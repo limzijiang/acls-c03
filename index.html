@@ -1,0 +1,2109 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ACLS Instructor 示範教學 20 題教案</title>
+<meta name="description" content="115 / 5 / 23（六）14:15–18:00　·　學員 C03　·　模擬器 SimPad Plus">
+<style>
+:root{
+  --bg:#fdfdfd; --fg:#1f2328; --muted:#656d76; --border:#d0d7de;
+  --link:#0969da; --soft:#f6f8fa; --hi:#fff8c5;
+  --skill:#0969da; --case:#bf3989;
+  --b1:#1F3864; --b2:#2E75B6; --b3:#7030A0;
+  --c-mnem:#fef9e7; --c-scen:#eef6fc; --c-open:#f4ecf7; --c-sum:#e8f5e9; --c-key:#fff3e0; --c-ref:#fce4ec;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d;
+         --link:#58a6ff; --soft:#161b22; --hi:#3a2f00;
+         --c-mnem:#2a2400; --c-scen:#0c2a47; --c-open:#2d1b3d; --c-sum:#0f2e1a; --c-key:#3a2400; --c-ref:#3a1d2a; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft JhengHei","PingFang TC","Helvetica Neue",Helvetica,Arial,sans-serif}
+.layout{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;gap:32px;padding:24px}
+@media (max-width:900px){.layout{grid-template-columns:1fr;padding:16px}.toc-wrap{position:static!important;max-height:none!important}}
+.toc-wrap{position:sticky;top:24px;align-self:start;max-height:calc(100vh - 48px);overflow-y:auto;border:1px solid var(--border);border-radius:10px;padding:14px;background:var(--soft);font-size:13.5px}
+.toc-h{font-weight:700;font-size:14px;margin-bottom:10px;color:var(--b1)}
+.toc-group{margin-bottom:14px}
+.toc-group-h{font-weight:600;font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;padding:6px 0 4px;border-bottom:1px solid var(--border);margin-bottom:4px}
+.toc-link{display:flex;gap:8px;padding:5px 6px;color:var(--fg);text-decoration:none;border-radius:4px;line-height:1.4}
+.toc-link:hover{background:var(--bg);color:var(--link)}
+.toc-id{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;color:var(--muted);min-width:30px}
+.toc-ttl{flex:1;font-size:13px}
+.search{width:100%;padding:6px 10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--fg);font:inherit;font-size:13px;margin-bottom:8px}
+.filter{display:flex;gap:6px;margin-bottom:10px;font-size:12px}
+.filter button{flex:1;padding:4px 8px;border:1px solid var(--border);background:var(--bg);border-radius:4px;cursor:pointer;color:var(--fg)}
+.filter button.active{background:var(--b2);color:#fff;border-color:var(--b2)}
+main{min-width:0}
+header.page-h{padding:8px 0 24px;border-bottom:2px solid var(--border);margin-bottom:24px}
+header.page-h h1{margin:0 0 6px;font-size:30px;font-weight:700;color:var(--b1);letter-spacing:-.5px}
+.subtitle{color:var(--muted);font-size:15px;margin-bottom:8px}
+.attribution{color:var(--muted);font-size:12.5px;font-style:italic}
+.intro{background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:24px}
+.intro h3{margin:0 0 8px;font-size:15px;color:var(--b1)}
+.intro ul{margin:6px 0 0;padding-left:22px;font-size:14px;color:var(--muted)}
+.intro li{margin:3px 0}
+.group{margin-bottom:48px}
+.group-h{font-size:22px;font-weight:700;color:var(--b1);padding:8px 0;border-bottom:2px solid var(--b2);margin:0 0 18px;position:sticky;top:0;background:var(--bg);z-index:5}
+.topic{border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:20px;background:var(--bg);scroll-margin-top:20px}
+.topic-head{display:flex;gap:14px;align-items:flex-start;border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:14px}
+.topic-id{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;font-weight:700;color:#fff;background:var(--b3);padding:6px 12px;border-radius:6px;letter-spacing:.5px;flex-shrink:0}
+.topic-meta{flex:1;min-width:0}
+.topic-title{margin:0 0 4px;font-size:18px;font-weight:600;color:var(--fg);line-height:1.4}
+.topic-sub{font-size:12.5px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;font-weight:600;color:#fff}
+.tag-skill{background:var(--skill)}
+.tag-case{background:var(--case)}
+.muted{color:var(--muted)}
+.block{margin:10px 0;padding:12px 14px;border-radius:8px;border:1px solid var(--border);background:var(--soft)}
+.block-h{font-size:13.5px;font-weight:700;color:var(--b1);margin-bottom:6px;letter-spacing:.3px}
+.scenario{background:var(--c-scen)}
+.mnemonic{background:var(--c-mnem);border-left:4px solid #d4a017}
+.mnemonic-detail{font-size:14.5px;font-weight:600;color:var(--fg);line-height:1.7}
+.opening{background:var(--c-open)}
+.opening blockquote{margin:0;padding:0;font-style:italic;color:var(--b3);font-size:14.5px;line-height:1.65}
+.summary{background:var(--c-sum);border-left:4px solid #2e7d32}
+.summary-text{font-weight:600;color:var(--fg);font-size:15px}
+.keypoints{background:var(--c-key)}
+.reference{background:var(--c-ref)}
+.reference .ref{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:4px}
+.reference .src{font-size:12px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:680px){.grid2{grid-template-columns:1fr}}
+ol,ul{margin:6px 0;padding-left:22px;font-size:14px;line-height:1.7}
+li{margin:3px 0}
+.qa{list-style:none;padding-left:0}
+.qa li{padding:5px 0;border-bottom:1px dashed var(--border);font-size:14px}
+.qa li:last-child{border-bottom:0}
+.q-label{color:var(--b2);font-size:13.5px;background:var(--bg);padding:1px 6px;border-radius:3px;border:1px solid var(--border);margin-right:4px}
+.do-scenario{background:var(--bg);border-left:3px solid var(--case);padding:8px 12px;margin:6px 0;font-size:14px;border-radius:0 6px 6px 0}
+footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-size:13px;color:var(--muted);text-align:center;line-height:1.7}
+@media print{
+  .toc-wrap,.search,.filter{display:none}
+  .layout{grid-template-columns:1fr;padding:0;max-width:100%}
+  .topic{page-break-inside:avoid;break-inside:avoid;border:1px solid #999}
+  .group-h{position:static}
+  body{font-size:11pt}
+}
+.scrolltop{position:fixed;bottom:24px;right:24px;background:var(--b2);color:#fff;border:0;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:18px;box-shadow:0 4px 12px rgba(0,0,0,.15);opacity:0;transition:opacity .2s}
+.scrolltop.show{opacity:.92}
+.scrolltop:hover{opacity:1}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<aside class="toc-wrap">
+  <div class="toc-h">📑 目錄（20 題）</div>
+  <input class="search" type="search" placeholder="搜尋題目…" oninput="filterTopics(this.value)">
+  <div class="filter">
+    <button data-f="all" class="active" onclick="filterType('all',this)">全部</button>
+    <button data-f="skill" onclick="filterType('skill',this)">Skill</button>
+    <button data-f="case" onclick="filterType('case',this)">Case</button>
+  </div>
+  
+    <div class="toc-group">
+      <div class="toc-group-h">Airway &amp; Intubation</div>
+      <a class="toc-link" href="#T01"><span class="toc-id">T01</span><span class="toc-ttl">打開呼吸道的操作技術</span></a>
+      <a class="toc-link" href="#T02"><span class="toc-id">T02</span><span class="toc-ttl">袋瓣面罩（BVM）操作技術</span></a>
+      <a class="toc-link" href="#T03"><span class="toc-id">T03</span><span class="toc-ttl">一般病患的氣管內管插管技術</span></a>
+      <a class="toc-link" href="#T04"><span class="toc-id">T04</span><span class="toc-ttl">懷疑頸椎受傷患者插管技術</span></a>
+      <a class="toc-link" href="#T05"><span class="toc-id">T05</span><span class="toc-ttl">喉頭罩（LMA）操作技術</span></a>
+    </div>
+
+    <div class="toc-group">
+      <div class="toc-group-h">Electrical Rx/AED/TCP/VF</div>
+      <a class="toc-link" href="#T06"><span class="toc-id">T06</span><span class="toc-ttl">ECG monitor 使用</span></a>
+      <a class="toc-link" href="#T07"><span class="toc-id">T07</span><span class="toc-ttl">AED 使用</span></a>
+      <a class="toc-link" href="#T08"><span class="toc-id">T08</span><span class="toc-ttl">去顫器（Defibrillator）使用</span></a>
+      <a class="toc-link" href="#T09"><span class="toc-id">T09</span><span class="toc-ttl">經皮心臟節律器（TCP）</span></a>
+      <a class="toc-link" href="#T10"><span class="toc-id">T10</span><span class="toc-ttl">Cardioversion 操作</span></a>
+    </div>
+
+    <div class="toc-group">
+      <div class="toc-group-h">Respiratory Arrest</div>
+      <a class="toc-link" href="#T11"><span class="toc-id">T11</span><span class="toc-ttl">70 歲男性 CVA → 瞳孔擴大、ICH</span></a>
+      <a class="toc-link" href="#T12"><span class="toc-id">T12</span><span class="toc-ttl">69 歲 COPD 男性、急診評估時無反應</span></a>
+      <a class="toc-link" href="#T13"><span class="toc-id">T13</span><span class="toc-ttl">72 歲 ICU COPD HR 95→45、HCO₂ retention</span></a>
+      <a class="toc-link" href="#T14"><span class="toc-id">T14</span><span class="toc-ttl">80 歲 ICU 肺炎、家屬大喊「沒呼吸了」</span></a>
+      <a class="toc-link" href="#T15"><span class="toc-id">T15</span><span class="toc-ttl">40 歲口服有機磷農藥</span></a>
+    </div>
+
+    <div class="toc-group">
+      <div class="toc-group-h">Acute Stroke</div>
+      <a class="toc-link" href="#T16"><span class="toc-id">T16</span><span class="toc-ttl">68 歲 / 橋腦出血 / 去大腦姿勢 / BP 210/120</span></a>
+      <a class="toc-link" href="#T17"><span class="toc-id">T17</span><span class="toc-ttl">24 歲 / 雷擊頭痛 / SAH</span></a>
+      <a class="toc-link" href="#T18"><span class="toc-id">T18</span><span class="toc-ttl">71 歲 / 短暫無力 / TIA</span></a>
+      <a class="toc-link" href="#T19"><span class="toc-id">T19</span><span class="toc-ttl">55 歲 / Malignant MCA / 中線偏移 / 視乳突水腫</span></a>
+      <a class="toc-link" href="#T20"><span class="toc-id">T20</span><span class="toc-ttl">67 歲 / EMT 院前評估與後送</span></a>
+    </div>
+</aside>
+
+<main>
+<header class="page-h">
+  <h1>ACLS Instructor 示範教學 20 題教案</h1>
+  <div class="subtitle">115 / 5 / 23（六）14:15–18:00　·　學員 C03　·　模擬器 SimPad Plus</div>
+  <div class="attribution">改編整合：Wayne 教案 20250526（15 題框架）+ 原案_Eletrical-tx.docx（T06–T10）+ 黃 D11 原創整合　·　Build 2026-05-02</div>
+</header>
+
+<div class="intro">
+  <h3>📌 使用說明</h3>
+  <ul>
+    <li><b>Skill 站</b>：3D 教學法（Describe 1.5 / Demo 2 / Do 3.5 / Summary 1 分鐘）</li>
+    <li><b>Case 站</b>：情境導向（開場 0.5 / 引導 2 / 演練 4 / Debrief 1.5 分鐘）</li>
+    <li>每題以 <b>口訣 / 記憶法</b> 為核心，台下發評分表讓觀眾「有事可做」。</li>
+    <li>七分鐘鈴 = 開始 Summary；八分鐘必停。</li>
+    <li>角色卡：Leader / Airway / Circulation / Recorder / Family（Case 站固定）。</li>
+    <li>側邊目錄可搜尋 / 篩選；點 Title 可跳轉；行動裝置自動切換為單欄。</li>
+    <li>Ctrl/Cmd + P 可印出（已優化分頁，每題不會被切斷）。</li>
+  </ul>
+</div>
+
+
+<section class="group" id="g-T01">
+  <h2 class="group-h">Airway &amp; Intubation</h2>
+  
+<article class="topic" id="T01" data-type="skill" data-group="Airway &amp; Intubation">
+  <header class="topic-head">
+    <div class="topic-id">T01</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">打開呼吸道的操作技術</h3>
+      <div class="topic-sub">
+        <span class="tag tag-skill">Skill 3D</span>
+        <span class="muted">·</span>
+        <span class="muted">Airway &amp; Intubation</span>
+        <span class="muted">·</span>
+        <span class="muted">11-Skill</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 失敗想四件事</div>
+    <div class="mnemonic-detail">血、水、膿、痰 → 抽吸　|　異物 → 取出　|　舌 → OPA/NPA　|　喉水腫 → 藥</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>不需 SimPad；Resusci Anne / Airway Trainer 即可。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>兩具假人並排、提示卡（壓額抬下巴 vs 抬下顎適應症）。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>大家好，我是 C03。接下來 8 分鐘只練一件事 ── 徒手打開呼吸道。請兩兩一組，每個人都會操作到。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 Describe（1.5 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　什麼樣的病人需要徒手打開呼吸道？　→ 意識不清、舌根後墜、無自主氣道；叫沒反應就先 A。</li>
+      <li><b class="q-label">Q2</b>　兩種方法是？　→ ① 壓額抬下巴（首選）② 抬下顎（懷疑頸椎傷害）。</li>
+      <li><b class="q-label">Q3</b>　何時用抬下顎？　→ 創傷、頸部傷害；保持頸椎中立位。</li>
+      <li><b class="q-label">Q4</b>　打開後仍無法通氣？　→ 想血水膿痰 / 異物 / 舌 / 喉水腫。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>同學 A 平躺扮路倒。示範壓額抬下巴：一手掌根壓額後推，另一手食中兩指扶下頷骨「骨頭」往上抬（不壓軟組織）。</li>
+      <li>示範抬下顎：站在頭端，大魚際肌貼顴骨穩住，食中無名小指鉤下頷角往上推，大拇指撐開下唇。</li>
+      <li>抬下顎打不開 → 立即轉壓額抬下巴。Take-home：通氣 &gt; 保護頸椎。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 Do（3.5 分鐘）</div>
+    <div class="do-scenario">兩兩一組，B 操作 A 當病人。情境一：路倒昏迷無外傷 → 壓額抬下巴。情境二：機車車禍後枕血腫 → 抬下顎；故意說「打不開！」看會不會果斷轉技術。</div>
+    <ol>
+      <li>巡視糾正：手指位置（軟組織？）</li>
+      <li>頭過度後仰？</li>
+      <li>換手交換角色</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">兩個技術、一個原則：通氣優先於頸椎。創傷先 jaw thrust，失敗就 head-tilt；非創傷直接 head-tilt chin-lift。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>手指扶骨頭不扶軟組織</li>
+        <li>創傷 jaw thrust → 失敗果斷轉 head-tilt</li>
+        <li>失敗想：血水膿痰 / 異物 / 舌 / 喉水腫</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 BLS Provider Manual, p.41–43；2020 ACLS Guidelines Part 3.</div>
+      <div class="src">改編自：wayne 教案 §11-Skill</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T02" data-type="skill" data-group="Airway &amp; Intubation">
+  <header class="topic-head">
+    <div class="topic-id">T02</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">袋瓣面罩（BVM）操作技術</h3>
+      <div class="topic-sub">
+        <span class="tag tag-skill">Skill 3D</span>
+        <span class="muted">·</span>
+        <span class="muted">Airway &amp; Intubation</span>
+        <span class="muted">·</span>
+        <span class="muted">12-Skill</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 困難 Ambu</div>
+    <div class="mnemonic-detail">鬍 · 胖 · 無齒 · 老 · 鼾音</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>Resusci Anne with Airway / SimMan；不需動 rhythm。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>BVM 一個、面罩 size 4、OPA 1 套、SpO₂ 卡（88→95）。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>8 分鐘只練 BVM。一個人 EC-clamp vs 兩人 thenar grip，密合度差很多 ── 等下你們會親身體會。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 Describe（1.5 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　怎麼組裝甦醒球？　→ 儲氣囊（接 100% O₂）+ 單向閥（瓣膜）+ 導管。</li>
+      <li><b class="q-label">Q2</b>　怎麼壓？　→ 壓 ⅓ 容量（避免胃脹氣）；1 秒擠 1 秒看胸抬；成人 10/min（每 6 秒 1 口）。</li>
+      <li><b class="q-label">Q3</b>　困難 Bagging 條件？　→ 鬍、胖、無齒、老、鼾音。</li>
+      <li><b class="q-label">Q4</b>　漏氣 / 給不進去怎處理？　→ 重做 EC-clamp、加 OPA、改兩人法、檢查管路。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>面罩定位：尖端覆鼻、弧形端置下唇下方。</li>
+      <li>單人 EC-clamp：拇指食指 C 壓住面罩、中環小指 E 鉤下頷骨上抬，不壓喉部軟組織。</li>
+      <li>兩人法：一人雙手 thenar grip 完整密合，第二人擠袋 ── 通氣量、密合度都明顯較好。</li>
+      <li>加 OPA：incisor 量到 ear lobe，反插再轉 180°；意識清醒會嘔吐改 NPA。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 Do（3.5 分鐘）</div>
+    <div class="do-scenario">EMT 抵達現場：老人張嘴呼吸 SpO₂ 75%，現場僅一人。請你開始操作。</div>
+    <ol>
+      <li>請 4 位學員兩兩配對：一組 1 人法、一組 2 人法</li>
+      <li>台下發評分表：每分鐘幾口？胸抬？</li>
+      <li>糾正：擠太用力（胃脹氣）/ 頻率太快（過度通氣 → CO 降）/ 漏氣</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">記住三個數字：壓 ⅓ 容量、每 6 秒 1 口、看到胸抬即可。一人不行就喊兩人法，永遠優先密合度。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>壓 ⅓、10/min、看胸抬</li>
+        <li>兩人法密合度 &gt; 一人法</li>
+        <li>過度通氣降低 venous return → ROSC 變難</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 ACLS Provider Manual Ch.5；Circulation 2020;142(suppl 2):S366.</div>
+      <div class="src">改編自：wayne 教案 §12-Skill</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T03" data-type="skill" data-group="Airway &amp; Intubation">
+  <header class="topic-head">
+    <div class="topic-id">T03</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">一般病患的氣管內管插管技術</h3>
+      <div class="topic-sub">
+        <span class="tag tag-skill">Skill 3D</span>
+        <span class="muted">·</span>
+        <span class="muted">Airway &amp; Intubation</span>
+        <span class="muted">·</span>
+        <span class="muted">13-Skill</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 兩組記憶</div>
+    <div class="mnemonic-detail">LEMON 困難氣道評估　|　開桿滑挑：開口、桿舌、滑到底、左上挑根現聲門</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>不需特殊；如要顯示 ETCO₂ waveform，monitor 預設 normal capnography 30–35 mmHg。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>Mac 3 喉鏡 + 7.5/7.0 ETT、10 mL syringe、bougie、stylet、ETCO₂ detector、固定帶。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>8 分鐘解一件事 ── 一般成人插管的流程與口訣。記住兩組：LEMON（評估）+ 開桿滑挑（動作）。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 Describe（1.5 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　插管適應症？　→ 無法保護氣道 / 通氣失敗 / 氧合失敗 / 預期病程惡化。</li>
+      <li><b class="q-label">Q2</b>　LEMON 怎麼用？　→ Look外觀 / Evaluate 3-3-2 / Mallampati / Obstruction / Neck mobility。有→啟動備援。</li>
+      <li><b class="q-label">Q3</b>　尺寸與深度？　→ 男 7.5–8.0 / 22–24 cm；女 6.5–7.0 / 20–22 cm；深度 ≈ 管號 × 3。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>邊做邊念 SOAP-ME：Suction、O₂、Airway 設備、Pharmacology、Monitor、ETCO₂。</li>
+      <li>Preoxygenation 3 min BVM 100% O₂。</li>
+      <li>口訣動作：開口（cross finger）→ 桿舌（喉鏡從右口角入推舌左）→ 滑到底（vallecula）→ 左上挑根 → 現聲門 → 送管 → cuff 過聲帶再進 2–3 cm。</li>
+      <li>Cuff 5–8 mL；Proof：聽診 5 點 + ETCO₂ waveform ≥ 4 循環 = 確認。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 Do（3.5 分鐘）</div>
+    <div class="do-scenario">你是病房總值，今天 9595，到場時已有人壓胸。主手接手插管，副手準備用物。患者 75 歲男性，正常體型。</div>
+    <ol>
+      <li>台下：嘗試是否 ≤ 30 秒？SpO₂ &lt; 90% 有沒有退出 BVM？</li>
+      <li>故意單側深插 → 看學員是否聽診出來退 1–2 cm</li>
+      <li>提示：永遠先看 SpO₂，再看波形</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">插管不是把管子放進去 ── 是「準備好、預氧好、放對、證明對、照顧好」。30 秒沒成功就退出再來，SpO₂ 是命。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>ETCO₂ waveform 是 gold standard</li>
+        <li>單次 ≤ 30 秒 / SpO₂ ≥ 90%</li>
+        <li>插完雙側呼吸聲 + 固定深度</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 ACLS Ch.5；NEJM 2017;377:1875.</div>
+      <div class="src">改編自：wayne 教案 §13-Skill（LEMON、開桿滑挑）</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T04" data-type="skill" data-group="Airway &amp; Intubation">
+  <header class="topic-head">
+    <div class="topic-id">T04</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">懷疑頸椎受傷患者插管技術</h3>
+      <div class="topic-sub">
+        <span class="tag tag-skill">Skill 3D</span>
+        <span class="muted">·</span>
+        <span class="muted">Airway &amp; Intubation</span>
+        <span class="muted">·</span>
+        <span class="muted">14-Skill</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 鐵律</div>
+    <div class="mnemonic-detail">保護呼吸道 &gt; 保護頸椎；MILS 全程不放手；VL/bougie 優先</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>Sinus tach 110、SpO₂ 92%；trauma scenario template。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>C-collar、頭部固定塊、Mac 4 / video laryngoscope、bougie、流程提示卡。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>車禍剛到的昏迷患者戴著 C-collar。8 分鐘搞定一件事：三人插管法 — 通氣優先，但不能讓他癱瘓。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 Describe（1.5 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　插管前要不要先排頸椎骨折？　→ 不要等。Airway compromise 直接做，全程 MILS。</li>
+      <li><b class="q-label">Q2</b>　誰固定？怎麼固定？　→ 第三人專責；雙肩輕靠胸、無名小指推下頷角、大拇指/魚際扶臉頰把下顎推開。</li>
+      <li><b class="q-label">Q3</b>　為何 VL 優先？　→ 不需頸過伸即可看聲門；無 VL 用 bougie + DL。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>車禍意識不清需插管。三人分工：主手插管、副手準備困難氣道備援、第三人固定頸椎。</li>
+      <li>拆 C-collar 前半（保留後半）→ 張口 → VL 入口角度小不撬 → 看聲門 → bougie 先放、ETT 沿 bougie 滑入。</li>
+      <li>Cuff → BVM → ETCO₂ → C-collar 重戴回去 → 固定 ETT。</li>
+      <li>失敗 → 考慮 BURP 改善視野；最差情況轉壓額抬下巴。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 Do（3.5 分鐘）</div>
+    <div class="do-scenario">急診室，車禍頭部外傷患者送來，C-collar 使用，呼吸衰竭要插管，VTS 穩定。</div>
+    <ol>
+      <li>台下觀察：頭有沒有移動 &gt; 1 cm？</li>
+      <li>30 秒內成功？</li>
+      <li>有沒有忘記重戴 C-collar？</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">C-spine 患者三條鐵律：MILS 全程不放手、VL/bougie 優先、通氣不能等。失敗果斷轉技術。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>MILS 不是 traction，只穩定</li>
+        <li>VL 第一線；無 VL 則 bougie + DL</li>
+        <li>通氣 &gt; 保護頸椎</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 ACLS Special Resuscitation；ATLS 10th ed. Ch.2.</div>
+      <div class="src">改編自：wayne 教案 §14-Skill（三人插管法、BURP）</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T05" data-type="skill" data-group="Airway &amp; Intubation">
+  <header class="topic-head">
+    <div class="topic-id">T05</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">喉頭罩（LMA）操作技術</h3>
+      <div class="topic-sub">
+        <span class="tag tag-skill">Skill 3D</span>
+        <span class="muted">·</span>
+        <span class="muted">Airway &amp; Intubation</span>
+        <span class="muted">·</span>
+        <span class="muted">15-Skill</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 兩個記憶點</div>
+    <div class="mnemonic-detail">比愛心（食拇指交叉打開嘴）　|　打氣量 = (size − 1) × 10 cc</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>不需特殊；可預設 ETCO₂ 顯示成功 capnogram。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>LMA size 3/4/5、潤滑劑、10/30 mL syringe、提示卡。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>LMA 是 ACLS 的 backup airway，EMT-2 可執行。8 分鐘練：選 size、放對、確認密合。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 Describe（1.5 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　何時用？　→ 對疼痛無反應、無咳嗽嘔吐反射；插管失敗備援；EMT-2 進階呼吸道。</li>
+      <li><b class="q-label">Q2</b>　禁忌症？　→ 未完全昏迷、仍有喉頭反射、噁心嘔吐 GI bleed、食道咽喉病變、嘴巴張不開 &lt; 2 cm。</li>
+      <li><b class="q-label">Q3</b>　Size 怎麼選？　→ 預設 4 號；過胖過瘦 ±1 號。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>打氣 20 cc 測 cuff 不漏氣 → 抽氣塑型 → 潤滑。</li>
+      <li>比愛心（食拇指交叉法）打開嘴巴。</li>
+      <li>面罩前端緊貼硬顎置入直到感受阻力 → 非慣用手固定。</li>
+      <li>打氣 (size−1)×10 cc（size 4 → 30 cc），目標壓 40–60 mmH₂O。</li>
+      <li>接 BVM → 雙側胸闊起伏對稱 → 聽診 → ETCO₂ 確認 → 固定。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 Do（3.5 分鐘）</div>
+    <div class="do-scenario">EMT-2 兩人組：意識不清 GCS 3、SpO₂ 88%，要置入 LMA。一位主手、一位副手。</div>
+    <ol>
+      <li>排除錯誤：漏氣 → 換大號</li>
+      <li>Cuff 壓 &gt; 60 mmH₂O → 洩氣後重打</li>
+      <li>提示：LMA 不防誤吸 → ROSC 後盡快換 ETT</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">LMA 三步：抽空 cuff、沿硬顎下、打氣到 40–60 mmH₂O。它不防誤吸 ── 是 backup，不是長期氣道。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>插管失敗別硬撐，LMA 上</li>
+        <li>禁忌：意識仍清、嘔吐反射在</li>
+        <li>LMA 不防誤吸；ROSC 後換 ETT</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 ACLS Adjuncts；BJA 2017;118:i14 DAS guidelines.</div>
+      <div class="src">改編自：wayne 教案 §15-Skill（比愛心、(size−1)×10）</div>
+    </div>
+  </div>
+</article>
+</section>
+
+<section class="group" id="g-T06">
+  <h2 class="group-h">Electrical Rx/AED/TCP/VF</h2>
+  
+<article class="topic" id="T06" data-type="skill" data-group="Electrical Rx/AED/TCP/VF">
+  <header class="topic-head">
+    <div class="topic-id">T06</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">ECG monitor 使用</h3>
+      <div class="topic-sub">
+        <span class="tag tag-skill">Skill 3D</span>
+        <span class="muted">·</span>
+        <span class="muted">Electrical Rx/AED/TCP/VF</span>
+        <span class="muted">·</span>
+        <span class="muted">62-Tachy-1</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 貼片口訣</div>
+    <div class="mnemonic-detail">白右、紅左下、黑（Smoke）over 紅（Fire）／或：白右紅腳</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>Sinus 80 → AF 130 → VT 180 → VF（paradox 鍵預設快速切換）。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>Monitor、3-lead 電極片、貼片定位海報。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>心電圖是 ACLS 的眼睛。8 分鐘搞定：貼對、選對 lead、看對東西。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 Describe（1.5 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　3-lead 怎麼貼？　→ 白色右鎖骨下、黑色左鎖骨下、紅色左肋緣下。</li>
+      <li><b class="q-label">Q2</b>　為何預設 lead II？　→ 平行心臟主軸，P 波最明顯。</li>
+      <li><b class="q-label">Q3</b>　Artifact vs 真心律？　→ 看病人有 pulse 嗎？訊號跟脈搏一致嗎？換 lead 看是否一致。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>貼上假人：白右、黑左、紅左下肋。開機 → lead II → gain 1× → speed 25 mm/s。</li>
+      <li>示範換 lead II → V → I，看波形變化。</li>
+      <li>示範遇 artifact：拍假人腿模擬抖動 → 教「先看病人不要先打電」。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 Do（3.5 分鐘）</div>
+    <div class="do-scenario">兩位學員：A 貼貼片、B 操作 monitor。</div>
+    <ol>
+      <li>SimPad 切：sinus → AF → VT → asystole（paradox 一鍵）</li>
+      <li>每次切換口頭報告：rhythm? rate? regular?</li>
+      <li>Asystole 出現：「你會打電嗎？」糾正：先確認 lead 接好 + 換 lead 確認 + 摸脈搏</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">Monitor 三步驟：貼對、看對 lead、永遠先看病人再看波形。Asystole 一定要 confirm in ≥ 2 leads。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>Lead II 預設工作 lead</li>
+        <li>Asystole 必須 ≥ 2 lead 確認</li>
+        <li>Artifact 80% 來自貼片接觸不良</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 ACLS Ch.4；Circulation 2020;142(suppl 2):S366.</div>
+      <div class="src">改編自：原案_Eletrical-tx.docx + 文斌_Dysrhythmias</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T07" data-type="skill" data-group="Electrical Rx/AED/TCP/VF">
+  <header class="topic-head">
+    <div class="topic-id">T07</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">AED 使用</h3>
+      <div class="topic-sub">
+        <span class="tag tag-skill">Skill 3D</span>
+        <span class="muted">·</span>
+        <span class="muted">Electrical Rx/AED/TCP/VF</span>
+        <span class="muted">·</span>
+        <span class="muted">62-Tachy-2</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 AED 5 步</div>
+    <div class="mnemonic-detail">開機 → 貼片 → 分析（不要碰）→ 電擊 → 立刻 CPR 2 min</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>VF；學員按 shock 後切 sinus 60（paradox 預設）。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>AED trainer、成人電擊片、剪刀、毛巾、提示卡「AED 5 步」。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>AED 簡單到 5 歲小孩都能用。8 分鐘練到不假思索。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 Describe（1.5 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　5 步驟？　→ 開機 / 貼片 / 不碰分析 / 電擊（如建議）/ 立刻 CPR。</li>
+      <li><b class="q-label">Q2</b>　貼片貼哪？　→ 右胸鎖骨下 + 左乳外側腋中線；或前後位（兒童、起搏器旁）。</li>
+      <li><b class="q-label">Q3</b>　哪些情況要先處理？　→ 胸毛多 → 剪／撕；胸口濕 → 擦乾；貼藥布 → 撕掉；起搏器 → 距離 ≥ 2.5 cm。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>開機（語音引導）→ 撕貼片背膠 → 黏右上 + 左下 → 連線。</li>
+      <li>「請大家離開！」（看頭/看腳/看自己）→ AED 分析 → 建議電擊。</li>
+      <li>「再次清空！氧氣移開！」→ 按閃爍鈕 → 立刻復位 30:2 CPR。</li>
+      <li>2 min 後 AED 自動再分析，按壓不能停 &gt; 10 秒。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 Do（3.5 分鐘）</div>
+    <div class="do-scenario">3 位學員：A 貼片、B 按 shock、C 維持高品質 CPR。</div>
+    <ol>
+      <li>台下計時：倒地→第一次電擊（目標 &lt; 3 min）</li>
+      <li>評估清場是否徹底</li>
+      <li>SimPad 切回 sinus → 學員應停 CPR 確認 pulse</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">記得「分析時手離開、電擊時氧氣離開」；shock 完馬上 CPR。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>Shock-to-CPR 中斷 &lt; 10 秒</li>
+        <li>Defib pads 距 pacemaker ≥ 2.5 cm</li>
+        <li>濕、毛、貼布三件事先處理</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 BLS Ch.6；Circulation 2020;142(suppl 2):S358.</div>
+      <div class="src">改編自：原案_BLS / 原案_Eletrical-tx</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T08" data-type="skill" data-group="Electrical Rx/AED/TCP/VF">
+  <header class="topic-head">
+    <div class="topic-id">T08</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">去顫器（Defibrillator）使用</h3>
+      <div class="topic-sub">
+        <span class="tag tag-skill">Skill 3D</span>
+        <span class="muted">·</span>
+        <span class="muted">Electrical Rx/AED/TCP/VF</span>
+        <span class="muted">·</span>
+        <span class="muted">62-Tachy-3</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 能量速查</div>
+    <div class="mnemonic-detail">VF/pVT：Biphasic 120–200J（不知就最大）／Mono 360J　|　兒童 2–4 J/kg</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>VF coarse → shock 後 paradox 切 organized rhythm。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>Manual defibrillator (biphasic)、貼片、流程卡 Charge–Clear–Shock。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>Manual defib 是醫師的核武。8 分鐘練：選對能量、清場、放對位置、無縫接 CPR。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 Describe（1.5 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　何時用 manual？　→ 醫療現場有 monitor、能精準選能量、可 cardioversion。</li>
+      <li><b class="q-label">Q2</b>　能量？　→ Biphasic 120–200J / Mono 360J；後續 ≥ 前一次。</li>
+      <li><b class="q-label">Q3</b>　貼片 vs paddle？　→ 貼片優：hands-off 安全、按壓不中斷、可同時 monitor + pace。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>看 rhythm（VF）→ 選 200J → Charge（CPR 不停）→ 「全員清場、氧氣移開」→ Shock → 立即 CPR 2 min。</li>
+      <li>清場三看：看頭、看腳、看自己；同時喊「Shock！」</li>
+      <li>Shock 後 NOT pulse check → 直接 CPR；2 min 後再 reassess。</li>
+      <li>VF persistent → 再電 + epinephrine 1 mg + amiodarone 300 mg。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 Do（3.5 分鐘）</div>
+    <div class="do-scenario">Leader 跟你說目前 VT 有脈搏 → 同步 100J；電完變無脈 VT → defib max；CPR 一輪 → 再電 max。</div>
+    <ol>
+      <li>台下計時 rhythm check → shock &lt; 10 秒</li>
+      <li>Shock → 復位 CPR ≤ 5 秒</li>
+      <li>故意切 organized rhythm → 學員應停 CPR 摸脈</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">Defib 三祕訣：能量選對、清場乾淨、shock 完不停 CPR。每延遲 1 分鐘存活率 ↓ 7–10%。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>Shock-CPR 銜接 ≤ 5 秒</li>
+        <li>清場三看（頭/腳/自己）</li>
+        <li>貼片 hands-off &gt; paddle</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 ACLS Ch.6；Resuscitation 2018;130:21.</div>
+      <div class="src">改編自：原案_Eletrical-tx.docx</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T09" data-type="skill" data-group="Electrical Rx/AED/TCP/VF">
+  <header class="topic-head">
+    <div class="topic-id">T09</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">經皮心臟節律器（TCP）</h3>
+      <div class="topic-sub">
+        <span class="tag tag-skill">Skill 3D</span>
+        <span class="muted">·</span>
+        <span class="muted">Electrical Rx/AED/TCP/VF</span>
+        <span class="muted">·</span>
+        <span class="muted">62-Tachy-4</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 Capture 雙確認</div>
+    <div class="mnemonic-detail">Electrical（spike + wide QRS）+ Mechanical（脈搏與 BP 改善）</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>Unstable brady HR 35 / BP 70/40；capture 成功後切 paced 80。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>Defib with pacing、pacing pads、提示卡 6 步。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>Symptomatic brady 對 atropine 沒效時 TCP 是橋樑。8 分鐘練：放對 pad、調對 mA、確認 capture、給止痛。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 Describe（1.5 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　適應症？　→ Symptomatic brady 對 atropine 0.5 mg q3–5min（max 3 mg）反應不佳；3° AVB；overdose。</li>
+      <li><b class="q-label">Q2</b>　Capture 怎判？　→ Electrical: spike 後跟 wide QRS（&gt;0.12s）。Mechanical: 摸到動脈搏動 + BP 改善。</li>
+      <li><b class="q-label">Q3</b>　會痛怎辦？　→ Morphine 2–4 mg / Fentanyl 50 µg；意識清醒可加 midazolam 1–2 mg。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>貼 pacing pads：前胸 V3 + 後背左肩胛下（前後夾降疼痛）。</li>
+      <li>Pacing → demand mode → rate 70 → mA 從 0 慢慢上加。</li>
+      <li>40 mA 起，每 5–10 mA 跳一次，看到 spike + wide QRS = electrical capture，再 + 5–10 mA margin。</li>
+      <li>同時摸 right femoral / carotid 確認 mechanical capture（不摸與 pad 同側）。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 Do（3.5 分鐘）</div>
+    <div class="do-scenario">2 位學員：A 貼 pad + 設機器、B 給止痛 + 摸脈確認 capture。</div>
+    <ol>
+      <li>台下：mA 多少 capture？</li>
+      <li>有同時確認 electrical + mechanical 嗎？</li>
+      <li>有 give analgesia 嗎？</li>
+      <li>故意調回 mA 看 loss of capture，學員應重加</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">TCP 三步：貼前後 pad、調 mA 到 capture、止痛。沒 capture 就是沒效 ── 永遠同時看波形與摸脈搏。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>Electrical + Mechanical capture 都要</li>
+        <li>止痛/鎮靜 — 病人會非常痛</li>
+        <li>TCP 是橋樑 → 安排 transvenous</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 ACLS Bradycardia Algorithm；Circulation 2020;142(suppl 2):S429.</div>
+      <div class="src">改編自：原案_Eletrical-tx.docx + 文斌_PEAAsystoleBradycardia</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T10" data-type="skill" data-group="Electrical Rx/AED/TCP/VF">
+  <header class="topic-head">
+    <div class="topic-id">T10</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">Cardioversion 操作</h3>
+      <div class="topic-sub">
+        <span class="tag tag-skill">Skill 3D</span>
+        <span class="muted">·</span>
+        <span class="muted">Electrical Rx/AED/TCP/VF</span>
+        <span class="muted">·</span>
+        <span class="muted">62-Tachy-5</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 能量表</div>
+    <div class="mnemonic-detail">Narrow regular（PSVT/AFL）50–100J　|　Narrow irregular（AF）120–200J　|　Wide regular（pVT）100J　|　Wide irregular（poly VT）→ 當 VF unsync max</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>Unstable AF RVR 180 / BP 80/50；sync shock 後切 sinus 90。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>Defib（含 sync 鍵）、貼片、midazolam/fentanyl 標示瓶、SYNC 紅膠帶醒目標籤。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>Cardioversion 跟 Defib 看似一樣，差一個 SYNC 鍵 ── 那個鍵沒按，會把不穩定電成 VF。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 Describe（1.5 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　何時做？　→ Unstable tachy with pulse：低 BP / 胸痛 / 急性心衰 / 意識變化 / 休克。</li>
+      <li><b class="q-label">Q2</b>　為何 SYNC？　→ 避開 T 波 vulnerable period，落在 T 波 = 誘發 VF（R-on-T）。</li>
+      <li><b class="q-label">Q3</b>　為何每次都要重按？　→ 每次 shock 後 sync 自動 off，下次要再按一次！</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>①IV、O₂、Monitor ②鎮靜（midazolam ± fentanyl）③貼 pad ④選能量 ⑤按 SYNC（看 R 波上有箭頭）⑥Charge ⑦清場 ⑧shock。</li>
+      <li>機器會等下一個 R 波才放電，會聽到延遲。</li>
+      <li>Cardioversion 後立即 reassess：rhythm、BP、意識。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 Do（3.5 分鐘）</div>
+    <div class="do-scenario">2 位學員：A 鎮靜 + 設備、B 操作 cardioversion。</div>
+    <ol>
+      <li>台下：有按 sync 嗎？能量對嗎？清場？</li>
+      <li>故意第二次不按 sync → 看學員是否抓出來提醒</li>
+      <li>主打教學點：每次 shock 都要重按 SYNC</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">跟 defib 差一個 SYNC 鍵。Unstable tachy 才電；能量看 narrow/wide × regular/irregular；每次 shock 後 SYNC reset 要重按。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>SYNC 沒按 = 可能誘發 VF</li>
+        <li>電擊前一定要鎮靜</li>
+        <li>每次 shock 後 sync 會 reset</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 ACLS Tachycardia；Circulation 2020;142(suppl 2):S444.</div>
+      <div class="src">改編自：原案_Eletrical-tx + 原案_tachycardia</div>
+    </div>
+  </div>
+</article>
+</section>
+
+<section class="group" id="g-T11">
+  <h2 class="group-h">Respiratory Arrest</h2>
+  
+<article class="topic" id="T11" data-type="case" data-group="Respiratory Arrest">
+  <header class="topic-head">
+    <div class="topic-id">T11</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">Case 1：70 歲男性 CVA → 瞳孔擴大、ICH</h3>
+      <div class="topic-sub">
+        <span class="tag tag-case">Case Scenario</span>
+        <span class="muted">·</span>
+        <span class="muted">Respiratory Arrest</span>
+        <span class="muted">·</span>
+        <span class="muted">21-Resp-ICH</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="block scenario">
+    <div class="block-h">📋 情境</div>
+    <div>70 y/o 男突然倒地、左偏癱、意識不清，送至 ED，原本呼吸尚好。等 CT 時 RR 18→6、Coma scale 變差、左瞳孔 3→6 mm 無反應。</div>
+  </div>
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 Cushing's Triad</div>
+    <div class="mnemonic-detail">不規則呼吸 + HTN + Bradycardia → 想腦疝</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>Baseline sinus 70 / SpO₂ 96%；3 min 後切 sinus 50 / SpO₂ 88% / RR 6（呼吸 trend 下降）。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>Brain CT（right basal ganglia ICH 30cc with mass effect）、ABG 卡（pH 7.28 / PCO₂ 58 / PO₂ 70）、神經保護性插管步驟卡。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>今天你是急診/神內團隊。腦疝在你眼前發生。8 分鐘核心 ── 神經保護性插管。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 情境引導 / Describe（2 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　為何 ICH 影響 A/B？　→ 意識差不能 protect airway；腦疝壓迫腦幹導致不規則呼吸。</li>
+      <li><b class="q-label">Q2</b>　顱內高壓典型表現？　→ Cushing's Triad：不規則呼吸 + HTN + brady。</li>
+      <li><b class="q-label">Q3</b>　插管前怎準備（避免 ICP 升高）？　→ 顱內高壓三階段：環境刺激 → 高滲透壓藥物 → 神經保護性插管。</li>
+      <li><b class="q-label">Q4</b>　Pre-medication？　→ Fentanyl 減痛；局部 Lidocaine 麻痺喉頭，降疼痛/嘔吐/咳嗽（皆會 ↑ICP）。</li>
+      <li><b class="q-label">Q5</b>　鎮靜與肌鬆？　→ 鎮靜 Etomidate（避 Ketamine ↑ICP）；肌鬆 Rocuronium（避 Sux ↑ICP）。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>頭部抬高 30°、止痛、止吐。</li>
+      <li>穩定 VTS：避免高低 BP、低 glucose、高體溫。</li>
+      <li>Pre-treatment: Fentanyl + 局部 Lidocaine。</li>
+      <li>RSI: Etomidate + Rocuronium。</li>
+      <li>插完考慮深度鎮靜 + 過度換氣（ETCO₂ 30–35 短期 ICP 控制）。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 情境演練（4 分鐘）</div>
+    <div class="do-scenario">56 y/o 男倒地左偏癱，CT Putamen 40cc ICH，呼吸淺快不規則 GCS 3。請執行神經保護性插管。</div>
+    <ol>
+      <li>Pre-medication: Fentanyl + Lidocaine</li>
+      <li>RSI: Etomidate + Rocuronium</li>
+      <li>插完: 深度鎮靜 + 過度換氣 30–35</li>
+      <li>Head up 30°、找神經外科</li>
+      <li>台下任務：crisis resource management 評分（closed-loop / 計畫 verbalize / role clarity）</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">顱內出血、避免進一步腦壓升高 → 神經保護性插管。Pre Lidocaine+Fentanyl，鎮靜 Etomidate，肌鬆 Rocuronium，最後考慮過度換氣。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>Cushing's Triad = 腦疝在敲門</li>
+        <li>Pre-medication 防 ICP 高峰</li>
+        <li>Etomidate + Rocuronium（避 Ketamine + Sux）</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA/ASA 2022 ICH Guidelines (Stroke 2022;53:e282)；INTERACT-2.</div>
+      <div class="src">改編自：wayne 教案 §21-Resp-ICH（神經保護性插管）</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T12" data-type="case" data-group="Respiratory Arrest">
+  <header class="topic-head">
+    <div class="topic-id">T12</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">Case 2：69 歲 COPD 男性、急診評估時無反應</h3>
+      <div class="topic-sub">
+        <span class="tag tag-case">Case Scenario</span>
+        <span class="muted">·</span>
+        <span class="muted">Respiratory Arrest</span>
+        <span class="muted">·</span>
+        <span class="muted">22-Resp-Resp Failure</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="block scenario">
+    <div class="block-h">📋 情境</div>
+    <div>69 y/o 男 COPD 病史，因呼吸困難至 ED。剛轉床時 nurse 發現 unresponsive。HR 110、BP 140/80、RR 0、SpO₂ 80%。</div>
+  </div>
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 兩組記憶</div>
+    <div class="mnemonic-detail">叫叫 CABD　|　呼吸衰竭三軸：道、力、氣</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>Sinus 110 / SpO₂ 80% / apneic；BVM 3 min 後切 SpO₂ 95%；插管後 sinus 90。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>Pulse oximeter 卡、ABG 卡（pH 7.20 / PCO₂ 75 / HCO₃ 30）、道力氣海報。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>這站考「Respiratory arrest with pulse」── 不是 cardiac arrest，5 分鐘內不處理就會。重點：先 Airway，不急著按。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 情境引導 / Describe（2 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　先做什麼？　→ 叫叫 CABD：叫病人、叫支援、C 觸脈搏（有 pulse）、A 暢通呼吸道+抽痰、B Ambu Bagging。</li>
+      <li><b class="q-label">Q2</b>　怎麼拆解呼吸衰竭？　→ 「道、力、氣」三字訣。</li>
+      <li><b class="q-label">Q3</b>　COPD AE 治療？　→ 插管 + 機械通氣、bronchodilator、steroid。SpO₂ 88–92% 讓腦幹記得呼吸；I:E 1:4–1:5。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>道：暢通呼吸道、抽痰、異物取出。</li>
+      <li>力：BVM 通氣 / 機械式呼吸器。</li>
+      <li>氣：氧、PEEP；治療疾病本身（bronchodilator / steroid / 抗生素）。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 情境演練（4 分鐘）</div>
+    <div class="do-scenario">80 y/o 男 ICU 心衰肺水腫 2 天，2 hr 前呼吸困難，會客時家屬大喊沒呼吸了。</div>
+    <ol>
+      <li>叫叫 CABD（人嗜睡躁動、有 pulse、HR 114 / BP 172/112 / RR 28 / SpO₂ 88%）</li>
+      <li>道：暢通+抽吸</li>
+      <li>力：BVM/機械式通氣</li>
+      <li>氣：高 O₂ + PEEP；肺水腫 → NTG pump + 利尿劑</li>
+      <li>台下：5H5T 表單勾選</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">叫叫 CABD → 道力氣三軸 → 治療疾病本身。COPD：SpO₂ 88–92、I:E 1:4–1:5、permissive hypercapnia。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>Respiratory arrest with pulse → 只通氣不壓胸</li>
+        <li>COPD：低 RR、長 expiratory、避 auto-PEEP</li>
+        <li>SpO₂ 88–92% 讓腦幹記得呼吸</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 ACLS Respiratory Arrest；Chest 2020;158:1336.</div>
+      <div class="src">改編自：wayne 教案 §22-Resp-Resp Failure（道力氣）</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T13" data-type="case" data-group="Respiratory Arrest">
+  <header class="topic-head">
+    <div class="topic-id">T13</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">Case 3：72 歲 ICU COPD HR 95→45、HCO₂ retention</h3>
+      <div class="topic-sub">
+        <span class="tag tag-case">Case Scenario</span>
+        <span class="muted">·</span>
+        <span class="muted">Respiratory Arrest</span>
+        <span class="muted">·</span>
+        <span class="muted">23-Resp-DOPE</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="block scenario">
+    <div class="block-h">📋 情境</div>
+    <div>72 y/o ICU 病人 AECOPD，5 hr 前 RSI 插管。ABG: pH 7.18 / PCO₂ 90 / PO₂ 110 / HCO₃ 32。Nurse 發現 HR 95 → 45 / BP 100/60。</div>
+  </div>
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 DOPE</div>
+    <div class="mnemonic-detail">D Displacement / O Obstruction / P Pneumothorax / E Equipment</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>Sinus 95 → sinus brady 45（or junctional brady）；SpO₂ 98%、ETCO₂ 80。學員調 vent 後切 sinus 80。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>Vent 設定卡（RR 18 / TV 500 / PEEP 8 / I:E 1:2）、ABG 前後對比卡、DOPE 提示卡。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>陷阱：bradycardia 不是心臟病 ── 是你呼吸器設錯把他壓壞的。8 分鐘找出來、調回去。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 情境引導 / Describe（2 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　為何心跳變慢？　→ CO₂ &gt; 60–80 → 呼吸性酸中毒 → pH &lt; 7.2 抑制心肌 → brady 甚至 arrest。先處理呼吸再打藥。</li>
+      <li><b class="q-label">Q2</b>　Brady 怎處理？　→ 校正可逆因素（這裡是 CO₂ 累積）；昏痛喘休克才給 Atropine / TCP / Dopamine。</li>
+      <li><b class="q-label">Q3</b>　已插管為何通氣不足？　→ 用 DOPE 口訣：</li>
+      <li><b class="q-label">Q4</b>　呼吸器怎麼調？　→ SpO₂ 88–92%、增加 minute ventilation、I:E 1:4–1:5 改善 CO₂ 排除。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>D：檢查 Endo 位置、ETCO₂、挑管。</li>
+      <li>O：Suction、檢查 cuff。</li>
+      <li>P：聽診、PE、CxR。</li>
+      <li>E：呼吸器運作與設定。</li>
+      <li>解決：斷開 vent + 慢手動 BVM 8/min（同時診斷+治療）。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 情境演練（4 分鐘）</div>
+    <div class="do-scenario">66 y/o ICU AECOPD 2 hr 前插管，pH 7.13 / CO₂ 90 / HR 45 / BP 100/60。</div>
+    <ol>
+      <li>DOPE 排除</li>
+      <li>調 vent: SpO₂ 88–92, ↑MV, I:E 1:4–1:5</li>
+      <li>C: Saline + Atropine + Dopamine + TCP</li>
+      <li>台下：DOPE 卡逐項勾選</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">插完管呼吸衰竭 → 先轉 BVM → DOPE 分析。COPD 注意 SpO₂ 88–92；CO₂ 累積 → ↑MV + 延長吐氣。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>Brady from auto-PEEP → 不是先 atropine</li>
+        <li>Disconnect + 慢手動通氣 = 同時診斷+治療</li>
+        <li>DOPE 5 件事</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 ACLS Special Resuscitation；Chest 2014;145:1175.</div>
+      <div class="src">改編自：wayne 教案 §23-Resp-DOPE</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T14" data-type="case" data-group="Respiratory Arrest">
+  <header class="topic-head">
+    <div class="topic-id">T14</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">Case 4：80 歲 ICU 肺炎、家屬大喊「沒呼吸了」</h3>
+      <div class="topic-sub">
+        <span class="tag tag-case">Case Scenario</span>
+        <span class="muted">·</span>
+        <span class="muted">Respiratory Arrest</span>
+        <span class="muted">·</span>
+        <span class="muted">24-Resp-Resp Failure</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="block scenario">
+    <div class="block-h">📋 情境</div>
+    <div>80 y/o 男老菸槍，CAP 住 ICU 兩天。會客時家屬跑到護理站大喊沒呼吸了。Unresponsive、apneic、有微弱頸動脈搏動、SpO₂ 78%。</div>
+  </div>
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 同 T12</div>
+    <div class="mnemonic-detail">叫叫 CABD → 道、力、氣（治療換成肺炎）</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>Sinus 50 / SpO₂ 78% / apneic（witnessed resp arrest with weak pulse）；BVM 後切 sinus 80 / SpO₂ 95%。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>CXR（RLL pneumonia）、抽痰機、ICU 急救角色卡（Leader/Airway/Compressions/Family liaison/Documenter）。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>這站考 ICU witnessed resp arrest 的團隊反應 ── 加上「家屬在旁邊」變數。8 分鐘要做的不只救命，還有溝通。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 情境引導 / Describe（2 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　先做什麼？　→ 叫叫 CABD（叫病人、叫支援、C 觸脈搏、A 暢通+抽痰、B Ambu）。</li>
+      <li><b class="q-label">Q2</b>　怎麼拆解？　→ 道、力、氣（同 T12）。</li>
+      <li><b class="q-label">Q3</b>　肺炎特殊性？　→ 抗生素、bronchodilator、化痰藥；肺保護性通氣（高 PEEP、低 TV 6 mL/kg IBW）。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>道：暢通+抽痰（pneumonia 痰多）。</li>
+      <li>力：BVM → 機械式呼吸器。</li>
+      <li>氣：FiO₂ 100% titrate down by SpO₂；PEEP 8；TV 6 mL/kg IBW。</li>
+      <li>Family liaison：請家屬出去，「爸爸現在呼吸狀況不好，我們在處理，請給我們 5 分鐘」。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 情境演練（4 分鐘）</div>
+    <div class="do-scenario">80 y/o 男 ICU 肺水腫 2 天，2 hr 前呼吸困難，家屬跑到護理站。</div>
+    <ol>
+      <li>叫叫 CABD</li>
+      <li>道力氣三軸</li>
+      <li>Septic shock 確認 → 抽 culture + broad-spectrum antibiotics + IV fluid 30 mL/kg</li>
+      <li>CXR 重照排 pneumothorax / mucous plug</li>
+      <li>家屬安撫角色 — wayne 沒寫但這是評審加分</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">叫叫 CABD → 道力氣 → 治療肺炎本身（抗生素+化痰+肺保護）+ 家屬安撫一秒鐘。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>Witnessed arrest in monitored bed → 病因常找得到</li>
+        <li>Family liaison 是固定角色</li>
+        <li>Lung-protective: TV 6 mL/kg IBW</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 ACLS；NEJM 2018;378:797 ARDS lung protection.</div>
+      <div class="src">改編自：wayne 教案 §24-Resp-Resp Failure（道力氣 + 肺炎特殊性）</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T15" data-type="case" data-group="Respiratory Arrest">
+  <header class="topic-head">
+    <div class="topic-id">T15</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">Case 5：40 歲口服有機磷農藥</h3>
+      <div class="topic-sub">
+        <span class="tag tag-case">Case Scenario</span>
+        <span class="muted">·</span>
+        <span class="muted">Respiratory Arrest</span>
+        <span class="muted">·</span>
+        <span class="muted">25-Resp-有機磷</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="block scenario">
+    <div class="block-h">📋 情境</div>
+    <div>40 y/o 男喝下半杯有機磷農藥送至 ED。分泌物大量、口鼻流涎、wheezing、瞳孔針尖。HR 50、BP 90/55、RR 28 shallow、SpO₂ 88%、GCS 7。</div>
+  </div>
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 SLUDGEBBB（淋濕蜜蜂）</div>
+    <div class="mnemonic-detail">Salivation, Lacrimation, Urination, Defecation, GI cramps, Emesis + Bronchorrhea / Bradycardia / Bronchospasm — 全身濕 + 心搏過緩</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>Sinus brady 50 / SpO₂ 88% / RR 28 with wheeze；給 atropine 後切 sinus 90 / SpO₂ 95%。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>Atropine 1 mg/mL ×5 amp、Pralidoxime（2-PAM）標示瓶、抽痰機、SLUDGEBBB 卡、PPE 整套（手套、罩、隔離衣）。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>SLUDGEBBB ── 淋濕蜜蜂。一邊保命、一邊不要被自己的病人毒到。8 分鐘核心：插管、解毒、PPE。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 情境引導 / Describe（2 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　症狀？　→ SLUDGEBBB（淋濕蜜蜂）：流汗流淚上吐下瀉尿多痰多 + brady。副交感神經興奮。</li>
+      <li><b class="q-label">Q2</b>　對呼吸道的影響？　→ 痰多 → 上呼吸道阻塞；支氣管痙攣 → 下呼吸道；痰累積 → 肺氣體交換消失。處置：持續抽吸。</li>
+      <li><b class="q-label">Q3</b>　怎麼穩定 ABC？　→ A 暢通+持續抽痰；B 機械式呼吸器+繼續抽；C brady → Atropine（同時是解毒劑）。</li>
+      <li><b class="q-label">Q4</b>　解毒劑？　→ Atropine 1–2–4 mg Q5min（double until 痰減少）+ Pralidoxime 2 mg IV then 500 mg IVF。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>PPE 是第一動作（沒做你也會中毒）。</li>
+      <li>移除衣物 + 清水沖洗皮膚（decontamination）→ 抽痰 → BVM 100% O₂。</li>
+      <li>插管：避用 succinylcholine（pseudocholinesterase 被抑制 → 延長作用）；用 Rocuronium 1.2 mg/kg。</li>
+      <li>Atropine 1–2–4 mg double titrate to「痰乾、肺底清、HR &gt; 80」── 不是看瞳孔。可達數十至數百 mg。</li>
+      <li>2-PAM 30 mg/kg IV over 30 min → 8 mg/kg/hr drip。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 情境演練（4 分鐘）</div>
+    <div class="do-scenario">30 y/o 女半小時前喝 200 cc 有機磷農藥自殺，BP 90/60、HR 55、SpO₂ 88%、GCS E2V2M4，痰多有雜音。</div>
+    <ol>
+      <li>叫叫 CABD（先 PPE）</li>
+      <li>C: IV / Monitor → BP 75/40 → Atropine, Dopamine, TCP</li>
+      <li>A: 抽痰、插管</li>
+      <li>B: 高濃度 O₂ + 機械通氣</li>
+      <li>D: 照會毒物科 → Atropine + 2-PAM 監測反應</li>
+      <li>台下：SLUDGEBBB 表單勾選</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">有機磷 3 件事：保護自己（PPE）、給氣（不用 sux）、給夠 atropine（titrate to lungs not pupils）。2-PAM 越早越好（&lt; 24 hr）。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>Atropine titrate 到痰乾、HR &gt; 80（不看瞳孔）</li>
+        <li>插管避 succinylcholine</li>
+        <li>PPE 是第一動作</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA 2020 ACLS Toxicology；Lancet 2008;371:597 OP poisoning.</div>
+      <div class="src">改編自：wayne 教案 §25-Resp-有機磷（SLUDGEBBB / 淋濕蜜蜂）</div>
+    </div>
+  </div>
+</article>
+</section>
+
+<section class="group" id="g-T16">
+  <h2 class="group-h">Acute Stroke</h2>
+  
+<article class="topic" id="T16" data-type="case" data-group="Acute Stroke">
+  <header class="topic-head">
+    <div class="topic-id">T16</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">Case 1：68 歲 / 橋腦出血 / 去大腦姿勢 / BP 210/120</h3>
+      <div class="topic-sub">
+        <span class="tag tag-case">Case Scenario</span>
+        <span class="muted">·</span>
+        <span class="muted">Acute Stroke</span>
+        <span class="muted">·</span>
+        <span class="muted">41-Stroke-顱內出血</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="block scenario">
+    <div class="block-h">📋 情境</div>
+    <div>68 y/o 女傍晚送至 ED 昏迷狀態、四肢去大腦姿勢。BP 210/120、HR 60、RR 18 irregular。Brain CT：pontine hemorrhage。</div>
+  </div>
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 Golden Hour Bundle 6 項</div>
+    <div class="mnemonic-detail">①BP &lt;140/80 ②凝血校正 ③Glucose &lt;180 ④BT &lt;37.5 ⑤癲癇控制 ⑥ICP 控制</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>Sinus 60 / SpO₂ 92% / irregular RR；插管+osmotic Tx 後切 sinus 75 / SpO₂ 98%；BP control 後切 BP 160/95。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>Brain CT 卡、stroke severity NIHSS 卡、Nicardipine/Labetalol 標示瓶、Golden Hour Bundle 6 項海報。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>橋腦出血預後最差 ── 但 8 分鐘內你做的事決定他能不能走出去。重點：airway、Golden Hour Bundle、誠實預後。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 情境引導 / Describe（2 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　ACLS Stroke 初步流程？　→ 啟動中風團隊+CT、評估 ABC、IV+lab、量血糖、NIHSS+last normal time。</li>
+      <li><b class="q-label">Q2</b>　ICH 的 Golden Hour 處置？　→ Bundle 6 項：避免高低 BP / 凝血校正 / 避免高低 glucose / 避免發燒 / 控癲癇 / 控 ICP。</li>
+      <li><b class="q-label">Q3</b>　BP 控制目標？　→ BP &lt; 140/80, MAP &gt; 80。藥物：Nicardipine drip 或 Labetalol IV。</li>
+      <li><b class="q-label">Q4</b>　凝血障礙如何校正？　→ Plt &lt; 50000 → 輸血小板；INR ↑ → Vit K + PCC；抗凝劑 → 查表反轉。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>GCS 6（去大腦 = M2）→ 不能保護氣道 → 插管。</li>
+      <li>Pre-RSI BP control（avoid 高峰）：fentanyl + lidocaine 預處理。</li>
+      <li>RSI Etomidate + Rocuronium；ETCO₂ 30–35 短期 ICP 控制；head up 30°。</li>
+      <li>BP：Nicardipine 5 mg/hr titrate / Labetalol 10–20 mg IV → 目標 SBP &lt; 140 in 1 hr。</li>
+      <li>Glucose Insulin → &lt; 180；BT 體外降溫 + Acetaminophen → &lt; 37.5°C。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 情境演練（4 分鐘）</div>
+    <div class="do-scenario">68 y/o 女 ICH，GCS E2V2M3、BP 220/140、HR 110、Glucose 240、BT 38.3、Plt 10000、INR 2.5、Aspirin 使用中。</div>
+    <ol>
+      <li>插管或放 Nasal Airway</li>
+      <li>Nicardipine/Labetalol → BP &lt; 140/80</li>
+      <li>Insulin → Glucose &lt; 180</li>
+      <li>Acetaminophen + 體外降溫 → BT &lt; 37.5</li>
+      <li>輸 Plt → &gt; 50000；Vit K + PCC → INR &lt; 1.5</li>
+      <li>Head up 30°、找 NS、找 ICU</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">腦部 CT 是急性中風處置的分水嶺。ICH 絕對不能 fibrinolytic。Golden Hour Bundle 6 項：BP/凝血/Glucose/BT/癲癇/ICP。BP &lt; 140 mmHg。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>ICH SBP 目標 140（比 ischemic 嚴格）</li>
+        <li>Pre-RSI 預防 BP 高峰（fentanyl/lidocaine）</li>
+        <li>Pontine hemorrhage 預後差但流程要對</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA/ASA 2022 ICH Guidelines；INTERACT-2 NEJM 2013;368:2355.</div>
+      <div class="src">改編自：wayne 教案 §41-Stroke-顱內出血（Golden Hour Bundle）</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T17" data-type="case" data-group="Acute Stroke">
+  <header class="topic-head">
+    <div class="topic-id">T17</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">Case 2：24 歲 / 雷擊頭痛 / SAH</h3>
+      <div class="topic-sub">
+        <span class="tag tag-case">Case Scenario</span>
+        <span class="muted">·</span>
+        <span class="muted">Acute Stroke</span>
+        <span class="muted">·</span>
+        <span class="muted">42-Stroke-SAH</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="block scenario">
+    <div class="block-h">📋 情境</div>
+    <div>24 y/o 男在重訓時突發劇烈頭痛、後頸僵硬、複視，意識清楚。BP 160/100。Brain CT 無異常。</div>
+  </div>
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 SUM</div>
+    <div class="mnemonic-detail">Sudden onset · Unlike previous · Maximal at onset</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>Sinus 95 / 正常 SpO₂；BP 160/100 持續；不轉換。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>Brain CT 卡（正常）、LP tray 圖示、xanthochromia 試管圖、CTA 圖（aneurysm）、Nimodipine 標示瓶。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>雷擊頭痛 + 頸僵硬，CT 正常 ── 你會放他回家還是繼續查？這站練：SUM 三特徵 + LP/CTA。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 情境引導 / Describe（2 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　中風流程啟動後做什麼？　→ CT、ABC、IV、Glucose、NIHSS、last normal time。</li>
+      <li><b class="q-label">Q2</b>　怎樣的頭痛懷疑 SAH？　→ SUM 三特徵：Sudden / Unlike / Maximal。其他：脖子痛、意識變、癲癇、複視。</li>
+      <li><b class="q-label">Q3</b>　CT 正常但仍懷疑？　→ LP 看 RBC（不降 + xanthochromia）；或直接 CTA。</li>
+      <li><b class="q-label">Q4</b>　LP (+) 處置？　→ 走顱內出血 Bundle：BP &lt; 140–160（Labetalol/Nicardipine）+ Nimodipine 防 vasospasm + CTA 找 aneurysm。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>Hunt-Hess grading（這個 case 約 grade 2）。</li>
+      <li>問病史：症狀活動（valsalva？）、家族史（PKD、aneurysm）、抽菸/運動/搬重物。</li>
+      <li>&gt; 6 hr 直接 LP；&lt; 6 hr 也可選 CTA（多中心首選 CTA）。</li>
+      <li>LP 結果：RBC 50000 in tube 1, 48000 in tube 4（沒降）+ xanthochromia (+) → SAH 確診。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 情境演練（4 分鐘）</div>
+    <div class="do-scenario">35 y/o 大哥搬家時突發劇烈頭痛+頸僵硬，BP 180/110。</div>
+    <ol>
+      <li>啟動 stroke code → CT</li>
+      <li>懷疑 SAH（SUM 三特徵）</li>
+      <li>CT 正常 → LP 或 CTA</li>
+      <li>BT 38.5 → Acetaminophen</li>
+      <li>BP 195/120 → Labetalol</li>
+      <li>Glucose 230 → Insulin</li>
+      <li>癲癇 → Keppra</li>
+      <li>CTA 評估動脈瘤 → 神經外科</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">雷擊頭痛 SUM 三特徵；CT 正常仍要 LP。走顱內出血 Bundle + Nimodipine 防 vasospasm。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>CT 6 hr 後 sensitivity 急降 — 不能只信 CT</li>
+        <li>SUM 三特徵：Sudden/Unlike/Maximal</li>
+        <li>Nimodipine 是 SAH 標配（防 vasospasm，不是降 BP）</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA/ASA 2023 SAH Guidelines；Lancet Neurol 2017;16:387.</div>
+      <div class="src">改編自：wayne 教案 §42-Stroke-SAH（SUM 口訣）</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T18" data-type="case" data-group="Acute Stroke">
+  <header class="topic-head">
+    <div class="topic-id">T18</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">Case 3：71 歲 / 短暫無力 / TIA</h3>
+      <div class="topic-sub">
+        <span class="tag tag-case">Case Scenario</span>
+        <span class="muted">·</span>
+        <span class="muted">Acute Stroke</span>
+        <span class="muted">·</span>
+        <span class="muted">43-Stroke-TIA</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="block scenario">
+    <div class="block-h">📋 情境</div>
+    <div>71 y/o 女，30 min 前突發左肢麻木+左上臂無力+言語不清，到院時症狀完全消失，神經學正常。BP 160/110、HR 88、Hx HTN、AF（warfarin）、DM。</div>
+  </div>
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 ABCD² Score</div>
+    <div class="mnemonic-detail">Age ≥60(1) · BP ≥140/90(1) · Clinical(unilateral 2 / speech 1) · Duration(≥60 min 2 / 10–59 1) · DM(1)　≥4 = 高 risk</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>AF 88 / BP 160/110；不轉換。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>NIHSS、ABCD² Score 卡、CTA/MRI 圖示、warfarin 標示瓶。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>症狀沒了 ── 你會放他回家嗎？TIA 是 stroke 前哨戰。8 分鐘核心：抓出高風險、住院 work-up、不漏 diff。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 情境引導 / Describe（2 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　會啟動 stroke code 嗎？　→ G-FAST &gt; 2 分啟動。</li>
+      <li><b class="q-label">Q2</b>　啟動後做什麼？　→ CT、ABC、IV、Glucose、NIHSS、last normal time。CT 沒出血。要不要打 tPA？看症狀。</li>
+      <li><b class="q-label">Q3</b>　不打 tPA，下一步？回家嗎？　→ 不行。TIA 48 hr 內再中風風險極高，用 ABCD² 評估 + 次級預防。</li>
+      <li><b class="q-label">Q4</b>　怎麼安排？　→ CTA/MRA（頸動脈/椎動脈狹窄 → 支架）；ECG/echo（AF → NOAC）；Low Risk + CTA 正常 → 48 hr 返診；否則住院。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>算 ABCD²：71y(1) + BP(1) + unilateral weak+speech(2) + 30 min(1) + DM(1) = 6 → 高風險。</li>
+      <li>NIHSS = 0（症狀已緩解）但 high-risk 不能放回家。</li>
+      <li>鑑別：seizure / migraine with aura / hypoglycemia。</li>
+      <li>AF + warfarin → 確認 INR；INR in range 仍發病 → sub-therapeutic 或 LAA thrombus。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 情境演練（4 分鐘）</div>
+    <div class="do-scenario">56 y/o 男 1 hr 前左側無力+麻木+左臉偏癱，BP 180/98，DM+HTN。</div>
+    <ol>
+      <li>啟動 stroke code → CT</li>
+      <li>ABC、IV、Glucose、NIHSS、last normal time</li>
+      <li>評估 ABCD² → 給 DAPT/SAPT、住院 or 返家</li>
+      <li>安排 CTA、ECG</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">TIA 不是 OK ── 是預警。算 ABCD² + 影像 + AF/carotid 找源頭 + 住院 work-up。Low Risk + CTA 正常才返診。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>症狀沒了還是要住院（48 hr 風險最高）</li>
+        <li>ABCD² ≥ 4 強烈建議住院</li>
+        <li>AF + warfarin 仍發病 → sub-therapeutic 或 LAA clot</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA/ASA 2021 TIA / Secondary Prevention；Lancet 2007;370:1432 ABCD².</div>
+      <div class="src">改編自：wayne 教案 §43-Stroke-TIA</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T19" data-type="case" data-group="Acute Stroke">
+  <header class="topic-head">
+    <div class="topic-id">T19</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">Case 4：55 歲 / Malignant MCA / 中線偏移 / 視乳突水腫</h3>
+      <div class="topic-sub">
+        <span class="tag tag-case">Case Scenario</span>
+        <span class="muted">·</span>
+        <span class="muted">Acute Stroke</span>
+        <span class="muted">·</span>
+        <span class="muted">44-Stroke-IICP</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="block scenario">
+    <div class="block-h">📋 情境</div>
+    <div>55 y/o 男到 ED 昏迷，BP 210/120、HR 55、RR 12 irregular、papilledema (+)。Brain CT：right MCA infarct + edema + midline shift。</div>
+  </div>
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 顱內高壓三階段</div>
+    <div class="mnemonic-detail">①預防（環境刺激、穩定 VTS、所有患者）②高滲透壓藥物（Mannitol/3% saline）③神經保護性插管+深度鎮靜+過度換氣／開顱／低溫</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>Sinus 55 / SpO₂ 92% / irregular RR (Cheyne-Stokes)；插管+osmotic Tx 後切 sinus 70 / SpO₂ 98%。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>Brain CT 卡（large MCA + 8 mm midline shift）、3% saline / Mannitol 標示瓶、stroke team activation 卡、顱內高壓三階段海報。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>Malignant MCA infarct + 早期腦疝。Ischemic 但已到救命階段 ── 不是 tPA 時機，是 ICP 與 hemicraniectomy 時機。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 情境引導 / Describe（2 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　顱內高壓初步徵兆？　→ Cushing's Triad：不規則呼吸 + HTN + brady。</li>
+      <li><b class="q-label">Q2</b>　降 ICP 方式？　→ 三階段處置（見上）。第一階段所有人都做；第二階段高風險或已 IICP；第三階段藥物治療失敗。</li>
+      <li><b class="q-label">Q3</b>　高滲透壓藥物原理 / 副作用？　→ Mannitol / 3% Saline 增血液滲透壓 → 腦水腫消退；副作用利尿、低 BP → 放尿管監測。</li>
+      <li><b class="q-label">Q4</b>　三階段都失敗？　→ 神經外科開顱降壓（hemicraniectomy &lt; 60y, &lt; 48 hr → mortality 80% → 30% per DESTINY/DECIMAL）；低溫治療。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>插管 RSI；ETCO₂ 30–35 短期 ICP。</li>
+      <li>Head up 30°、3% saline 250 mL bolus 或 Mannitol 1 g/kg。</li>
+      <li>BP 不要急降（ischemic 容許 SBP &lt; 220）；急降反而 penumbra ischemia。</li>
+      <li>Neurosurgery 緊急 consult — hemicraniectomy。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 情境演練（4 分鐘）</div>
+    <div class="do-scenario">55 y/o 男吃飯時突然昏倒，stroke code → CT 顯示左橋腦 25 cc ICH 暫無水腫。預防 IICP 處置？接著 BP 210/120、HR 52、RR 8 → 下一步？再發現中線偏移 → 下一步？</div>
+    <ol>
+      <li>Head up 30°、止痛、止吐、控 BP/SpO₂/BT/Glucose</li>
+      <li>出現 IICP → Mannitol + 放尿管監測</li>
+      <li>中線偏移 → 神經保護性插管+深鎮靜+過度換氣+低溫+開顱、住 ICU</li>
+      <li>台下：兩位扮家屬問「醫師我爸到底會不會好？」— 給結構化答案</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">Cushing's Triad → 顱內高壓三階段處置。Hemicraniectomy &lt; 60y + &lt; 48 hr 救命（mortality 80% → 30%）。家屬要誠實談 mRS 3–4。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>Ischemic SBP &lt; 220（比 ICH 寬鬆），急降會擴大 infarct</li>
+        <li>顱內高壓三階段（預防/藥物/手術）</li>
+        <li>Hemicraniectomy 數字：80% → 30%</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA/ASA 2019 Acute Ischemic Stroke；Lancet Neurol 2007;6:215 DESTINY/DECIMAL meta.</div>
+      <div class="src">改編自：wayne 教案 §44-Stroke-IICP（三階段處置）</div>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="T20" data-type="case" data-group="Acute Stroke">
+  <header class="topic-head">
+    <div class="topic-id">T20</div>
+    <div class="topic-meta">
+      <h3 class="topic-title">Case 5：67 歲 / EMT 院前評估與後送</h3>
+      <div class="topic-sub">
+        <span class="tag tag-case">Case Scenario</span>
+        <span class="muted">·</span>
+        <span class="muted">Acute Stroke</span>
+        <span class="muted">·</span>
+        <span class="muted">45-Stroke-EMT</span>
+        <span class="muted">·</span>
+        <span class="muted">8 min + 2 min debrief</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="block scenario">
+    <div class="block-h">📋 情境</div>
+    <div>67 y/o 男，18:30 用晚餐時突發暈眩+右側無力。EMT 18:40 抵達現場：意識清、口齒不清、右臉下垂、右上肢無法平舉。呼吸順、脈搏不規則。Hx HTN、DM、AF（未抗凝）。</div>
+  </div>
+
+  <div class="block mnemonic">
+    <div class="block-h">🧠 G-FAST</div>
+    <div class="mnemonic-detail">Gaze（眼追手指）· Face（露齒微笑）· Arm（兩手抬起，昏迷者看哪邊先落）· Speech（「股市上萬點、台灣走出去」）· Time of last normal</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <div class="block-h">🎛 SimPad Plus 設定</div>
+      <div>AF 100 / SpO₂ 96% / 正常呼吸；途中保持，到院後 AF 90。</div>
+    </div>
+    <div class="block">
+      <div class="block-h">🧰 教具</div>
+      <div>G-FAST 卡、三醫院選擇情境卡（地區2min/區域10min rtPA/醫學中心50min IA）、SBAR handoff 表。</div>
+    </div>
+  </div>
+
+  <div class="block opening">
+    <div class="block-h">🎤 開場（30 秒）</div>
+    <blockquote>今天你是消防分隊待命的 EMT。stroke 鏈條第一棒。8 分鐘核心：G-FAST、scene time &lt; 15 min、送對醫院、預先通報。</blockquote>
+  </div>
+
+  <div class="block">
+    <div class="block-h">💬 情境引導 / Describe（2 分鐘）</div>
+    <ol class="qa">
+      <li><b class="q-label">Q1</b>　哪些症狀啟動 stroke 流程？　→ 半邊肢體/臉無力、口齒不清、步態不穩、頭痛、眩暈。</li>
+      <li><b class="q-label">Q2</b>　院前評估流程？　→ 穩定 ABC → 啟動中風 → G-FAST → 量血糖排低糖 → 院前通知。SpO₂ &gt; 94 才給 O₂。</li>
+      <li><b class="q-label">Q3</b>　G-FAST 怎執行？　→ 五字決：Gaze/Face/Arm/Speech/Time。</li>
+      <li><b class="q-label">Q4</b>　送哪間醫院？　→ tPA window 4.5 hr → 區域以上；IA window 24 hr → 醫學中心。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
+    <ol>
+      <li>評估 G-FAST 五項。</li>
+      <li>取得 last normal time（昨晚幾點睡？）。</li>
+      <li>Glucose 量測排低糖。</li>
+      <li>預先通報醫院 → 醫院預啟動 CT + stroke team。</li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <div class="block-h">🏃 情境演練（4 分鐘）</div>
+    <div class="do-scenario">EMT 通報：56 y/o 女突然把車停路中央，路人通報 119。意識清、口齒不清、右側 face/muscle 無力、症狀 30 min。BP 160/110、HR 85、SpO₂ 92、Glucose 110。三間醫院：新仁地區 2 min（無 NS）/ 新竹中國醫區域 10 min（rtPA）/ 林口長庚醫學中心 50 min（IA）。要送哪間？</div>
+    <ol>
+      <li>啟動 stroke code 用 G-FAST 評估</li>
+      <li>取得 last normal time</li>
+      <li>量血糖（已排除）</li>
+      <li>院前通知醫院</li>
+      <li>醫院選擇：在 4.5 hr 內 + LVO 嫌疑 → 直送 IA 中心；否則 rtPA 中心</li>
+      <li>台下：扮 ED dispatcher 接電話 SBAR</li>
+    </ol>
+  </div>
+
+  <div class="block summary">
+    <div class="block-h">✅ Summary（1 分鐘）</div>
+    <div class="summary-text">懷疑中風 → 啟動流程 → G-FAST → 量血糖 → 預先通報 → 送對醫院。tPA 4.5 hr / IA 24 hr。</div>
+  </div>
+
+  <div class="grid2">
+    <div class="block keypoints">
+      <div class="block-h">🎯 Teaching Key Points</div>
+      <ul>
+        <li>G-FAST 五字決（台灣版）</li>
+        <li>Scene time &lt; 15 min；不給 aspirin（未排除出血）</li>
+        <li>預先通報 = 醫院預啟動 = 省 30 分鐘</li>
+      </ul>
+    </div>
+    <div class="block reference">
+      <div class="block-h">📚 Reference / 出處</div>
+      <div class="ref">AHA/ASA 2019 Acute Ischemic Stroke (Stroke 2019;50:e344)；Stroke 2018;49:1116 Mission: Lifeline LVO.</div>
+      <div class="src">改編自：wayne 教案 §45-Stroke-到院前（G-FAST + 三醫院）</div>
+    </div>
+  </div>
+</article>
+</section>
+
+<footer>
+  ACLS Instructor 示範教學 20 題教案　·　115 / 5 / 23（六）14:15–18:00　·　學員 C03　·　模擬器 SimPad Plus<br>
+  改編整合：Wayne 教案 20250526（15 題框架）+ 原案_Eletrical-tx.docx（T06–T10）+ 黃 D11 原創整合　·　Build 2026-05-02<br>
+  <span style="color:var(--muted);font-size:11.5px">本頁不收集任何資料；所有內容僅供教學使用。</span>
+</footer>
+</main>
+</div>
+
+<button class="scrolltop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到頂部">↑</button>
+
+<script>
+const topics = document.querySelectorAll('.topic');
+const tocLinks = document.querySelectorAll('.toc-link');
+function filterTopics(q){
+  q = q.toLowerCase().trim();
+  topics.forEach(t=>{
+    const text = t.textContent.toLowerCase();
+    t.style.display = (!q || text.includes(q)) ? '' : 'none';
+  });
+  tocLinks.forEach(l=>{
+    const id = l.getAttribute('href').slice(1);
+    const t = document.getElementById(id);
+    l.style.display = t.style.display === 'none' ? 'none' : '';
+  });
+}
+function filterType(f, btn){
+  document.querySelectorAll('.filter button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  topics.forEach(t=>{
+    const m = (f==='all') || t.dataset.type === f;
+    t.style.display = m ? '' : 'none';
+  });
+  tocLinks.forEach(l=>{
+    const id = l.getAttribute('href').slice(1);
+    const t = document.getElementById(id);
+    l.style.display = t.style.display === 'none' ? 'none' : '';
+  });
+}
+const scrollBtn = document.querySelector('.scrolltop');
+window.addEventListener('scroll', ()=>{
+  scrollBtn.classList.toggle('show', window.scrollY > 600);
+});
+</script>
+</body>
+</html>
