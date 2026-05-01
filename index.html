@@ -7,19 +7,16 @@
 <meta name="description" content="115 / 5 / 23（六）14:15–18:00　·　學員 C03　·　模擬器 SimPad Plus">
 <style>
 :root{
-  --bg:#fdfdfd; --fg:#1f2328; --muted:#656d76; --border:#d0d7de;
+  --bg:#ffffff; --fg:#1f2328; --muted:#656d76; --border:#d0d7de;
   --link:#0969da; --soft:#f6f8fa; --hi:#fff8c5;
   --skill:#0969da; --case:#bf3989;
   --b1:#1F3864; --b2:#2E75B6; --b3:#7030A0;
   --c-mnem:#fef9e7; --c-scen:#eef6fc; --c-open:#f4ecf7; --c-sum:#e8f5e9; --c-key:#fff3e0; --c-ref:#fce4ec;
-}
-@media (prefers-color-scheme: dark){
-  :root{ --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d;
-         --link:#58a6ff; --soft:#161b22; --hi:#3a2f00;
-         --c-mnem:#2a2400; --c-scen:#0c2a47; --c-open:#2d1b3d; --c-sum:#0f2e1a; --c-key:#3a2400; --c-ref:#3a1d2a; }
+  --c-aha:#e3f2fd;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft JhengHei","PingFang TC","Helvetica Neue",Helvetica,Arial,sans-serif}
+html,body{background:#ffffff;color:#1f2328}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft JhengHei","PingFang TC","Helvetica Neue",Helvetica,Arial,sans-serif}
 .layout{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;gap:32px;padding:24px}
 @media (max-width:900px){.layout{grid-template-columns:1fr;padding:16px}.toc-wrap{position:static!important;max-height:none!important}}
 .toc-wrap{position:sticky;top:24px;align-self:start;max-height:calc(100vh - 48px);overflow-y:auto;border:1px solid var(--border);border-radius:10px;padding:14px;background:var(--soft);font-size:13.5px}
@@ -68,6 +65,11 @@ header.page-h h1{margin:0 0 6px;font-size:30px;font-weight:700;color:var(--b1);l
 .reference{background:var(--c-ref)}
 .reference .ref{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:4px}
 .reference .src{font-size:12px;color:var(--muted)}
+.aha{background:var(--c-aha);border:1px solid #90caf9;border-left:4px solid #1976d2;margin-top:12px}
+.aha .block-h{color:#0d47a1;font-size:14px}
+.aha-source{font-size:12px;color:var(--muted);font-style:italic;margin-bottom:6px}
+.aha-items{margin:0;padding-left:22px;font-size:13.5px;line-height:1.7}
+.aha-items li{margin:3px 0}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (max-width:680px){.grid2{grid-template-columns:1fr}}
 ol,ul{margin:6px 0;padding-left:22px;font-size:14px;line-height:1.7}
@@ -143,7 +145,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
 <header class="page-h">
   <h1>ACLS Instructor 示範教學 20 題教案</h1>
   <div class="subtitle">115 / 5 / 23（六）14:15–18:00　·　學員 C03　·　模擬器 SimPad Plus</div>
-  <div class="attribution">改編整合：Wayne 教案 20250526（15 題框架）+ 原案_Eletrical-tx.docx（T06–T10）+ 黃 D11 原創整合　·　Build 2026-05-02</div>
+  <div class="attribution">改編整合：Wayne 教案 20250526（15 題框架）+ 原案_Eletrical-tx.docx（T06–T10）+ AHA 2025 ACLS Instructor &amp; Provider Manual（官方評分清單）+ 原創整合　·　Build 2026-05-02 v3</div>
 </header>
 
 <div class="intro">
@@ -152,6 +154,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     <li><b>Skill 站</b>：3D 教學法（Describe 1.5 / Demo 2 / Do 3.5 / Summary 1 分鐘）</li>
     <li><b>Case 站</b>：情境導向（開場 0.5 / 引導 2 / 演練 4 / Debrief 1.5 分鐘）</li>
     <li>每題以 <b>口訣 / 記憶法</b> 為核心，台下發評分表讓觀眾「有事可做」。</li>
+    <li>每題附 <b>📋 AHA 官方評分清單</b> （藍色 box）— 評審當天會勾的項目，dry-run 自評用。</li>
     <li>七分鐘鈴 = 開始 Summary；八分鐘必停。</li>
     <li>角色卡：Leader / Airway / Circulation / Recorder / Family（Case 站固定）。</li>
     <li>側邊目錄可搜尋 / 篩選；點 Title 可跳轉；行動裝置自動切換為單欄。</li>
@@ -252,6 +255,22 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <div class="src">改編自：wayne 教案 §11-Skill</div>
     </div>
   </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Airway Management Skills Testing — Critical Skills Descriptors</div>
+    <div class="aha-source">出處：ACLS Instructor Manual Part 4 + Lesson 3B</div>
+    <ul class="aha-items">
+      <li>Perform a full assessment</li>
+      <li>Begin ventilation without delay</li>
+      <li>Insert an OPA or an NPA</li>
+      <li>Connect bag-mask device to oxygen and adjust flow rate</li>
+      <li>Give bag-mask ventilation with OPA/NPA for 1 minute（測 1 分鐘）：</li>
+      <li>　• Rate：1 breath every 6 seconds（10/min）</li>
+      <li>　• Speed：squeeze bag for 1 second</li>
+      <li>　• Volume：⅓ to ½ bag squeeze that produces visible chest rise</li>
+      <li>⚠️ Fail criteria：ventilating once every ≤4 sec OR ≥8 sec</li>
+    </ul>
+  </div>
 </article>
 
 <article class="topic" id="T02" data-type="skill" data-group="Airway &amp; Intubation">
@@ -340,9 +359,25 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     </div>
     <div class="block reference">
       <div class="block-h">📚 Reference / 出處</div>
-      <div class="ref">AHA 2020 ACLS Provider Manual Ch.5；Circulation 2020;142(suppl 2):S366.</div>
+      <div class="ref">AHA 2025 ACLS Provider Manual Ch.5；Circulation 2020;142(suppl 2):S366.</div>
       <div class="src">改編自：wayne 教案 §12-Skill</div>
     </div>
+  </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Airway Management Skills Testing — Critical Skills Descriptors</div>
+    <div class="aha-source">出處：ACLS Instructor Manual Part 4 + Lesson 3B</div>
+    <ul class="aha-items">
+      <li>Perform a full assessment</li>
+      <li>Begin ventilation without delay</li>
+      <li>Insert an OPA or an NPA</li>
+      <li>Connect bag-mask device to oxygen and adjust flow rate</li>
+      <li>Give bag-mask ventilation with OPA/NPA for 1 minute（測 1 分鐘）：</li>
+      <li>　• Rate：1 breath every 6 seconds（10/min）</li>
+      <li>　• Speed：squeeze bag for 1 second</li>
+      <li>　• Volume：⅓ to ½ bag squeeze that produces visible chest rise</li>
+      <li>⚠️ Fail criteria：ventilating once every ≤4 sec OR ≥8 sec</li>
+    </ul>
   </div>
 </article>
 
@@ -431,9 +466,20 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     </div>
     <div class="block reference">
       <div class="block-h">📚 Reference / 出處</div>
-      <div class="ref">AHA 2020 ACLS Ch.5；NEJM 2017;377:1875.</div>
+      <div class="ref">AHA 2025 ACLS Ch.5；NEJM 2017;377:1875。【2025 更新】Removed delivering medications down an ET tube.</div>
       <div class="src">改編自：wayne 教案 §13-Skill（LEMON、開桿滑挑）</div>
     </div>
+  </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Lesson 3C — Advanced Airway Insertion (Optional)</div>
+    <div class="aha-source">出處：ACLS Instructor Manual Part 6 / Lesson 3C</div>
+    <ul class="aha-items">
+      <li>※ 此題在 AHA 屬「Optional」進階氣道，視學員 scope of practice 而定，不在標準 Skill Test 範圍。</li>
+      <li>Supraglottic airway devices 包括 LMA（多種變化）、Laryngeal Tube、Endotracheal Tube</li>
+      <li>搭配 Lesson 4 Technology Review 操作 monitor/defibrillator</li>
+      <li>【2025 更新】不再從 ET tube 給藥（Removed delivering medications down an ET tube）</li>
+    </ul>
   </div>
 </article>
 
@@ -526,6 +572,17 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <div class="src">改編自：wayne 教案 §14-Skill（三人插管法、BURP）</div>
     </div>
   </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Trauma 相關 — 屬 Optional / 散見於 Megacode</div>
+    <div class="aha-source">出處：AHA 標準課程未列為獨立 Skill Test</div>
+    <ul class="aha-items">
+      <li>※ AHA 標準 Skill Test 不單獨測 c-spine intubation；見於部分 Megacode trauma 案例</li>
+      <li>通用原則（採 ACLS Provider Manual 引述）：MILS（manual in-line stabilization）</li>
+      <li>優先順序：通氣 &gt; 保護頸椎 — 與 wayne 教案一致</li>
+      <li>評審看：MILS 全程不放手 / video laryngoscope 或 bougie 使用 / 重戴 C-collar</li>
+    </ul>
+  </div>
 </article>
 
 <article class="topic" id="T05" data-type="skill" data-group="Airway &amp; Intubation">
@@ -614,9 +671,20 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     </div>
     <div class="block reference">
       <div class="block-h">📚 Reference / 出處</div>
-      <div class="ref">AHA 2020 ACLS Adjuncts；BJA 2017;118:i14 DAS guidelines.</div>
+      <div class="ref">AHA 2025 ACLS Adjuncts；BJA 2017;118:i14 DAS guidelines.</div>
       <div class="src">改編自：wayne 教案 §15-Skill（比愛心、(size−1)×10）</div>
     </div>
+  </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Lesson 3C — Supraglottic Airway Devices</div>
+    <div class="aha-source">出處：ACLS Provider Manual Part 3 + Instructor Manual Lesson 3C</div>
+    <ul class="aha-items">
+      <li>※ LMA 屬 supraglottic airway，列在 Lesson 3C「Optional Advanced Airways」</li>
+      <li>AHA 認可的 supraglottic devices：Laryngeal Mask Airway（多版本）/ Laryngeal Tube / ETT</li>
+      <li>插完即可 hands-off — 適合 cardiac arrest 維持 CCF</li>
+      <li>AHA 建議：搭配 Quantitative Waveform Capnography 確認位置（與 ETT 同等標準）</li>
+    </ul>
   </div>
 </article>
 </section>
@@ -708,9 +776,23 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     </div>
     <div class="block reference">
       <div class="block-h">📚 Reference / 出處</div>
-      <div class="ref">AHA 2020 ACLS Ch.4；Circulation 2020;142(suppl 2):S366.</div>
+      <div class="ref">AHA 2025 ACLS Ch.4；Circulation 2020;142(suppl 2):S366.</div>
       <div class="src">改編自：原案_Eletrical-tx.docx + 文斌_Dysrhythmias</div>
     </div>
+  </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Lesson 4 — Technology Review</div>
+    <div class="aha-source">出處：ACLS Instructor Manual Part 6 / Lesson 4</div>
+    <ul class="aha-items">
+      <li>15 分鐘 demo monitor/defibrillator 功能：</li>
+      <li>　• Power button</li>
+      <li>　• Transcutaneous pacing</li>
+      <li>　• Synchronized cardioversion</li>
+      <li>　• Defibrillation（manual 與 automatic 模式）</li>
+      <li>※ AHA 強調學員需動手（hands-on）熟悉自己單位設備按鈕位置</li>
+      <li>評審看：是否清楚指示 monitor leads 應用 / 識別藝術品 / 認出可電擊 vs 不可電擊</li>
+    </ul>
   </div>
 </article>
 
@@ -803,6 +885,20 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <div class="src">改編自：原案_BLS / 原案_Eletrical-tx</div>
     </div>
   </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Adult High-Quality BLS Skills Testing — AED 段落</div>
+    <div class="aha-source">出處：ACLS Instructor Manual Part 4 / Adult BLS Critical Skills</div>
+    <ul class="aha-items">
+      <li>Powers on the AED（按鈕或開蓋，AED 一到立刻開機）</li>
+      <li>Correctly attaches pads（成人尺寸、正確位置）</li>
+      <li>Clears for analysis（清楚溝通停止接觸 + 按 analyze 鈕，如機器要求）</li>
+      <li>Clears to safely deliver shock（再次清楚溝通停止接觸）</li>
+      <li>Delivers a shock within 45 seconds after AED arrival</li>
+      <li>Resumes chest compressions immediately after shock delivery</li>
+      <li>Does not turn off the AED during CPR</li>
+    </ul>
+  </div>
 </article>
 
 <article class="topic" id="T08" data-type="skill" data-group="Electrical Rx/AED/TCP/VF">
@@ -890,9 +986,27 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     </div>
     <div class="block reference">
       <div class="block-h">📚 Reference / 出處</div>
-      <div class="ref">AHA 2020 ACLS Ch.6；Resuscitation 2018;130:21.</div>
+      <div class="ref">AHA 2025 ACLS Ch.6；Resuscitation 2018;130:21.</div>
       <div class="src">改編自：原案_Eletrical-tx.docx</div>
     </div>
+  </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Adult Cardiac Arrest Learning Station Checklist (VF/pVT)</div>
+    <div class="aha-source">出處：ACLS Instructor Manual Part 5 / Lesson 8–9</div>
+    <ul class="aha-items">
+      <li>Assigns team roles and directs the team</li>
+      <li>Directs the systematic approach</li>
+      <li>Directs team to administer 100% oxygen</li>
+      <li>Directs team to apply monitor leads</li>
+      <li>Directs IV or IO access</li>
+      <li>Directs appropriate defibrillation and drug treatment</li>
+      <li>Directs reassessment of patient in response to treatments</li>
+      <li>Summarizes specific treatments</li>
+      <li>Verbalizes indications for advanced airway if needed</li>
+      <li>Considers reversible causes（5H5T）</li>
+      <li>Directs post-cardiac arrest care</li>
+    </ul>
   </div>
 </article>
 
@@ -982,9 +1096,24 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     </div>
     <div class="block reference">
       <div class="block-h">📚 Reference / 出處</div>
-      <div class="ref">AHA 2020 ACLS Bradycardia Algorithm；Circulation 2020;142(suppl 2):S429.</div>
+      <div class="ref">AHA 2025 ACLS Bradycardia Algorithm；Circulation 2020;142(suppl 2):S429.</div>
       <div class="src">改編自：原案_Eletrical-tx.docx + 文斌_PEAAsystoleBradycardia</div>
     </div>
+  </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Adult Bradycardia With a Pulse Learning Station Checklist</div>
+    <div class="aha-source">出處：ACLS Instructor Manual Part 5 / Lesson 5</div>
+    <ul class="aha-items">
+      <li>Assigns team roles and directs the team（effective team dynamics）</li>
+      <li>Directs the systematic approach（BLS → Primary → Secondary）</li>
+      <li>Directs team to apply monitor leads</li>
+      <li>Directs IV or IO access</li>
+      <li>Directs appropriate drug treatment OR transcutaneous pacing</li>
+      <li>Directs reassessment of patient in response to treatments</li>
+      <li>Summarizes specific treatments</li>
+      <li>Verbalizes indications for advanced airway if needed</li>
+    </ul>
   </div>
 </article>
 
@@ -1008,8 +1137,8 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
   
 
   <div class="block mnemonic">
-    <div class="block-h">🧠 能量表</div>
-    <div class="mnemonic-detail">Narrow regular（PSVT/AFL）50–100J　|　Narrow irregular（AF）120–200J　|　Wide regular（pVT）100J　|　Wide irregular（poly VT）→ 當 VF unsync max</div>
+    <div class="block-h">🧠 能量表（2025 更新）</div>
+    <div class="mnemonic-detail">Narrow regular 100J　|　Monomorphic VT 100J　|　AF 200J　|　AFL 200J　|　Polymorphic VT → defib（unsync max）</div>
   </div>
 
   <div class="grid2">
@@ -1072,9 +1201,25 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     </div>
     <div class="block reference">
       <div class="block-h">📚 Reference / 出處</div>
-      <div class="ref">AHA 2020 ACLS Tachycardia；Circulation 2020;142(suppl 2):S444.</div>
+      <div class="ref">AHA 2025 ACLS Tachycardia；Circulation 2020;142(suppl 2):S444.【2025 更新】Removed sotalol；改稱 narrow-complex tachycardia。</div>
       <div class="src">改編自：原案_Eletrical-tx + 原案_tachycardia</div>
     </div>
+  </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Adult Tachyarrhythmia With a Pulse Learning Station Checklist</div>
+    <div class="aha-source">出處：ACLS Instructor Manual Part 5 / Lesson 6</div>
+    <ul class="aha-items">
+      <li>Assigns team roles and directs the team</li>
+      <li>Directs the systematic approach</li>
+      <li>Directs team to apply monitor leads</li>
+      <li>Directs IV or IO access</li>
+      <li>Directs appropriate drug treatment OR synchronized/unsynchronized cardioversion</li>
+      <li>Directs reassessment of patient in response to treatments</li>
+      <li>Summarizes specific treatments</li>
+      <li>Verbalizes indications for advanced airway if needed</li>
+      <li>【2025 能量更新】Narrow regular 100J · Monomorphic VT 100J · AF 200J · AFL 200J · Polymorphic VT → defibrillation dose（unsync）</li>
+    </ul>
   </div>
 </article>
 </section>
@@ -1179,6 +1324,18 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <div class="src">改編自：wayne 教案 §21-Resp-ICH（神經保護性插管）</div>
     </div>
   </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Case 9：ED Resp Arrest (Stroke) — 直接對應參考</div>
+    <div class="aha-source">出處：ACLS Instructor Manual Part 5 / Case 9</div>
+    <ul class="aha-items">
+      <li>【AHA 原案】58 y/o 男 COPD 滑倒，單側臉無力，stertorous breathing，pupils respond slowly and unequally to light</li>
+      <li>【AHA Instructor Note】須懷疑 CVA 並啟動 stroke protocol；無法保護氣道 → 插管</li>
+      <li>【AHA 推薦初始 vent】TV 6–8 mL/kg · FiO₂ 0.4–0.5 · PEEP 5–6 · PaCO₂ 35–45 / ETCO₂ 30–40</li>
+      <li>【測驗依據】Airway Management Skills Testing Checklist（見 T02）</li>
+      <li>【家屬溝通】AHA 強調 Lesson Stroke 中需「prearrival notification」與家屬同步</li>
+    </ul>
+  </div>
 </article>
 
 <article class="topic" id="T12" data-type="case" data-group="Respiratory Arrest">
@@ -1270,9 +1427,21 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     </div>
     <div class="block reference">
       <div class="block-h">📚 Reference / 出處</div>
-      <div class="ref">AHA 2020 ACLS Respiratory Arrest；Chest 2020;158:1336.</div>
+      <div class="ref">AHA 2025 ACLS Respiratory Arrest；Chest 2020;158:1336.</div>
       <div class="src">改編自：wayne 教案 §22-Resp-Resp Failure（道力氣）</div>
     </div>
+  </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Resp Arrest with Pulse — 通氣標準</div>
+    <div class="aha-source">出處：ACLS Provider Manual Part 3 + Lesson 3B</div>
+    <ul class="aha-items">
+      <li>【AHA 條文】Resp arrest with pulse → 1 breath every 6 seconds (10/min)，每次 1 sec 達到 visible chest rise</li>
+      <li>【關鍵警示】避免 excessive ventilation：增加 intrathoracic pressure → 降 venous return → 降 cardiac output</li>
+      <li>【2025 更新】通氣容量改用「⅓ 至 ½ 一袋擠壓」描述（取代舊版 600–800 mL）</li>
+      <li>【Pulse check】Resp arrest with pulse 每 2 min 確認 pulse（5–10 sec）</li>
+      <li>【測驗依據】Airway Management Skills Testing Checklist（見 T02）</li>
+    </ul>
   </div>
 </article>
 
@@ -1367,9 +1536,21 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     </div>
     <div class="block reference">
       <div class="block-h">📚 Reference / 出處</div>
-      <div class="ref">AHA 2020 ACLS Special Resuscitation；Chest 2014;145:1175.</div>
+      <div class="ref">AHA 2025 ACLS Special Resuscitation；Chest 2014;145:1175.</div>
       <div class="src">改編自：wayne 教案 §23-Resp-DOPE</div>
     </div>
+  </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Bradycardia Checklist（轉用）+ Resp Arrest 通氣標準</div>
+    <div class="aha-source">出處：AHA Lesson 5 + Provider Manual Part 3</div>
+    <ul class="aha-items">
+      <li>【主流程】此 case 雖以 brady 為表徵，但根因是通氣異常 → 走 Bradycardia Checklist 但 5H5T 中重點是 Hypoxia/H+ acidosis</li>
+      <li>【AHA Bradycardia Checklist 關鍵項】Directs reassessment of patient → 這裡就是「斷開 vent」</li>
+      <li>Considers reversible causes（5H5T）— H+: acidosis from CO₂</li>
+      <li>【AHA 通氣指引】Each breath 1 sec 達 visible chest rise；插管後 1 breath every 6 seconds</li>
+      <li>【DOPE 不在 AHA 教科書字面】但屬通用 ICU 教學（與 wayne 一致）</li>
+    </ul>
   </div>
 </article>
 
@@ -1463,9 +1644,20 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     </div>
     <div class="block reference">
       <div class="block-h">📚 Reference / 出處</div>
-      <div class="ref">AHA 2020 ACLS；NEJM 2018;378:797 ARDS lung protection.</div>
+      <div class="ref">AHA 2025 ACLS；NEJM 2018;378:797 ARDS lung protection.</div>
       <div class="src">改編自：wayne 教案 §24-Resp-Resp Failure（道力氣 + 肺炎特殊性）</div>
     </div>
+  </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Case 10：ED Resp Arrest (TBI With Pneumonia) — 結構參考</div>
+    <div class="aha-source">出處：ACLS Instructor Manual Part 5 / Case 10</div>
+    <ul class="aha-items">
+      <li>【AHA Case 10】TBI with pneumonia 案例 — 同樣聚焦「氣道+ventilator settings」</li>
+      <li>【AHA 推薦初始 vent for pneumonia / ARDS】TV 6–8 mL/kg IBW · PEEP 5–6 · FiO₂ titrate by SpO₂</li>
+      <li>【測驗依據】Airway Management Skills Testing Checklist（見 T02）</li>
+      <li>【家屬溝通】wayne 加的「Family liaison」雖非 AHA 列項，但符合 AHA 第 1 部「High-Performance Teams」精神</li>
+    </ul>
   </div>
 </article>
 
@@ -1562,9 +1754,21 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     </div>
     <div class="block reference">
       <div class="block-h">📚 Reference / 出處</div>
-      <div class="ref">AHA 2020 ACLS Toxicology；Lancet 2008;371:597 OP poisoning.</div>
+      <div class="ref">AHA 2025 ACLS Toxicology；Lancet 2008;371:597 OP poisoning.</div>
       <div class="src">改編自：wayne 教案 §25-Resp-有機磷（SLUDGEBBB / 淋濕蜜蜂）</div>
     </div>
+  </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Case 49：Out-of-Hospital Cardiac Arrest (Opiate Overdose) — 結構參考</div>
+    <div class="aha-source">出處：ACLS Instructor Manual Part 5 / Case 49</div>
+    <ul class="aha-items">
+      <li>【AHA 課綱】有機磷不在標準 ACLS 案例，但「Toxicology cardiac arrest」原則通用</li>
+      <li>【AHA Special Situations 原則】Treat the underlying cause（解毒）為核心</li>
+      <li>【AHA Bradycardia Checklist 適用】此 case brady 仍走 Bradycardia 流程，但 reversible cause = 中毒</li>
+      <li>【AHA Airway 標準】Resp 失敗 → 用 Bag-mask vent + OPA/NPA 為起點，仍走 Lesson 3B 評分標準</li>
+      <li>【測驗依據】Airway Management Skills Testing Checklist（見 T02）+ Bradycardia Checklist（見 T09）</li>
+    </ul>
   </div>
 </article>
 </section>
@@ -1669,6 +1873,20 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <div class="src">改編自：wayne 教案 §41-Stroke-顱內出血（Golden Hour Bundle）</div>
     </div>
   </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA 8 D's of Stroke Care + 關鍵時間目標</div>
+    <div class="aha-source">出處：ACLS Provider Manual Part 2 + Lesson Stroke</div>
+    <ul class="aha-items">
+      <li>Detection（症狀辨識）→ Dispatch（撥 119）→ Delivery（EMS 評估、運送、預先通報）</li>
+      <li>Door（ED 分流）→ Data（評估、實驗室、影像）→ Decision（診斷、治療選擇）</li>
+      <li>Drug/Device（thrombolytic 或 EVT）→ Disposition（送 stroke unit / ICU）</li>
+      <li>【關鍵時間目標】General assessment 10 min · Neurologic 20 min · CT/MRI 20 min</li>
+      <li>CT 判讀 45 min · Thrombolytic 從到院 60 min · 從症狀 3 hr（精選 4.5 hr）</li>
+      <li>EVT：LVO 患者最長 24 hr（0–6 hr 需 NCCT eligible；6–24 hr 需 penumbra imaging）</li>
+      <li>【2025 更新】Tenecteplase 加入為 thrombolytic 選項（與 alteplase 並列）</li>
+    </ul>
+  </div>
 </article>
 
 <article class="topic" id="T17" data-type="case" data-group="Acute Stroke">
@@ -1769,6 +1987,20 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <div class="src">改編自：wayne 教案 §42-Stroke-SAH（SUM 口訣）</div>
     </div>
   </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA 8 D's of Stroke Care + 關鍵時間目標</div>
+    <div class="aha-source">出處：ACLS Provider Manual Part 2 + Lesson Stroke</div>
+    <ul class="aha-items">
+      <li>Detection（症狀辨識）→ Dispatch（撥 119）→ Delivery（EMS 評估、運送、預先通報）</li>
+      <li>Door（ED 分流）→ Data（評估、實驗室、影像）→ Decision（診斷、治療選擇）</li>
+      <li>Drug/Device（thrombolytic 或 EVT）→ Disposition（送 stroke unit / ICU）</li>
+      <li>【關鍵時間目標】General assessment 10 min · Neurologic 20 min · CT/MRI 20 min</li>
+      <li>CT 判讀 45 min · Thrombolytic 從到院 60 min · 從症狀 3 hr（精選 4.5 hr）</li>
+      <li>EVT：LVO 患者最長 24 hr（0–6 hr 需 NCCT eligible；6–24 hr 需 penumbra imaging）</li>
+      <li>【2025 更新】Tenecteplase 加入為 thrombolytic 選項（與 alteplase 並列）</li>
+    </ul>
+  </div>
 </article>
 
 <article class="topic" id="T18" data-type="case" data-group="Acute Stroke">
@@ -1865,6 +2097,18 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <div class="src">改編自：wayne 教案 §43-Stroke-TIA</div>
     </div>
   </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Stroke Lesson — TIA 重點</div>
+    <div class="aha-source">出處：ACLS Provider Manual Part 2 + Lesson Stroke</div>
+    <ul class="aha-items">
+      <li>【AHA 定義】TIA = 暫時性血流阻斷，症狀通常數分鐘緩解，無永久損傷</li>
+      <li>【AHA 警示】TIA 是「warning stroke」，預示未來可能 stroke</li>
+      <li>【AHA 區分關鍵】TIA 與 minor stroke 差別在「無永久損傷」（症狀緩解 + MRI/影像無 acute infarct），而不只是時間</li>
+      <li>【後續處置】仍走 stroke 流程：CT 排出血 → ABC → IV → glucose → NIHSS → last normal time</li>
+      <li>【測驗依據】此案 8 分鐘示範屬「Stroke 識別 + secondary prevention 教學」</li>
+    </ul>
+  </div>
 </article>
 
 <article class="topic" id="T19" data-type="case" data-group="Acute Stroke">
@@ -1960,6 +2204,20 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <div class="ref">AHA/ASA 2019 Acute Ischemic Stroke；Lancet Neurol 2007;6:215 DESTINY/DECIMAL meta.</div>
       <div class="src">改編自：wayne 教案 §44-Stroke-IICP（三階段處置）</div>
     </div>
+  </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA 8 D's of Stroke Care + 關鍵時間目標</div>
+    <div class="aha-source">出處：ACLS Provider Manual Part 2 + Lesson Stroke</div>
+    <ul class="aha-items">
+      <li>Detection（症狀辨識）→ Dispatch（撥 119）→ Delivery（EMS 評估、運送、預先通報）</li>
+      <li>Door（ED 分流）→ Data（評估、實驗室、影像）→ Decision（診斷、治療選擇）</li>
+      <li>Drug/Device（thrombolytic 或 EVT）→ Disposition（送 stroke unit / ICU）</li>
+      <li>【關鍵時間目標】General assessment 10 min · Neurologic 20 min · CT/MRI 20 min</li>
+      <li>CT 判讀 45 min · Thrombolytic 從到院 60 min · 從症狀 3 hr（精選 4.5 hr）</li>
+      <li>EVT：LVO 患者最長 24 hr（0–6 hr 需 NCCT eligible；6–24 hr 需 penumbra imaging）</li>
+      <li>【2025 更新】Tenecteplase 加入為 thrombolytic 選項（與 alteplase 並列）</li>
+    </ul>
   </div>
 </article>
 
@@ -2059,12 +2317,25 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <div class="src">改編自：wayne 教案 §45-Stroke-到院前（G-FAST + 三醫院）</div>
     </div>
   </div>
+
+  <div class="block aha">
+    <div class="block-h">📋 AHA Cincinnati Prehospital Stroke Scale (CPSS) + 8 D's</div>
+    <div class="aha-source">出處：ACLS Provider Manual Part 2 + Lesson Stroke</div>
+    <ul class="aha-items">
+      <li>【AHA CPSS 三項】1. Facial droop（露齒微笑）2. Arm drift（閉眼雙手抬高）3. Abnormal speech（「You can't teach an old dog new tricks」）</li>
+      <li>【AHA 數據】1 finding (+) → 72% 機率 stroke；3 findings (+) → &gt; 85% 機率</li>
+      <li>評估時間：&lt; 1 min</li>
+      <li>【G-FAST = CPSS + Gaze + Time】台灣本地強化版，與 wayne 一致</li>
+      <li>【AHA 8 D 第 3 項 Delivery】EMS 須執行：Identify signs / Assess ABC / Complete stroke assessment / Establish time / Transport / Alert hospital / Check glucose</li>
+      <li>【AHA 醫院選擇】依 stroke severity score 與 local protocols；考慮帶 witness/family 確認時間</li>
+    </ul>
+  </div>
 </article>
 </section>
 
 <footer>
   ACLS Instructor 示範教學 20 題教案　·　115 / 5 / 23（六）14:15–18:00　·　學員 C03　·　模擬器 SimPad Plus<br>
-  改編整合：Wayne 教案 20250526（15 題框架）+ 原案_Eletrical-tx.docx（T06–T10）+ 黃 D11 原創整合　·　Build 2026-05-02<br>
+  改編整合：Wayne 教案 20250526（15 題框架）+ 原案_Eletrical-tx.docx（T06–T10）+ AHA 2025 ACLS Instructor &amp; Provider Manual（官方評分清單）+ 原創整合　·　Build 2026-05-02 v3<br>
   <span style="color:var(--muted);font-size:11.5px">本頁不收集任何資料；所有內容僅供教學使用。</span>
 </footer>
 </main>
