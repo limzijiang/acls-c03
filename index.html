@@ -90,6 +90,80 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
 .scrolltop{position:fixed;bottom:24px;right:24px;background:var(--b2);color:#fff;border:0;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:18px;box-shadow:0 4px 12px rgba(0,0,0,.15);opacity:0;transition:opacity .2s}
 .scrolltop.show{opacity:.92}
 .scrolltop:hover{opacity:1}
+
+/* === Transcript Annotation === */
+.anno{position:relative;cursor:pointer;border-radius:3px;padding:0 1px;transition:filter .15s}
+.anno:hover{filter:brightness(.95)}
+.anno::after{content:attr(data-icon);display:inline-block;font-size:10px;vertical-align:super;margin-left:1px;opacity:.85;line-height:1}
+.anno-highlight{background:#fff3a3;box-shadow:inset 0 -2px 0 #d4a017}
+.anno-verify{background:#ffe0b2;box-shadow:inset 0 -2px 0 #ef6c00}
+.anno-fix{background:#ffcdd2;box-shadow:inset 0 -2px 0 #c62828}
+.anno-other{background:#e1bee7;box-shadow:inset 0 -2px 0 #6a1b9a}
+.anno-flash{animation:annoFlash 1.4s ease}
+@keyframes annoFlash{0%,100%{outline:0 solid transparent}30%,60%{outline:3px solid #1976d2;outline-offset:2px}}
+
+#anno-toolbar{position:absolute;display:none;z-index:1000;background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.18);padding:6px;gap:4px;flex-wrap:wrap;max-width:340px}
+#anno-toolbar.show{display:flex}
+#anno-toolbar button{padding:5px 10px;border:1px solid var(--border);border-radius:5px;background:#fff;cursor:pointer;font:inherit;font-size:12.5px;color:var(--fg);white-space:nowrap}
+#anno-toolbar button:hover{filter:brightness(.95)}
+#anno-toolbar .ab-highlight{background:#fff3a3}
+#anno-toolbar .ab-verify{background:#ffe0b2}
+#anno-toolbar .ab-fix{background:#ffcdd2}
+#anno-toolbar .ab-other{background:#e1bee7}
+#anno-toolbar .ab-cancel{background:var(--soft);color:var(--muted)}
+
+#anno-popover{position:absolute;display:none;z-index:1000;background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.18);padding:8px;min-width:220px}
+#anno-popover.show{display:block}
+#anno-popover .ap-row{display:flex;gap:6px;margin-bottom:6px;flex-wrap:wrap}
+#anno-popover .ap-row:last-child{margin-bottom:0}
+#anno-popover .ap-text{font-size:12.5px;color:var(--muted);max-height:60px;overflow:auto;background:var(--soft);padding:6px;border-radius:4px}
+#anno-popover textarea{width:100%;min-height:54px;border:1px solid var(--border);border-radius:5px;padding:6px;font:inherit;font-size:13px;resize:vertical;box-sizing:border-box}
+#anno-popover button{padding:4px 10px;border:1px solid var(--border);border-radius:5px;background:#fff;cursor:pointer;font:inherit;font-size:12px;color:var(--fg)}
+#anno-popover button:hover{filter:brightness(.95)}
+#anno-popover .pop-del{background:#ffcdd2;border-color:#c62828;color:#c62828}
+#anno-popover .pop-save{background:var(--b2);color:#fff;border-color:var(--b2)}
+#anno-popover .pop-tag{font-size:11px;padding:2px 6px;border:1px solid var(--border);border-radius:4px;cursor:pointer;background:#fff}
+#anno-popover .pop-tag.active{background:var(--b1);color:#fff;border-color:var(--b1)}
+
+#anno-panel{position:fixed;right:0;top:0;height:100%;width:380px;max-width:92vw;background:#fff;border-left:1px solid var(--border);box-shadow:-4px 0 18px rgba(0,0,0,.1);transform:translateX(100%);transition:transform .25s ease;z-index:900;display:flex;flex-direction:column}
+#anno-panel.open{transform:translateX(0)}
+#anno-panel header{padding:14px 16px;border-bottom:1px solid var(--border);background:var(--soft);display:flex;justify-content:space-between;align-items:center;gap:8px}
+#anno-panel header .ap-title{font-weight:700;font-size:15px;color:var(--b1)}
+#anno-panel header .ap-close{font-size:18px;background:none;border:0;cursor:pointer;color:var(--muted);padding:0 4px}
+#anno-panel .ap-toolbar{padding:10px 14px;border-bottom:1px solid var(--border);display:flex;gap:6px;flex-wrap:wrap;background:#fff}
+#anno-panel .ap-toolbar button{font-size:12px;padding:4px 10px;border:1px solid var(--border);border-radius:5px;background:#fff;cursor:pointer;color:var(--fg)}
+#anno-panel .ap-toolbar button:hover{background:var(--soft)}
+#anno-panel .ap-toolbar .ap-clear{color:#c62828;border-color:#c62828}
+#anno-panel .ap-filters{padding:8px 14px;border-bottom:1px solid var(--border);display:flex;gap:5px;flex-wrap:wrap;background:var(--soft)}
+#anno-panel .ap-filters button{font-size:11.5px;padding:3px 8px;border:1px solid var(--border);border-radius:12px;background:#fff;cursor:pointer;color:var(--fg)}
+#anno-panel .ap-filters button.active{background:var(--b1);color:#fff;border-color:var(--b1)}
+#anno-panel .ap-list{flex:1;overflow-y:auto;padding:10px 12px}
+#anno-panel .ap-item{padding:9px 10px;border:1px solid var(--border);border-radius:6px;margin-bottom:8px;font-size:13px;cursor:pointer;background:#fff;border-left-width:4px}
+#anno-panel .ap-item:hover{box-shadow:0 2px 6px rgba(0,0,0,.08)}
+#anno-panel .ap-item.t-highlight{border-left-color:#d4a017}
+#anno-panel .ap-item.t-verify{border-left-color:#ef6c00}
+#anno-panel .ap-item.t-fix{border-left-color:#c62828}
+#anno-panel .ap-item.t-other{border-left-color:#6a1b9a}
+#anno-panel .ap-tag{display:inline-block;font-size:10.5px;font-weight:700;color:#fff;padding:1px 7px;border-radius:3px;margin-right:6px}
+#anno-panel .ap-tag.t-highlight{background:#d4a017}
+#anno-panel .ap-tag.t-verify{background:#ef6c00}
+#anno-panel .ap-tag.t-fix{background:#c62828}
+#anno-panel .ap-tag.t-other{background:#6a1b9a}
+#anno-panel .ap-text{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;color:var(--fg);line-height:1.5;margin-top:2px}
+#anno-panel .ap-meta{font-size:11px;color:var(--muted);margin-top:4px;display:flex;justify-content:space-between;align-items:center}
+#anno-panel .ap-note{margin-top:5px;font-size:12px;color:var(--b1);background:var(--soft);padding:4px 7px;border-radius:4px;line-height:1.45;white-space:pre-wrap;word-break:break-word}
+#anno-panel .ap-empty{text-align:center;color:var(--muted);font-size:13px;padding:30px 16px;line-height:1.7}
+#anno-panel .ap-empty kbd{background:var(--soft);border:1px solid var(--border);border-radius:3px;padding:1px 5px;font-size:11.5px}
+
+#anno-fab{position:fixed;bottom:24px;right:80px;background:var(--b1);color:#fff;border:0;height:42px;border-radius:21px;padding:0 14px;cursor:pointer;font:inherit;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.18);z-index:800;display:flex;align-items:center;gap:6px}
+#anno-fab:hover{filter:brightness(1.08)}
+#anno-fab .anno-count{background:#fff;color:var(--b1);font-size:11px;padding:1px 7px;border-radius:10px;font-weight:700;min-width:18px;text-align:center}
+
+@media print{
+  #anno-toolbar,#anno-popover,#anno-panel,#anno-fab{display:none!important}
+  .anno::after{display:none}
+  .anno{background:transparent!important;box-shadow:none!important;border-bottom:1px solid #999!important}
+}
 </style>
 </head>
 <body>
@@ -2343,6 +2417,56 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
 
 <button class="scrolltop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到頂部">↑</button>
 
+<div id="anno-toolbar" role="toolbar" aria-label="標註工具列">
+  <button type="button" class="ab-highlight" data-type="highlight" title="標記為亮點">⭐ 亮點</button>
+  <button type="button" class="ab-verify" data-type="verify" title="標記為需查證">🔍 需查證</button>
+  <button type="button" class="ab-fix" data-type="fix" title="標記為需修正">✏️ 需修正</button>
+  <button type="button" class="ab-other" data-type="other" title="其它（手動輸入備註）">📌 其它</button>
+  <button type="button" class="ab-cancel" data-action="cancel" title="取消">✕</button>
+</div>
+
+<div id="anno-popover" role="dialog" aria-label="編輯標註">
+  <div class="ap-row" id="pop-tags">
+    <button type="button" class="pop-tag" data-type="highlight">⭐ 亮點</button>
+    <button type="button" class="pop-tag" data-type="verify">🔍 需查證</button>
+    <button type="button" class="pop-tag" data-type="fix">✏️ 需修正</button>
+    <button type="button" class="pop-tag" data-type="other">📌 其它</button>
+  </div>
+  <div class="ap-row"><div class="ap-text" id="pop-text"></div></div>
+  <div class="ap-row"><textarea id="pop-note" placeholder="備註（可選）…"></textarea></div>
+  <div class="ap-row" style="justify-content:space-between">
+    <button type="button" class="pop-del" id="pop-del">🗑 移除</button>
+    <div style="display:flex;gap:6px">
+      <button type="button" id="pop-cancel">取消</button>
+      <button type="button" class="pop-save" id="pop-save">儲存</button>
+    </div>
+  </div>
+</div>
+
+<aside id="anno-panel" aria-label="標註清單">
+  <header>
+    <span class="ap-title">📝 我的標註 <span id="anno-total" style="color:var(--muted);font-weight:400">(0)</span></span>
+    <button type="button" class="ap-close" id="ap-close" title="關閉" aria-label="關閉">✕</button>
+  </header>
+  <div class="ap-toolbar">
+    <button type="button" id="ap-export" title="匯出 JSON">📤 匯出</button>
+    <button type="button" id="ap-import" title="從 JSON 匯入">📥 匯入</button>
+    <input type="file" id="ap-import-file" accept="application/json,.json" style="display:none">
+    <button type="button" id="ap-copy" title="複製為文字">📋 複製文字</button>
+    <button type="button" class="ap-clear" id="ap-clear" title="清除全部">🗑 清空</button>
+  </div>
+  <div class="ap-filters" id="ap-filters">
+    <button type="button" data-f="all" class="active">全部</button>
+    <button type="button" data-f="highlight">⭐ 亮點</button>
+    <button type="button" data-f="verify">🔍 需查證</button>
+    <button type="button" data-f="fix">✏️ 需修正</button>
+    <button type="button" data-f="other">📌 其它</button>
+  </div>
+  <div class="ap-list" id="ap-list"></div>
+</aside>
+
+<button id="anno-fab" type="button" aria-label="開啟標註清單" title="開啟標註清單（選文字即可標記）">📝 標註 <span class="anno-count" id="anno-count">0</span></button>
+
 <script>
 const topics = document.querySelectorAll('.topic');
 const tocLinks = document.querySelectorAll('.toc-link');
@@ -2375,6 +2499,561 @@ const scrollBtn = document.querySelector('.scrolltop');
 window.addEventListener('scroll', ()=>{
   scrollBtn.classList.toggle('show', window.scrollY > 600);
 });
+
+/* ===== Transcript Annotation ===== */
+(function(){
+  const STORAGE_KEY = 'acls-c03-annotations-v1';
+  const TYPES = {
+    highlight: { label: '亮點',  icon: '⭐' },
+    verify:    { label: '需查證', icon: '🔍' },
+    fix:       { label: '需修正', icon: '✏️' },
+    other:     { label: '其它',  icon: '📌' }
+  };
+
+  const toolbar    = document.getElementById('anno-toolbar');
+  const popover    = document.getElementById('anno-popover');
+  const popText    = document.getElementById('pop-text');
+  const popNote    = document.getElementById('pop-note');
+  const popDel     = document.getElementById('pop-del');
+  const popCancel  = document.getElementById('pop-cancel');
+  const popSave    = document.getElementById('pop-save');
+  const popTagsBox = document.getElementById('pop-tags');
+  const panel      = document.getElementById('anno-panel');
+  const panelList  = document.getElementById('ap-list');
+  const panelTotal = document.getElementById('anno-total');
+  const fab        = document.getElementById('anno-fab');
+  const fabCount   = document.getElementById('anno-count');
+  const filterBox  = document.getElementById('ap-filters');
+  const mainEl     = document.querySelector('main');
+
+  let annotations = [];      // {id,containerId,start,end,text,type,note,ts}
+  let currentEdit = null;    // id of annotation being edited
+  let currentRange = null;   // saved range for new annotations
+  let activeFilter = 'all';
+
+  function uid(){
+    return 'a' + Math.random().toString(36).slice(2,9) + Date.now().toString(36).slice(-4);
+  }
+
+  function load(){
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      annotations = (data && data.annotations) || [];
+    } catch(e){ annotations = []; }
+  }
+
+  function save(){
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({version:1, annotations}));
+    } catch(e){
+      console.warn('儲存標註失敗:', e);
+    }
+  }
+
+  /* Find closest container with stable id; fall back to <main>. */
+  function getContainer(node){
+    let n = node && node.nodeType === 3 ? node.parentNode : node;
+    while (n && n !== document.body) {
+      if (n.id && /^T\d+$/.test(n.id)) return n;
+      n = n.parentNode;
+    }
+    return mainEl;
+  }
+  function containerKey(el){ return (el && el.id) ? el.id : '__main__'; }
+  function getContainerByKey(key){
+    if (key === '__main__') return mainEl;
+    return document.getElementById(key) || mainEl;
+  }
+
+  /* Compute textContent offset of a (node,offset) pair within container.
+     Generated content from CSS ::after is NOT counted in textContent,
+     so existing wrapped annotations don't shift offsets. */
+  function getOffset(container, node, offset){
+    if (node === container){
+      // offset is index in childNodes; sum textContent of children before offset
+      let total = 0;
+      for (let i = 0; i < offset && i < container.childNodes.length; i++){
+        total += container.childNodes[i].textContent.length;
+      }
+      return total;
+    }
+    const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null);
+    let total = 0, n;
+    while ((n = walker.nextNode())) {
+      if (n === node) return total + offset;
+      total += n.nodeValue.length;
+    }
+    return -1;
+  }
+
+  function rangeToOffsets(container, range){
+    return [
+      getOffset(container, range.startContainer, range.startOffset),
+      getOffset(container, range.endContainer, range.endOffset)
+    ];
+  }
+
+  function offsetsToRange(container, start, end){
+    const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null);
+    let total = 0, startNode=null, startOff=0, endNode=null, endOff=0, n;
+    while ((n = walker.nextNode())) {
+      const len = n.nodeValue.length;
+      if (startNode === null && total + len >= start){
+        startNode = n; startOff = start - total;
+      }
+      if (endNode === null && total + len >= end){
+        endNode = n; endOff = end - total;
+        break;
+      }
+      total += len;
+    }
+    if (!startNode || !endNode) return null;
+    const r = document.createRange();
+    try {
+      r.setStart(startNode, startOff);
+      r.setEnd(endNode, endOff);
+    } catch(e){ return null; }
+    return r;
+  }
+
+  function rangeIntersectsAnno(range){
+    const frag = range.cloneContents();
+    if (frag.querySelector && frag.querySelector('.anno')) return true;
+    let n = range.commonAncestorContainer;
+    if (n.nodeType === 3) n = n.parentNode;
+    return !!(n && n.closest && n.closest('.anno'));
+  }
+
+  function applyAnno(anno){
+    const container = getContainerByKey(anno.containerId);
+    if (!container) return false;
+    const range = offsetsToRange(container, anno.start, anno.end);
+    if (!range) return false;
+
+    const span = document.createElement('span');
+    span.className = 'anno anno-' + anno.type;
+    span.dataset.annoId = anno.id;
+    span.dataset.icon = TYPES[anno.type].icon;
+    span.title = TYPES[anno.type].label + (anno.note ? ' · ' + anno.note : '');
+
+    try {
+      range.surroundContents(span);
+    } catch(e){
+      try {
+        const frag = range.extractContents();
+        span.appendChild(frag);
+        range.insertNode(span);
+      } catch(e2){
+        console.warn('包裹標註失敗:', e2);
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function removeAnnoSpan(id){
+    const span = mainEl.querySelector('.anno[data-anno-id="' + id + '"]');
+    if (!span) return;
+    const parent = span.parentNode;
+    while (span.firstChild) parent.insertBefore(span.firstChild, span);
+    parent.removeChild(span);
+    parent.normalize();
+  }
+
+  function reapplyAll(){
+    // Remove existing wrappers, then re-apply by stored offsets so new
+    // annotations don't get split by old DOM insertions.
+    annotations.forEach(a => removeAnnoSpan(a.id));
+    // Apply per container, sorted by start ascending (any order is fine
+    // since wrapping doesn't change textContent length).
+    annotations.forEach(a => applyAnno(a));
+  }
+
+  function refreshSpanMeta(anno){
+    const span = mainEl.querySelector('.anno[data-anno-id="' + anno.id + '"]');
+    if (!span) return;
+    span.className = 'anno anno-' + anno.type;
+    span.dataset.icon = TYPES[anno.type].icon;
+    span.title = TYPES[anno.type].label + (anno.note ? ' · ' + anno.note : '');
+  }
+
+  /* ===== Selection toolbar ===== */
+  function hideToolbar(){
+    toolbar.classList.remove('show');
+    currentRange = null;
+  }
+
+  function showToolbarForSelection(){
+    const sel = window.getSelection();
+    if (!sel || sel.isCollapsed || sel.rangeCount === 0) { hideToolbar(); return; }
+    const range = sel.getRangeAt(0);
+    if (range.collapsed) { hideToolbar(); return; }
+    if (!mainEl.contains(range.commonAncestorContainer)) { hideToolbar(); return; }
+    if (rangeIntersectsAnno(range)) { hideToolbar(); return; }
+    const text = range.toString().trim();
+    if (!text) { hideToolbar(); return; }
+
+    const rect = range.getBoundingClientRect();
+    if (!rect || (rect.width === 0 && rect.height === 0)) { hideToolbar(); return; }
+
+    currentRange = range.cloneRange();
+
+    // Position above the selection; flip below if no room.
+    toolbar.classList.add('show');
+    const tbRect = toolbar.getBoundingClientRect();
+    const scrollX = window.scrollX || window.pageXOffset;
+    const scrollY = window.scrollY || window.pageYOffset;
+    let top = rect.top + scrollY - tbRect.height - 8;
+    if (top < scrollY + 4) top = rect.bottom + scrollY + 8;
+    let left = rect.left + scrollX + (rect.width - tbRect.width) / 2;
+    const maxLeft = scrollX + document.documentElement.clientWidth - tbRect.width - 8;
+    if (left < scrollX + 4) left = scrollX + 4;
+    if (left > maxLeft) left = maxLeft;
+    toolbar.style.top = top + 'px';
+    toolbar.style.left = left + 'px';
+  }
+
+  document.addEventListener('mouseup', (e) => {
+    if (toolbar.contains(e.target) || popover.contains(e.target) || panel.contains(e.target)) return;
+    setTimeout(showToolbarForSelection, 1);
+  });
+  document.addEventListener('keyup', (e) => {
+    if (toolbar.contains(e.target) || popover.contains(e.target) || panel.contains(e.target)) return;
+    if (e.key === 'Shift' || e.key === 'Control' || e.key === 'Alt' || e.key === 'Meta') return;
+    setTimeout(showToolbarForSelection, 1);
+  });
+  document.addEventListener('selectionchange', () => {
+    const sel = window.getSelection();
+    if (!sel || sel.isCollapsed) hideToolbar();
+  });
+  document.addEventListener('mousedown', (e) => {
+    if (toolbar.contains(e.target) || popover.contains(e.target)) return;
+    hideToolbar();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape'){
+      hideToolbar();
+      hidePopover();
+    }
+  });
+
+  toolbar.addEventListener('click', (e) => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    if (btn.dataset.action === 'cancel'){ hideToolbar(); window.getSelection().removeAllRanges(); return; }
+    const type = btn.dataset.type;
+    if (!type || !TYPES[type] || !currentRange) return;
+    addAnnotationFromRange(currentRange, type);
+    hideToolbar();
+    window.getSelection().removeAllRanges();
+  });
+
+  function addAnnotationFromRange(range, type){
+    if (rangeIntersectsAnno(range)) {
+      alert('選取範圍與已有標註重疊，請先移除既有標註。');
+      return;
+    }
+    const container = getContainer(range.commonAncestorContainer);
+    const [start, end] = rangeToOffsets(container, range);
+    if (start < 0 || end < 0 || end <= start) return;
+    const text = range.toString();
+
+    let note = '';
+    if (type === 'other'){
+      note = prompt('輸入「其它」備註（可留空）：', '') || '';
+    }
+
+    const anno = {
+      id: uid(),
+      containerId: containerKey(container),
+      start, end, text,
+      type, note,
+      ts: new Date().toISOString()
+    };
+    annotations.push(anno);
+    save();
+    if (!applyAnno(anno)){
+      // Roll back if wrapping failed
+      annotations = annotations.filter(a => a.id !== anno.id);
+      save();
+      alert('無法標註此範圍（可能跨越元素邊界），請嘗試較小範圍。');
+      return;
+    }
+    renderPanel();
+  }
+
+  /* ===== Popover for editing existing annotation ===== */
+  function showPopoverFor(span){
+    const id = span.dataset.annoId;
+    const anno = annotations.find(a => a.id === id);
+    if (!anno) return;
+    currentEdit = id;
+    popText.textContent = anno.text;
+    popNote.value = anno.note || '';
+    popTagsBox.querySelectorAll('.pop-tag').forEach(b => {
+      b.classList.toggle('active', b.dataset.type === anno.type);
+    });
+
+    const rect = span.getBoundingClientRect();
+    popover.classList.add('show');
+    const pRect = popover.getBoundingClientRect();
+    const scrollX = window.scrollX || window.pageXOffset;
+    const scrollY = window.scrollY || window.pageYOffset;
+    let top = rect.bottom + scrollY + 6;
+    if (rect.bottom + pRect.height + 6 > window.innerHeight) {
+      top = rect.top + scrollY - pRect.height - 6;
+    }
+    let left = rect.left + scrollX;
+    const maxLeft = scrollX + document.documentElement.clientWidth - pRect.width - 8;
+    if (left > maxLeft) left = maxLeft;
+    if (left < scrollX + 4) left = scrollX + 4;
+    popover.style.top = top + 'px';
+    popover.style.left = left + 'px';
+    setTimeout(() => popNote.focus(), 50);
+  }
+
+  function hidePopover(){
+    popover.classList.remove('show');
+    currentEdit = null;
+  }
+
+  popTagsBox.addEventListener('click', (e) => {
+    const btn = e.target.closest('.pop-tag');
+    if (!btn) return;
+    popTagsBox.querySelectorAll('.pop-tag').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+
+  popSave.addEventListener('click', () => {
+    if (!currentEdit) return;
+    const anno = annotations.find(a => a.id === currentEdit);
+    if (!anno) return;
+    const activeTag = popTagsBox.querySelector('.pop-tag.active');
+    if (activeTag) anno.type = activeTag.dataset.type;
+    anno.note = popNote.value.trim();
+    save();
+    refreshSpanMeta(anno);
+    renderPanel();
+    hidePopover();
+  });
+
+  popDel.addEventListener('click', () => {
+    if (!currentEdit) return;
+    if (!confirm('確定要移除此標註？')) return;
+    deleteAnnotation(currentEdit);
+    hidePopover();
+  });
+
+  popCancel.addEventListener('click', hidePopover);
+
+  document.addEventListener('mousedown', (e) => {
+    if (popover.contains(e.target)) return;
+    if (e.target.closest && e.target.closest('.anno')) return;
+    if (popover.classList.contains('show')) hidePopover();
+  });
+
+  /* Click on existing annotation -> open popover */
+  mainEl.addEventListener('click', (e) => {
+    const span = e.target.closest && e.target.closest('.anno');
+    if (!span) return;
+    e.preventDefault();
+    e.stopPropagation();
+    hideToolbar();
+    showPopoverFor(span);
+  });
+
+  function deleteAnnotation(id){
+    removeAnnoSpan(id);
+    annotations = annotations.filter(a => a.id !== id);
+    save();
+    renderPanel();
+  }
+
+  /* ===== Side panel ===== */
+  function openPanel(){ panel.classList.add('open'); renderPanel(); }
+  function closePanel(){ panel.classList.remove('open'); }
+
+  fab.addEventListener('click', () => {
+    if (panel.classList.contains('open')) closePanel(); else openPanel();
+  });
+  document.getElementById('ap-close').addEventListener('click', closePanel);
+
+  filterBox.addEventListener('click', (e) => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    activeFilter = btn.dataset.f;
+    filterBox.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+    renderPanel();
+  });
+
+  function getTopicTitle(containerId){
+    if (containerId === '__main__') return '（頁面）';
+    const el = document.getElementById(containerId);
+    if (!el) return containerId;
+    const t = el.querySelector('.topic-title');
+    return containerId + ' · ' + (t ? t.textContent.trim() : '');
+  }
+
+  function renderPanel(){
+    fabCount.textContent = annotations.length;
+    panelTotal.textContent = '(' + annotations.length + ')';
+    if (!panel.classList.contains('open')) return;
+
+    const list = activeFilter === 'all'
+      ? annotations.slice()
+      : annotations.filter(a => a.type === activeFilter);
+
+    // Sort by container id then start offset
+    list.sort((a, b) => {
+      if (a.containerId !== b.containerId) return a.containerId.localeCompare(b.containerId);
+      return a.start - b.start;
+    });
+
+    if (!list.length){
+      panelList.innerHTML = '<div class="ap-empty">尚無標註<br>選取頁面上的文字後，點上方工具列即可加入標註。<br><br>快捷：選文字後按 <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd>/<kbd>4</kbd></div>';
+      return;
+    }
+
+    panelList.innerHTML = list.map(a => {
+      const t = TYPES[a.type];
+      const noteHtml = a.note ? '<div class="ap-note">' + escapeHtml(a.note) + '</div>' : '';
+      return '<div class="ap-item t-' + a.type + '" data-id="' + a.id + '">' +
+        '<div><span class="ap-tag t-' + a.type + '">' + t.icon + ' ' + t.label + '</span>' +
+        '<span style="font-size:11px;color:var(--muted)">' + escapeHtml(getTopicTitle(a.containerId)) + '</span></div>' +
+        '<div class="ap-text">' + escapeHtml(a.text) + '</div>' +
+        noteHtml +
+        '<div class="ap-meta"><span>' + new Date(a.ts).toLocaleString('zh-Hant') + '</span>' +
+        '<span><button type="button" class="ap-jump" style="font-size:11px;background:none;border:0;color:var(--link);cursor:pointer">跳轉</button> ' +
+        '<button type="button" class="ap-edit" style="font-size:11px;background:none;border:0;color:var(--b1);cursor:pointer">編輯</button> ' +
+        '<button type="button" class="ap-rm" style="font-size:11px;background:none;border:0;color:#c62828;cursor:pointer">刪除</button></span></div>' +
+        '</div>';
+    }).join('');
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, c => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    }[c]));
+  }
+
+  panelList.addEventListener('click', (e) => {
+    const item = e.target.closest('.ap-item');
+    if (!item) return;
+    const id = item.dataset.id;
+    if (e.target.classList.contains('ap-rm')){
+      if (confirm('刪除此標註？')) deleteAnnotation(id);
+      return;
+    }
+    if (e.target.classList.contains('ap-edit')){
+      const span = mainEl.querySelector('.anno[data-anno-id="' + id + '"]');
+      if (span){ span.scrollIntoView({behavior:'smooth', block:'center'}); showPopoverFor(span); }
+      return;
+    }
+    // default = jump
+    const span = mainEl.querySelector('.anno[data-anno-id="' + id + '"]');
+    if (!span) return;
+    span.scrollIntoView({behavior:'smooth', block:'center'});
+    span.classList.add('anno-flash');
+    setTimeout(() => span.classList.remove('anno-flash'), 1500);
+  });
+
+  /* ===== Export / Import / Clear / Copy ===== */
+  document.getElementById('ap-export').addEventListener('click', () => {
+    const data = JSON.stringify({version:1, exportedAt:new Date().toISOString(), annotations}, null, 2);
+    const blob = new Blob([data], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'acls-c03-annotations-' + new Date().toISOString().slice(0,10) + '.json';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+
+  document.getElementById('ap-import').addEventListener('click', () => {
+    document.getElementById('ap-import-file').click();
+  });
+  document.getElementById('ap-import-file').addEventListener('change', (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try {
+        const data = JSON.parse(ev.target.result);
+        if (!data || !Array.isArray(data.annotations)) throw new Error('格式不正確');
+        const mode = confirm('是否要合併匯入？\n按「確定」合併、按「取消」覆寫。');
+        if (mode){
+          const ids = new Set(annotations.map(a => a.id));
+          data.annotations.forEach(a => { if (!ids.has(a.id)) annotations.push(a); });
+        } else {
+          annotations = data.annotations;
+        }
+        save();
+        reapplyAll();
+        renderPanel();
+        alert('已匯入 ' + data.annotations.length + ' 筆標註。');
+      } catch(err){ alert('匯入失敗：' + err.message); }
+      e.target.value = '';
+    };
+    reader.readAsText(file);
+  });
+
+  document.getElementById('ap-copy').addEventListener('click', () => {
+    if (!annotations.length){ alert('沒有可複製的標註。'); return; }
+    const lines = annotations.slice().sort((a,b) => {
+      if (a.containerId !== b.containerId) return a.containerId.localeCompare(b.containerId);
+      return a.start - b.start;
+    }).map(a => {
+      const t = TYPES[a.type];
+      const where = getTopicTitle(a.containerId);
+      return '[' + t.label + '] ' + where + '\n　文字：' + a.text + (a.note ? '\n　備註：' + a.note : '');
+    });
+    const text = lines.join('\n\n');
+    navigator.clipboard.writeText(text).then(
+      () => alert('已複製 ' + annotations.length + ' 筆標註至剪貼簿。'),
+      () => {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); alert('已複製。'); }
+        catch(e){ alert('複製失敗，請手動複製。'); }
+        document.body.removeChild(ta);
+      }
+    );
+  });
+
+  document.getElementById('ap-clear').addEventListener('click', () => {
+    if (!annotations.length) return;
+    if (!confirm('確定要清空全部 ' + annotations.length + ' 筆標註？此操作無法復原。')) return;
+    annotations.forEach(a => removeAnnoSpan(a.id));
+    annotations = [];
+    save();
+    renderPanel();
+  });
+
+  /* ===== Keyboard shortcuts when toolbar showing ===== */
+  document.addEventListener('keydown', (e) => {
+    if (!toolbar.classList.contains('show')) return;
+    if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+    const map = { '1':'highlight', '2':'verify', '3':'fix', '4':'other' };
+    if (map[e.key] && currentRange){
+      e.preventDefault();
+      addAnnotationFromRange(currentRange, map[e.key]);
+      hideToolbar();
+      window.getSelection().removeAllRanges();
+    }
+  });
+
+  /* ===== Init ===== */
+  load();
+  // Apply on next tick so DOM is fully ready
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', () => { reapplyAll(); renderPanel(); });
+  } else {
+    reapplyAll();
+    renderPanel();
+  }
+})();
 </script>
 </body>
 </html>
