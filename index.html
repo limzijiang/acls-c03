@@ -164,6 +164,25 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
   .anno::after{display:none}
   .anno{background:transparent!important;box-shadow:none!important;border-bottom:1px solid #999!important}
 }
+
+/* === Topic Images === */
+.topic-images{margin:0 0 14px}
+.topic-images .block-h{margin-bottom:8px}
+.topic-images-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.topic-images-grid figure{margin:0}
+.topic-images-grid img{width:100%;height:auto;border-radius:8px;border:1px solid var(--border);background:#fff;cursor:zoom-in;display:block;transition:filter .15s}
+.topic-images-grid img:hover{filter:brightness(1.04)}
+.topic-images-grid figcaption{font-size:11.5px;color:var(--muted);margin-top:4px;text-align:center}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:2000;cursor:zoom-out;padding:20px}
+.lightbox.show{display:flex}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+.lightbox-hint{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:rgba(255,255,255,.6);font-size:12px;pointer-events:none}
+@media print{
+  .lightbox{display:none!important}
+  .topic-images-grid img{cursor:default;break-inside:avoid;page-break-inside:avoid}
+  .topic-images{break-inside:avoid;page-break-inside:avoid}
+}
+
 </style>
 </head>
 <body>
@@ -256,6 +275,14 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-04.webp" alt="T01 圖 1" loading="lazy"></figure>
+      <figure><img src="images/img-26.webp" alt="T01 圖 2" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   
 
@@ -363,6 +390,13 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-20.webp" alt="T02 圖 1" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   
 
@@ -471,6 +505,16 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-19.webp" alt="T03 圖 1" loading="lazy"></figure>
+      <figure><img src="images/img-32.webp" alt="T03 圖 2" loading="lazy"></figure>
+      <figure><img src="images/img-02.webp" alt="T03 圖 3" loading="lazy"></figure>
+      <figure><img src="images/img-31.webp" alt="T03 圖 4" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   
 
@@ -573,6 +617,13 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-23.webp" alt="T04 圖 1" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   
 
@@ -675,6 +726,14 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-22.webp" alt="T05 圖 1" loading="lazy"></figure>
+      <figure><img src="images/img-27.webp" alt="T05 圖 2" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   
 
@@ -1317,6 +1376,14 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-18.webp" alt="T11 圖 1" loading="lazy"></figure>
+      <figure><img src="images/img-05.webp" alt="T11 圖 2" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   <div class="block scenario">
     <div class="block-h">📋 情境</div>
@@ -1428,6 +1495,13 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-13.webp" alt="T12 圖 1" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   <div class="block scenario">
     <div class="block-h">📋 情境</div>
@@ -1535,6 +1609,14 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-33.webp" alt="T13 圖 1" loading="lazy"></figure>
+      <figure><img src="images/img-11.webp" alt="T13 圖 2" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   <div class="block scenario">
     <div class="block-h">📋 情境</div>
@@ -1644,6 +1726,13 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-13.webp" alt="T14 圖 1" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   <div class="block scenario">
     <div class="block-h">📋 情境</div>
@@ -1751,6 +1840,14 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-15.webp" alt="T15 圖 1" loading="lazy"></figure>
+      <figure><img src="images/img-03.webp" alt="T15 圖 2" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   <div class="block scenario">
     <div class="block-h">📋 情境</div>
@@ -1866,6 +1963,16 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-10.webp" alt="T16 圖 1" loading="lazy"></figure>
+      <figure><img src="images/img-21.webp" alt="T16 圖 2" loading="lazy"></figure>
+      <figure><img src="images/img-09.webp" alt="T16 圖 3" loading="lazy"></figure>
+      <figure><img src="images/img-25.webp" alt="T16 圖 4" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   <div class="block scenario">
     <div class="block-h">📋 情境</div>
@@ -1979,6 +2086,15 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-30.webp" alt="T17 圖 1" loading="lazy"></figure>
+      <figure><img src="images/img-10.webp" alt="T17 圖 2" loading="lazy"></figure>
+      <figure><img src="images/img-12.webp" alt="T17 圖 3" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   <div class="block scenario">
     <div class="block-h">📋 情境</div>
@@ -2093,6 +2209,15 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-10.webp" alt="T18 圖 1" loading="lazy"></figure>
+      <figure><img src="images/img-29.webp" alt="T18 圖 2" loading="lazy"></figure>
+      <figure><img src="images/img-06.webp" alt="T18 圖 3" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   <div class="block scenario">
     <div class="block-h">📋 情境</div>
@@ -2201,6 +2326,15 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-18.webp" alt="T19 圖 1" loading="lazy"></figure>
+      <figure><img src="images/img-24.webp" alt="T19 圖 2" loading="lazy"></figure>
+      <figure><img src="images/img-10.webp" alt="T19 圖 3" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   <div class="block scenario">
     <div class="block-h">📋 情境</div>
@@ -2311,6 +2445,15 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
+  <div class="block topic-images">
+    <div class="block-h">📷 圖示（教案原圖）</div>
+    <div class="topic-images-grid">
+      <figure><img src="images/img-10.webp" alt="T20 圖 1" loading="lazy"></figure>
+      <figure><img src="images/img-01.webp" alt="T20 圖 2" loading="lazy"></figure>
+      <figure><img src="images/img-16.webp" alt="T20 圖 3" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   <div class="block scenario">
     <div class="block-h">📋 情境</div>
@@ -3054,6 +3197,28 @@ window.addEventListener('scroll', ()=>{
     renderPanel();
   }
 })();
+
+/* ===== Image lightbox ===== */
+(function(){
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  lightbox.innerHTML = '<img alt=""><div class="lightbox-hint">點任意處或按 Esc 關閉</div>';
+  document.body.appendChild(lightbox);
+  const lbImg = lightbox.querySelector('img');
+  document.addEventListener('click', (e) => {
+    const img = e.target.closest && e.target.closest('.topic-images-grid img');
+    if (!img) return;
+    e.preventDefault();
+    lbImg.src = img.src;
+    lbImg.alt = img.alt || '';
+    lightbox.classList.add('show');
+  });
+  lightbox.addEventListener('click', () => lightbox.classList.remove('show'));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('show');
+  });
+})();
+
 </script>
 </body>
 </html>
