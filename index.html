@@ -183,9 +183,61 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
   .topic-images{break-inside:avoid;page-break-inside:avoid}
 }
 
+
+/* === Provider scope markers === */
+.oos{background:#fee;border-bottom:2px dotted #c62828;padding:0 2px;border-radius:2px;cursor:help}
+.oos::before{content:"🚫";font-size:10px;margin-right:2px;opacity:.85}
+.oos-block{border-left:4px solid #c62828;background:#fff5f5;padding:10px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+.oos-block-h{display:inline-block;font-size:11px;font-weight:700;color:#c62828;background:#ffd6d6;padding:2px 8px;border-radius:3px;margin-bottom:6px}
+.oos-block .block-h{color:#c62828}
+.oos-topic{border-left:4px solid #c62828;background:#fff5f5;padding:12px 16px;margin:0 0 14px;border-radius:0 8px 8px 0}
+.oos-topic .oos-topic-h{font-size:13px;font-weight:700;color:#c62828;margin-bottom:6px}
+.oos-topic-body{font-size:13.5px;color:var(--fg);line-height:1.6}
+
+.local{background:#fff8e1;border-bottom:2px dotted #f57f17;padding:0 2px;border-radius:2px;cursor:help}
+.local::before{content:"⚠️";font-size:10px;margin-right:2px}
+
+/* Provider 延伸閱讀 block */
+.block.provider{background:#e3f2fd;border:1px solid #90caf9;border-left:4px solid #1976d2;margin-top:14px}
+.block.provider .block-h{color:#0d47a1;font-size:14px}
+.block.provider .pg{display:inline-block;font-size:10.5px;color:#fff;background:#1976d2;padding:1px 6px;border-radius:3px;margin-right:4px;font-family:ui-monospace,monospace;font-weight:600}
+.block.provider .pv-section{font-weight:600;color:#0d47a1;font-size:13px}
+.block.provider ul{font-size:13.5px;line-height:1.7}
+.block.provider .pv-source{font-size:11px;color:var(--muted);margin-top:8px;font-style:italic}
+.block.provider .pv-tag-in{display:inline-block;background:#c8e6c9;color:#1b5e20;font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:3px;margin-left:4px}
+.block.provider .pv-tag-out{display:inline-block;background:#ffcdd2;color:#b71c1c;font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:3px;margin-left:4px}
+
+/* Hide-OOS toggle */
+body.hide-oos .oos{background:transparent;border-bottom:0}
+body.hide-oos .oos::before{display:none}
+body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
+
+/* Top banner */
+.scope-banner{position:sticky;top:0;background:linear-gradient(90deg,#1976d2,#1565c0);color:#fff;padding:8px 16px;font-size:13px;z-index:850;display:flex;justify-content:center;gap:14px;align-items:center;box-shadow:0 2px 6px rgba(0,0,0,.15);flex-wrap:wrap}
+.scope-banner.hidden{display:none}
+.scope-banner .sb-label{font-weight:600}
+.scope-banner button{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.45);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font:inherit;font-size:12px}
+.scope-banner button:hover{background:rgba(255,255,255,.3)}
+.scope-banner .sb-close{background:transparent;border:0;font-size:16px;line-height:1;padding:0 4px;cursor:pointer;color:#fff;opacity:.7}
+.scope-banner .sb-close:hover{opacity:1}
+
+@media print{
+  .scope-banner{display:none!important}
+  .oos::before,.local::before{display:none}
+  .oos{background:transparent!important;border-bottom:1px dotted #999}
+  .oos-block,.oos-topic{break-inside:avoid;page-break-inside:avoid}
+  .block.provider{break-inside:avoid;page-break-inside:avoid}
+}
+
 </style>
 </head>
 <body>
+<div class="scope-banner" id="scope-banner">
+  <span class="sb-label">📚 ACLS Provider 範圍篩選</span>
+  <button id="toggle-oos">隱藏超綱內容</button>
+  <span style="font-size:11.5px;opacity:.85">紅底框 = Provider 課程外（Instructor 等級延伸）</span>
+  <button class="sb-close" id="dismiss-banner" title="關閉">✕</button>
+</div>
 <div class="layout">
 
 <aside class="toc-wrap">
@@ -1415,8 +1467,8 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     <div class="block-h">💬 情境引導 / Describe（2 分鐘）</div>
     <ol class="qa">
       <li><b class="q-label">Q1</b>　為何 ICH 影響 A/B？　→ 意識差不能 protect airway；腦疝壓迫腦幹導致不規則呼吸。</li>
-      <li><b class="q-label">Q2</b>　顱內高壓典型表現？　→ Cushing's Triad：不規則呼吸 + HTN + brady。</li>
-      <li><b class="q-label">Q3</b>　插管前怎準備（避免 ICP 升高）？　→ 顱內高壓三階段：環境刺激 → 高滲透壓藥物 → 神經保護性插管。</li>
+      <li><b class="q-label">Q2</b>　<span class="local">顱內高壓典型表現？　→ Cushing's Triad：不規則呼吸 + HTN + brady。</span></li>
+      <li><b class="q-label">Q3</b>　<span class="oos">插管前怎準備（避免 ICP 升高）？　→ 顱內高壓三階段：環境刺激 → 高滲透壓藥物 → 神經保護性插管。</span></li>
       <li><b class="q-label">Q4</b>　Pre-medication？　→ Fentanyl 減痛；局部 Lidocaine 麻痺喉頭，降疼痛/嘔吐/咳嗽（皆會 ↑ICP）。</li>
       <li><b class="q-label">Q5</b>　鎮靜與肌鬆？　→ 鎮靜 Etomidate（避 Ketamine ↑ICP）；肌鬆 Rocuronium（避 Sux ↑ICP）。</li>
     </ol>
@@ -1447,7 +1499,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
 
   <div class="block summary">
     <div class="block-h">✅ Summary（1 分鐘）</div>
-    <div class="summary-text">顱內出血、避免進一步腦壓升高 → 神經保護性插管。Pre Lidocaine+Fentanyl，鎮靜 Etomidate，肌鬆 Rocuronium，最後考慮過度換氣。</div>
+    <div class="summary-text">顱內出血、避免進一步腦壓升高 → 神經保護性插管。<span class="oos">Pre Lidocaine+Fentanyl，鎮靜 Etomidate，肌鬆 Rocuronium，最後考慮過度換氣</span>。</div>
   </div>
 
   <div class="grid2">
@@ -1455,8 +1507,8 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <div class="block-h">🎯 Teaching Key Points</div>
       <ul>
         <li>Cushing's Triad = 腦疝在敲門</li>
-        <li>Pre-medication 防 ICP 高峰</li>
-        <li>Etomidate + Rocuronium（避 Ketamine + Sux）</li>
+        <li><span class="oos">Pre-medication 防 ICP 高峰</span></li>
+        <li><span class="oos">Etomidate + Rocuronium（避 Ketamine + Sux）</span></li>
       </ul>
     </div>
     <div class="block reference">
@@ -1476,6 +1528,19 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <li>【測驗依據】Airway Management Skills Testing Checklist（見 T02）</li>
       <li>【家屬溝通】AHA 強調 Lesson Stroke 中需「prearrival notification」與家屬同步</li>
     </ul>
+  </div>
+
+  <div class="block provider">
+    <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
+    <span class="pg">pg 104+</span> <span class="pv-section">Part 3 / Respiratory Arrest</span>
+    <ul style="margin-top:8px">
+      <li>Provider 對 respiratory arrest 定義：意識不清、有 pulse、呼吸完全消失或不足。沿用 BLS + primary + secondary assessment。</li>
+      <li><b>O₂ 目標</b>：stroke ≥95%（Provider 列為 stroke chapter 標準）。</li>
+      <li>中風辨識：8 D's of Stroke Care，hemorrhagic stroke 為 thrombolytic 絕對禁忌。</li>
+      <li>本題的「神經保護性插管 / RSI pre-medication（Fentanyl, Lidocaine, Etomidate, Rocuronium）」<span class="pv-tag-out">Provider 不教</span>—Manual 明文：「Systems or facilities that use rapid sequence intubation may consider additional medications.」（pg 104）但不在 Provider 課程內容中說明。</li>
+      <li>本題的「ETCO₂ 30-35 過度換氣降腦壓」<span class="pv-tag-out">Provider 不教</span>—Provider 對 ICH 處置只說：「Hemorrhage is present → 不給 tPA → Initiate intracranial hemorrhage protocol → Admit to stroke unit/ICU」（pg 56）。</li>
+    </ul>
+    <div class="pv-source">出處：AHA 2025 ACLS Provider Manual（American Heart Association, ISBN 978-1-68472-295-2）</div>
   </div>
 </article>
 
@@ -1534,7 +1599,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     <ol class="qa">
       <li><b class="q-label">Q1</b>　先做什麼？　→ 叫叫 CABD：叫病人、叫支援、C 觸脈搏（有 pulse）、A 暢通呼吸道+抽痰、B Ambu Bagging。</li>
       <li><b class="q-label">Q2</b>　怎麼拆解呼吸衰竭？　→ 「道、力、氣」三字訣。</li>
-      <li><b class="q-label">Q3</b>　COPD AE 治療？　→ 插管 + 機械通氣、bronchodilator、steroid。SpO₂ 88–92% 讓腦幹記得呼吸；I:E 1:4–1:5。</li>
+      <li><b class="q-label">Q3</b>　COPD AE 治療？　→ 插管 + 機械通氣、bronchodilator、steroid。<span class="oos">SpO₂ 88–92% 讓腦幹記得呼吸</span>；I:E 1:4–1:5。</li>
     </ol>
   </div>
 
@@ -1561,7 +1626,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
 
   <div class="block summary">
     <div class="block-h">✅ Summary（1 分鐘）</div>
-    <div class="summary-text">叫叫 CABD → 道力氣三軸 → 治療疾病本身。COPD：SpO₂ 88–92、I:E 1:4–1:5、permissive hypercapnia。</div>
+    <div class="summary-text">叫叫 CABD → 道力氣三軸 → 治療疾病本身。COPD：SpO₂ 88–92、<span class="oos">I:E 1:4–1:5、permissive hypercapnia</span>。</div>
   </div>
 
   <div class="grid2">
@@ -1569,7 +1634,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <div class="block-h">🎯 Teaching Key Points</div>
       <ul>
         <li>Respiratory arrest with pulse → 只通氣不壓胸</li>
-        <li>COPD：低 RR、長 expiratory、避 auto-PEEP</li>
+        <li><span class="oos">COPD：低 RR、長 expiratory、避 auto-PEEP</span></li>
         <li>SpO₂ 88–92% 讓腦幹記得呼吸</li>
       </ul>
     </div>
@@ -1590,6 +1655,20 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <li>【Pulse check】Resp arrest with pulse 每 2 min 確認 pulse（5–10 sec）</li>
       <li>【測驗依據】Airway Management Skills Testing Checklist（見 T02）</li>
     </ul>
+  </div>
+
+  <div class="block provider">
+    <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
+    <span class="pg">pg 109-117</span> <span class="pv-section">Part 3 / Respiratory Arrest</span>
+    <ul style="margin-top:8px">
+      <li><b>通氣速率（核心）</b>：1 breath every 6 seconds (10/min)，每口 1 sec 達 visible chest rise。<span class="pv-tag-in">Provider 核心</span></li>
+      <li><b>避免 excessive ventilation</b>：增加 intrathoracic P → 降 venous return → 降 cardiac output → 降 survival；可能引起 cerebral vasoconstriction。<span class="pv-tag-in">Provider 核心</span></li>
+      <li>BVM 容量：⅓ 至 ½ 一袋擠壓（約 500-600 mL）達 chest rise。</li>
+      <li>BVM 技巧：單人 E-C clamp / 雙人 C-E + thumb-finger seal 提供更高 tidal volume；單人建議用 pocket mask 提高 CCF。</li>
+      <li>OPA 適應症：意識不清且無 cough/gag reflex。NPA 可用於 conscious / semi-conscious。</li>
+      <li>本題「<b>SpO₂ 88-92% permissive hypercapnia</b>」「<b>I:E 1:4–1:5 延長吐氣</b>」「bronchodilator/steroid 高劑量」<span class="pv-tag-out">Provider 不教</span>—屬 ICU/RT 級別 COPD-specific 設定。Provider 通用 SpO₂ 目標為 ≥95%（CA 給 100%）。</li>
+    </ul>
+    <div class="pv-source">出處：AHA 2025 ACLS Provider Manual（American Heart Association, ISBN 978-1-68472-295-2）</div>
   </div>
 </article>
 
@@ -1678,7 +1757,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
 
   <div class="block summary">
     <div class="block-h">✅ Summary（1 分鐘）</div>
-    <div class="summary-text">插完管呼吸衰竭 → 先轉 BVM → DOPE 分析。COPD 注意 SpO₂ 88–92；CO₂ 累積 → ↑MV + 延長吐氣。</div>
+    <div class="summary-text">插完管呼吸衰竭 → 先轉 BVM → DOPE 分析。<span class="oos">COPD 注意 SpO₂ 88–92；CO₂ 累積 → ↑MV + 延長吐氣</span>。</div>
   </div>
 
   <div class="grid2">
@@ -1707,6 +1786,19 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <li>【AHA 通氣指引】Each breath 1 sec 達 visible chest rise；插管後 1 breath every 6 seconds</li>
       <li>【DOPE 不在 AHA 教科書字面】但屬通用 ICU 教學（與 wayne 一致）</li>
     </ul>
+  </div>
+
+  <div class="block provider">
+    <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
+    <span class="pg">pg 117, 70</span> <span class="pv-section">Part 3 / Advanced Airways + Part 2 / Bradycardia</span>
+    <ul style="margin-top:8px">
+      <li><b>DOPE 口訣</b>：Displacement / Obstruction / Pneumothorax / Equipment failure—Manual 明文列為標準 troubleshooting 工具。<span class="pv-tag-in">Provider 核心</span></li>
+      <li>ET tube placement 確認：<b>Continuous waveform capnography</b>（推薦 + 臨床評估）；無 capnography 時用 colorimetric / nonwaveform CO₂ detector。</li>
+      <li>Bradycardia algorithm（Part 2 pg 70）：Atropine 1 mg IV，3-5 min 可重複，max 3 mg；無效用 TCP 或 dopamine/epinephrine infusion。<span class="pv-tag-in">Provider 核心</span></li>
+      <li>Atropine 在以下情境效果差：MI / 2-2 或 3° AVB / 換心後 / 寬 QRS 的 3° block（infranodal）。</li>
+      <li>本題「increase MV、I:E 1:4-1:5 改善 CO₂ 排除」<span class="pv-tag-out">Provider 不教</span>—屬機械式呼吸器設定細節，非 Provider 課程內容。</li>
+    </ul>
+    <div class="pv-source">出處：AHA 2025 ACLS Provider Manual（American Heart Association, ISBN 978-1-68472-295-2）</div>
   </div>
 </article>
 
@@ -1802,7 +1894,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <ul>
         <li>Witnessed arrest in monitored bed → 病因常找得到</li>
         <li>Family liaison 是固定角色</li>
-        <li>Lung-protective: TV 6 mL/kg IBW</li>
+        <li><span class="oos">Lung-protective: TV 6 mL/kg IBW</span></li>
       </ul>
     </div>
     <div class="block reference">
@@ -1822,6 +1914,19 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <li>【家屬溝通】wayne 加的「Family liaison」雖非 AHA 列項，但符合 AHA 第 1 部「High-Performance Teams」精神</li>
     </ul>
   </div>
+
+  <div class="block provider">
+    <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
+    <span class="pg">pg 116</span> <span class="pv-section">Part 3 / Respiratory Arrest</span>
+    <ul style="margin-top:8px">
+      <li><b>Pulse Oximetry</b>：normal 95-98%；dark skin 在低 SpO₂（<80%）時可能 artificially high（COVID-19 期間之研究）。</li>
+      <li>O₂ 飽和度目標：一般 ≥95%、ACS ≥90%、post-CA 90-98%、stroke ≥95%；CA 給 100%。</li>
+      <li>BVM 對 advanced airway 尚未置入：1 breath / 6 sec；advanced airway in place（含 LMA / 喉罩 / ETT）：仍是 1 / 6 sec。</li>
+      <li>Bag-mask Caution：避免 excessive ventilation（重要，反覆強調）。</li>
+      <li>本題「<b>TV 6 mL/kg IBW（lung-protective）</b>」「PEEP 8、FiO₂ titrate」「Septic shock 30 mL/kg fluid + broad-spectrum abx」<span class="pv-tag-out">Provider 不教</span>—屬 ICU/critical care 範圍（ARDSNet）。Provider 課程僅教 BVM 與 advanced airway 已置入後的通氣，不教 ventilator setting。</li>
+    </ul>
+    <div class="pv-source">出處：AHA 2025 ACLS Provider Manual（American Heart Association, ISBN 978-1-68472-295-2）</div>
+  </div>
 </article>
 
 <article class="topic" id="T15" data-type="case" data-group="Respiratory Arrest">
@@ -1840,7 +1945,11 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
-  <div class="block topic-images">
+  <div class="oos-topic">
+    <div class="oos-topic-h">⚠️ 本題完整內容超出 Provider 課程範圍</div>
+    <div class="oos-topic-body">AHA 2025 ACLS Provider Manual 對 toxic-induced emergencies 唯一在課程內容的是 <b>opioid overdose + Naloxone</b>（pg 142, Cardiac Arrest: Selected Special Situations）。本題的有機磷中毒（SLUDGEBBB / Atropine titration / Pralidoxime / 避用 Sux / Decontamination）屬 toxicology / occupational medicine 範疇，<b>非 Provider 課程教學內容</b>，本題作為 Instructor 等級延伸 case 使用。</div>
+  </div>
+<div class="block topic-images">
     <div class="block-h">📷 圖示（教案原圖）</div>
     <div class="topic-images-grid">
       <figure><img src="images/img-15.webp" alt="T15 圖 1" loading="lazy"></figure>
@@ -1940,6 +2049,15 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <li>【AHA Airway 標準】Resp 失敗 → 用 Bag-mask vent + OPA/NPA 為起點，仍走 Lesson 3B 評分標準</li>
       <li>【測驗依據】Airway Management Skills Testing Checklist（見 T02）+ Bradycardia Checklist（見 T09）</li>
     </ul>
+  </div><div class="block provider">
+    <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
+    <span class="pg">pg 142</span> <span class="pv-section">Part 3 / Cardiac Arrest: Selected Special Situations</span>
+    <ul style="margin-top:8px">
+      <li>Provider 唯一相關內容：<b>Treating Respiratory or Cardiac Arrest Associated With Opioid Overdose</b>—懷疑 opioid overdose → 給 Naloxone（依 protocol）。</li>
+      <li>Provider 對其他中毒（如有機磷、TCA、CCB/BB）僅在 H&T 5H5T 中以「Toxins」一字帶過，不教解毒劑或具體處置。</li>
+      <li>一般處置原則：<span class="pv-tag-in">仍適用</span> BLS/CABD、暢通氣道、抽吸、給氧、機械通氣、bradycardia algorithm（Atropine/TCP/dopamine）。</li>
+    </ul>
+    <div class="pv-source">出處：AHA 2025 ACLS Provider Manual（American Heart Association, ISBN 978-1-68472-295-2）</div>
   </div>
 </article>
 </section>
@@ -1981,7 +2099,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
 
   <div class="block mnemonic">
     <div class="block-h">🧠 Golden Hour Bundle 6 項</div>
-    <div class="mnemonic-detail">①BP &lt;140/80 ②凝血校正 ③Glucose &lt;180 ④BT &lt;37.5 ⑤癲癇控制 ⑥ICP 控制</div>
+    <div class="mnemonic-detail"><span class="oos">①BP &lt;140/80 ②凝血校正 ③Glucose &lt;180 ④BT &lt;37.5 ⑤癲癇控制 ⑥ICP 控制</span></div>
   </div>
 
   <div class="grid2">
@@ -2005,8 +2123,8 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     <ol class="qa">
       <li><b class="q-label">Q1</b>　ACLS Stroke 初步流程？　→ 啟動中風團隊+CT、評估 ABC、IV+lab、量血糖、NIHSS+last normal time。</li>
       <li><b class="q-label">Q2</b>　ICH 的 Golden Hour 處置？　→ Bundle 6 項：避免高低 BP / 凝血校正 / 避免高低 glucose / 避免發燒 / 控癲癇 / 控 ICP。</li>
-      <li><b class="q-label">Q3</b>　BP 控制目標？　→ BP &lt; 140/80, MAP &gt; 80。藥物：Nicardipine drip 或 Labetalol IV。</li>
-      <li><b class="q-label">Q4</b>　凝血障礙如何校正？　→ Plt &lt; 50000 → 輸血小板；INR ↑ → Vit K + PCC；抗凝劑 → 查表反轉。</li>
+      <li><b class="q-label">Q3</b>　<span class="oos">BP 控制目標？　→ BP &lt; 140/80, MAP &gt; 80。藥物：Nicardipine drip 或 Labetalol IV。</span></li>
+      <li><b class="q-label">Q4</b>　<span class="oos">凝血障礙如何校正？　→ Plt &lt; 50000 → 輸血小板；INR ↑ → Vit K + PCC；抗凝劑 → 查表反轉。</span></li>
     </ol>
   </div>
 
@@ -2029,7 +2147,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <li>Nicardipine/Labetalol → BP &lt; 140/80</li>
       <li>Insulin → Glucose &lt; 180</li>
       <li>Acetaminophen + 體外降溫 → BT &lt; 37.5</li>
-      <li>輸 Plt → &gt; 50000；Vit K + PCC → INR &lt; 1.5</li>
+      <li><span class="oos">輸 Plt → &gt; 50000；Vit K + PCC → INR &lt; 1.5</span></li>
       <li>Head up 30°、找 NS、找 ICU</li>
     </ol>
   </div>
@@ -2068,6 +2186,20 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <li>【2025 更新】Tenecteplase 加入為 thrombolytic 選項（與 alteplase 並列）</li>
     </ul>
   </div>
+
+  <div class="block provider">
+    <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
+    <span class="pg">pg 42-66</span> <span class="pv-section">Part 2 / Acute Stroke</span>
+    <ul style="margin-top:8px">
+      <li><b>8 D's of Stroke Care</b>：Detection / Dispatch / Delivery / Door / Data / Decision / Drug or Device / Disposition。<span class="pv-tag-in">Provider 核心</span></li>
+      <li>Brain imaging（NCCT/MRI）≤20 min after arrival；interpretation ≤45 min。</li>
+      <li><b>Hemorrhage 識別</b>：CT 看到 hemorrhage = 絕對 contraindication for thrombolytic and EVT → admit to stroke unit / neuro ICU。<span class="pv-tag-in">Provider 核心</span></li>
+      <li>Provider 對 hemorrhagic stroke 的明確內容止於此一句：「Hemorrhagic stroke: a blood vessel suddenly ruptures... thrombolytic therapy is contraindicated; avoid anticoagulants.」（pg 31）</li>
+      <li>Insulin for glucose >180 mg/dL：<span class="pv-tag-in">Provider 列入 general stroke care</span>。</li>
+      <li>本題「<b>The Golden Hour Bundle 六項</b>」「<b>BP <140/80 with Nicardipine for ICH</b>」「PCC / Vit K / Platelet transfusion 反轉」「Mannitol、體外降溫」<span class="pv-tag-out">Provider 不教</span>—Provider 的 BP target 只有 thrombolytic candidate <185/110。ICH-specific 治療屬 neurocritical care / 神內。</li>
+    </ul>
+    <div class="pv-source">出處：AHA 2025 ACLS Provider Manual（American Heart Association, ISBN 978-1-68472-295-2）</div>
+  </div>
 </article>
 
 <article class="topic" id="T17" data-type="case" data-group="Acute Stroke">
@@ -2086,7 +2218,11 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
-  <div class="block topic-images">
+  <div class="oos-topic">
+    <div class="oos-topic-h">⚠️ 本題完整內容超出 Provider 課程範圍</div>
+    <div class="oos-topic-body">AHA 2025 ACLS Provider Manual 對 SAH 的明文內容止於 Table 11 thrombolytic 禁忌欄：「IV alteplase is contraindicated in patients presenting with symptoms and signs most consistent with a subarachnoid hemorrhage.」（pg 60-61）—<b>Provider 不教 SAH 的識別、診斷或處置</b>。本題的 SUM 口訣、雷擊頭痛 SAH 鑑別、Lumbar Puncture / Xanthochromia、CTA 評估動脈瘤、Nimodipine 預防血管痙攣，均屬 Instructor 等級或神經科專科內容。</div>
+  </div>
+<div class="block topic-images">
     <div class="block-h">📷 圖示（教案原圖）</div>
     <div class="topic-images-grid">
       <figure><img src="images/img-30.webp" alt="T17 圖 1" loading="lazy"></figure>
@@ -2190,6 +2326,14 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <li>EVT：LVO 患者最長 24 hr（0–6 hr 需 NCCT eligible；6–24 hr 需 penumbra imaging）</li>
       <li>【2025 更新】Tenecteplase 加入為 thrombolytic 選項（與 alteplase 並列）</li>
     </ul>
+  </div><div class="block provider">
+    <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
+    <span class="pg">pg 60-61</span> <span class="pv-section">Part 2 / Acute Stroke / Thrombolytic Eligibility</span>
+    <ul style="margin-top:8px">
+      <li><span class="pv-tag-out">Provider 對 SAH 唯一內容</span>：alteplase 對 SAH 為絕對禁忌（COR 3: Harm; LOE C-EO）。</li>
+      <li>一般處置流程仍適用：啟動 stroke team、ABC、IV、glucose、CT/MRI ≤20 min、NIHSS、確認 last known normal time。</li>
+    </ul>
+    <div class="pv-source">出處：AHA 2025 ACLS Provider Manual（American Heart Association, ISBN 978-1-68472-295-2）</div>
   </div>
 </article>
 
@@ -2209,7 +2353,11 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
-  <div class="block topic-images">
+  <div class="oos-topic">
+    <div class="oos-topic-h">⚠️ 本題大部分內容超出 Provider 課程範圍</div>
+    <div class="oos-topic-body">AHA 2025 ACLS Provider Manual 對 TIA 的明文出現於：「A small percentage of patients with acute stroke or transient ischemic attack have coexisting myocardial ischemia or other abnormalities.」（pg 56）—<b>Provider 提到 TIA 但不教 secondary prevention</b>。本題的 ABCD2 score、DAPT/SAPT、48 hr 再中風風險、CTA / 心電圖找 embolic source 屬 outpatient neurology / secondary stroke prevention。</div>
+  </div>
+<div class="block topic-images">
     <div class="block-h">📷 圖示（教案原圖）</div>
     <div class="topic-images-grid">
       <figure><img src="images/img-10.webp" alt="T18 圖 1" loading="lazy"></figure>
@@ -2248,9 +2396,9 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
   <div class="block">
     <div class="block-h">💬 情境引導 / Describe（2 分鐘）</div>
     <ol class="qa">
-      <li><b class="q-label">Q1</b>　會啟動 stroke code 嗎？　→ G-FAST &gt; 2 分啟動。</li>
+      <li><b class="q-label">Q1</b>　會啟動 stroke code 嗎？　→ <span class="local">G-FAST &gt; 2 分啟動。</span></li>
       <li><b class="q-label">Q2</b>　啟動後做什麼？　→ CT、ABC、IV、Glucose、NIHSS、last normal time。CT 沒出血。要不要打 tPA？看症狀。</li>
-      <li><b class="q-label">Q3</b>　不打 tPA，下一步？回家嗎？　→ 不行。TIA 48 hr 內再中風風險極高，用 ABCD² 評估 + 次級預防。</li>
+      <li><b class="q-label">Q3</b>　不打 tPA，下一步？回家嗎？　→ 不行。<span class="oos">TIA 48 hr 內再中風風險極高，用 ABCD² 評估 + 次級預防。</span></li>
       <li><b class="q-label">Q4</b>　怎麼安排？　→ CTA/MRA（頸動脈/椎動脈狹窄 → 支架）；ECG/echo（AF → NOAC）；Low Risk + CTA 正常 → 48 hr 返診；否則住院。</li>
     </ol>
   </div>
@@ -2258,7 +2406,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
   <div class="block">
     <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
     <ol>
-      <li>算 ABCD²：71y(1) + BP(1) + unilateral weak+speech(2) + 30 min(1) + DM(1) = 6 → 高風險。</li>
+      <li><span class="oos">算 ABCD²：71y(1) + BP(1) + unilateral weak+speech(2) + 30 min(1) + DM(1) = 6 → 高風險。</span></li>
       <li>NIHSS = 0（症狀已緩解）但 high-risk 不能放回家。</li>
       <li>鑑別：seizure / migraine with aura / hypoglycemia。</li>
       <li>AF + warfarin → 確認 INR；INR in range 仍發病 → sub-therapeutic 或 LAA thrombus。</li>
@@ -2271,14 +2419,14 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     <ol>
       <li>啟動 stroke code → CT</li>
       <li>ABC、IV、Glucose、NIHSS、last normal time</li>
-      <li>評估 ABCD² → 給 DAPT/SAPT、住院 or 返家</li>
+      <li><span class="oos">評估 ABCD² → 給 DAPT/SAPT、住院 or 返家</span></li>
       <li>安排 CTA、ECG</li>
     </ol>
   </div>
 
   <div class="block summary">
     <div class="block-h">✅ Summary（1 分鐘）</div>
-    <div class="summary-text">TIA 不是 OK ── 是預警。算 ABCD² + 影像 + AF/carotid 找源頭 + 住院 work-up。Low Risk + CTA 正常才返診。</div>
+    <div class="summary-text"><span class="oos">TIA 不是 OK ── 是預警。算 ABCD² + 影像 + AF/carotid 找源頭 + 住院 work-up。Low Risk + CTA 正常才返診。</span></div>
   </div>
 
   <div class="grid2">
@@ -2286,7 +2434,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <div class="block-h">🎯 Teaching Key Points</div>
       <ul>
         <li>症狀沒了還是要住院（48 hr 風險最高）</li>
-        <li>ABCD² ≥ 4 強烈建議住院</li>
+        <li><span class="oos">ABCD² ≥ 4 強烈建議住院</span></li>
         <li>AF + warfarin 仍發病 → sub-therapeutic 或 LAA clot</li>
       </ul>
     </div>
@@ -2307,6 +2455,15 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <li>【後續處置】仍走 stroke 流程：CT 排出血 → ABC → IV → glucose → NIHSS → last normal time</li>
       <li>【測驗依據】此案 8 分鐘示範屬「Stroke 識別 + secondary prevention 教學」</li>
     </ul>
+  </div><div class="block provider">
+    <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
+    <span class="pg">pg 56</span> <span class="pv-section">Part 2 / Acute Stroke</span>
+    <ul style="margin-top:8px">
+      <li><span class="pv-tag-in">Provider 教的 TIA 相關內容</span>：所有疑似中風（含 TIA）患者應 12-lead ECG（找 AF 等 embolic source）；24 hr cardiac monitoring（pg 56）。</li>
+      <li>Stroke 流程：啟動 stroke code → CT ≤20 min → Hemorrhage? → tPA candidate? — TIA 走同一個 algorithm 直到 CT 結果。</li>
+      <li>症狀 resolved（neurologic function rapidly improving to normal）→ thrombolytic 可能不需要（Manual pg 59）。</li>
+    </ul>
+    <div class="pv-source">出處：AHA 2025 ACLS Provider Manual（American Heart Association, ISBN 978-1-68472-295-2）</div>
   </div>
 </article>
 
@@ -2326,7 +2483,11 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
-  <div class="block topic-images">
+  <div class="oos-topic">
+    <div class="oos-topic-h">⚠️ 本題完整內容超出 Provider 課程範圍</div>
+    <div class="oos-topic-body">AHA 2025 ACLS Provider Manual 對 IICP 的明文止於 general stroke care：「Monitor the patient for signs of increased intracranial pressure, such as increasing lethargy or decreasing level of consciousness or increased BP with a concurrent decrease in heart rate. Continue to control BP to reduce the potential risk of bleeding.」（pg 65）—<b>Provider 教 IICP 識別，不教階梯式處置</b>。本題的三階段降腦壓 ladder（環境刺激 → 高滲透壓 → 神經保護插管）、Mannitol / 3% Saline、過度換氣、低溫治療、神經外科開顱，均屬 neurocritical care / 神經外科內容。</div>
+  </div>
+<div class="block topic-images">
     <div class="block-h">📷 圖示（教案原圖）</div>
     <div class="topic-images-grid">
       <figure><img src="images/img-18.webp" alt="T19 圖 1" loading="lazy"></figure>
@@ -2343,7 +2504,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
 
   <div class="block mnemonic">
     <div class="block-h">🧠 顱內高壓三階段</div>
-    <div class="mnemonic-detail">①預防（環境刺激、穩定 VTS、所有患者）②高滲透壓藥物（Mannitol/3% saline）③神經保護性插管+深度鎮靜+過度換氣／開顱／低溫</div>
+    <div class="mnemonic-detail"><span class="oos">①預防（環境刺激、穩定 VTS、所有患者）②高滲透壓藥物（Mannitol/3% saline）③神經保護性插管+深度鎮靜+過度換氣／開顱／低溫</span></div>
   </div>
 
   <div class="grid2">
@@ -2366,8 +2527,8 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     <div class="block-h">💬 情境引導 / Describe（2 分鐘）</div>
     <ol class="qa">
       <li><b class="q-label">Q1</b>　顱內高壓初步徵兆？　→ Cushing's Triad：不規則呼吸 + HTN + brady。</li>
-      <li><b class="q-label">Q2</b>　降 ICP 方式？　→ 三階段處置（見上）。第一階段所有人都做；第二階段高風險或已 IICP；第三階段藥物治療失敗。</li>
-      <li><b class="q-label">Q3</b>　高滲透壓藥物原理 / 副作用？　→ Mannitol / 3% Saline 增血液滲透壓 → 腦水腫消退；副作用利尿、低 BP → 放尿管監測。</li>
+      <li><b class="q-label">Q2</b>　<span class="oos">降 ICP 方式？　→ 三階段處置（見上）。第一階段所有人都做；第二階段高風險或已 IICP；第三階段藥物治療失敗。</span></li>
+      <li><b class="q-label">Q3</b>　<span class="oos">高滲透壓藥物原理 / 副作用？　→ Mannitol / 3% Saline 增血液滲透壓 → 腦水腫消退；副作用利尿、低 BP → 放尿管監測。</span></li>
       <li><b class="q-label">Q4</b>　三階段都失敗？　→ 神經外科開顱降壓（hemicraniectomy &lt; 60y, &lt; 48 hr → mortality 80% → 30% per DESTINY/DECIMAL）；低溫治療。</li>
     </ol>
   </div>
@@ -2376,7 +2537,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
     <ol>
       <li>插管 RSI；ETCO₂ 30–35 短期 ICP。</li>
-      <li>Head up 30°、3% saline 250 mL bolus 或 Mannitol 1 g/kg。</li>
+      <li><span class="oos">Head up 30°、3% saline 250 mL bolus 或 Mannitol 1 g/kg。</span></li>
       <li>BP 不要急降（ischemic 容許 SBP &lt; 220）；急降反而 penumbra ischemia。</li>
       <li>Neurosurgery 緊急 consult — hemicraniectomy。</li>
     </ol>
@@ -2387,7 +2548,7 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
     <div class="do-scenario">55 y/o 男吃飯時突然昏倒，stroke code → CT 顯示左橋腦 25 cc ICH 暫無水腫。預防 IICP 處置？接著 BP 210/120、HR 52、RR 8 → 下一步？再發現中線偏移 → 下一步？</div>
     <ol>
       <li>Head up 30°、止痛、止吐、控 BP/SpO₂/BT/Glucose</li>
-      <li>出現 IICP → Mannitol + 放尿管監測</li>
+      <li><span class="oos">出現 IICP → Mannitol + 放尿管監測</span></li>
       <li>中線偏移 → 神經保護性插管+深鎮靜+過度換氣+低溫+開顱、住 ICU</li>
       <li>台下：兩位扮家屬問「醫師我爸到底會不會好？」— 給結構化答案</li>
     </ol>
@@ -2426,6 +2587,14 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <li>EVT：LVO 患者最長 24 hr（0–6 hr 需 NCCT eligible；6–24 hr 需 penumbra imaging）</li>
       <li>【2025 更新】Tenecteplase 加入為 thrombolytic 選項（與 alteplase 並列）</li>
     </ul>
+  </div><div class="block provider">
+    <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
+    <span class="pg">pg 65</span> <span class="pv-section">Part 2 / Acute Stroke / Begin General Stroke Care</span>
+    <ul style="margin-top:8px">
+      <li><span class="pv-tag-in">Provider 教的 IICP 識別</span>：increasing lethargy、decreasing LOC、增加 BP 合併降低 HR（Cushing reflex 概念，未明文使用「Cushing's Triad」一詞）。</li>
+      <li>處置原則：control BP to reduce bleeding risk、emergency CT 確認是 edema 還是 hemorrhage、consult neurosurgery as appropriate。</li>
+    </ul>
+    <div class="pv-source">出處：AHA 2025 ACLS Provider Manual（American Heart Association, ISBN 978-1-68472-295-2）</div>
   </div>
 </article>
 
@@ -2445,7 +2614,11 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       </div>
     </div>
   </header>
-  <div class="block topic-images">
+  <div class="oos-topic">
+    <div class="oos-topic-h">✓ 本題大致對應 Provider 範圍（含一處台灣本地擴充）</div>
+    <div class="oos-topic-body">本題的「啟動 Stroke Code、量血糖、Last normal time、預先通報、tPA 4.5 hr / IA 24 hr 醫院分流」<b>完全對應 Provider Manual Part 2 / Acute Stroke 之 EMS Acute Stroke Routing Algorithm</b>。唯一差異：本題用 <b>G-FAST</b>（5 項，含 Gaze + Time），Provider 的標準是 <b>CPSS 三項</b>（face / arm / speech）+ <b>FAST-ED 五項</b>（含 Eye deviation / Denial）作為 LVO triage。G-FAST 屬於台灣本地版本，可視為地區擴充。</div>
+  </div>
+<div class="block topic-images">
     <div class="block-h">📷 圖示（教案原圖）</div>
     <div class="topic-images-grid">
       <figure><img src="images/img-10.webp" alt="T20 圖 1" loading="lazy"></figure>
@@ -2546,6 +2719,18 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
       <li>【AHA 8 D 第 3 項 Delivery】EMS 須執行：Identify signs / Assess ABC / Complete stroke assessment / Establish time / Transport / Alert hospital / Check glucose</li>
       <li>【AHA 醫院選擇】依 stroke severity score 與 local protocols；考慮帶 witness/family 確認時間</li>
     </ul>
+  </div><div class="block provider">
+    <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
+    <span class="pg">pg 47-49</span> <span class="pv-section">Part 2 / Acute Stroke / EMS Critical Assessments</span>
+    <ul style="margin-top:8px">
+      <li><b>EMS 七項關鍵動作</b>（Manual 直譯）：Assess ABCs + O₂ if SpO₂ ≤94%；Initiate stroke protocol；Physical exam；Neurologic assessment（CPSS / LAPSS / FAST-ED）；Establish last known normal；Triage to appropriate stroke center；Check glucose；Provide prehospital notification。<span class="pv-tag-in">Provider 核心</span></li>
+      <li><b>CPSS 三項</b>（Manual Table 4）：Facial droop（露齒微笑）/ Arm drift（雙手抬高 10 sec）/ Abnormal speech（"You can't teach an old dog new tricks"）。1 finding → 72% stroke 機率。</li>
+      <li><b>FAST-ED 五項</b>：Facial palsy / Arm drift / Speech changes / Eye deviation / Denial-neglect。Score ≥4 → suspected LVO → 直送 Thrombectomy-Capable / Comprehensive Stroke Center。</li>
+      <li><b>Time windows</b>：tPA 0-3 hr / 3-4.5 hr 嚴選；EVT 0-6 hr stent retriever；6-16 hr DAWN/DEFUSE-3；16-24 hr DAWN（pg 49）。</li>
+      <li>醫院分流四級（Table 5）：ASRH / PSC / TSC / CSC—據 stroke severity score 與本地 protocol 決定。</li>
+      <li><span class="local">⚠️ G-FAST</span>：台灣本地版（Gaze + Face + Arm + Speech + Time），Provider Manual 用 <b>CPSS</b> 為標準三項，加 <b>FAST-ED</b> 為 LVO triage 工具。建議授課時兩種一併講。</li>
+    </ul>
+    <div class="pv-source">出處：AHA 2025 ACLS Provider Manual（American Heart Association, ISBN 978-1-68472-295-2）</div>
   </div>
 </article>
 </section>
@@ -3217,6 +3402,32 @@ window.addEventListener('scroll', ()=>{
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') lightbox.classList.remove('show');
   });
+})();
+
+
+/* ===== Provider scope toggle ===== */
+(function(){
+  const tb = document.getElementById('toggle-oos');
+  const banner = document.getElementById('scope-banner');
+  if (!tb || !banner) return;
+  const STORAGE = 'acls-c03-hide-oos';
+  if (localStorage.getItem(STORAGE) === '1') {
+    document.body.classList.add('hide-oos');
+    tb.textContent = '顯示超綱內容';
+  }
+  tb.addEventListener('click', () => {
+    document.body.classList.toggle('hide-oos');
+    const hidden = document.body.classList.contains('hide-oos');
+    tb.textContent = hidden ? '顯示超綱內容' : '隱藏超綱內容';
+    localStorage.setItem(STORAGE, hidden ? '1' : '0');
+  });
+  document.getElementById('dismiss-banner').addEventListener('click', () => {
+    banner.classList.add('hidden');
+    localStorage.setItem('acls-c03-banner-dismissed', '1');
+  });
+  if (localStorage.getItem('acls-c03-banner-dismissed') === '1') {
+    banner.classList.add('hidden');
+  }
 })();
 
 </script>
