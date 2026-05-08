@@ -184,6 +184,24 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
 }
 
 
+
+/* === Guidelines tier markers === */
+.guideline-topic{border-left:4px solid #2e7d32;background:#f1f8e9;padding:12px 16px;margin:0 0 14px;border-radius:0 8px 8px 0}
+.guideline-topic .gt-h{font-size:13px;font-weight:700;color:#1b5e20;margin-bottom:6px}
+.guideline-topic-body{font-size:13.5px;color:var(--fg);line-height:1.6}
+
+.stroke-separate{border-left:4px solid #6a1b9a;background:#f3e5f5;padding:12px 16px;margin:0 0 14px;border-radius:0 8px 8px 0}
+.stroke-separate .ss-h{font-size:13px;font-weight:700;color:#4a148c;margin-bottom:6px}
+.stroke-separate-body{font-size:13.5px;color:var(--fg);line-height:1.6}
+
+.block.guidelines{background:#e8f5e9;border:1px solid #81c784;border-left:4px solid #2e7d32;margin-top:14px}
+.block.guidelines .block-h{color:#1b5e20;font-size:14px}
+.block.guidelines .pg{display:inline-block;font-size:10.5px;color:#fff;background:#2e7d32;padding:1px 6px;border-radius:3px;margin-right:4px;font-family:ui-monospace,monospace;font-weight:600}
+.block.guidelines .gd-section{font-weight:600;color:#1b5e20;font-size:13px}
+.block.guidelines ul{font-size:13.5px;line-height:1.7}
+.block.guidelines .gd-source{font-size:11px;color:var(--muted);margin-top:8px;font-style:italic}
+.block.guidelines .gd-cor{display:inline-block;background:#388e3c;color:#fff;font-size:10px;font-weight:600;padding:1px 4px;border-radius:3px;margin-right:4px}
+
 /* === Provider scope markers === */
 .oos{background:#fee;border-bottom:2px dotted #c62828;padding:0 2px;border-radius:2px;cursor:help}
 .oos::before{content:"🚫";font-size:10px;margin-right:2px;opacity:.85}
@@ -233,9 +251,9 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
 </head>
 <body>
 <div class="scope-banner" id="scope-banner">
-  <span class="sb-label">📚 ACLS Provider 範圍篩選</span>
-  <button id="toggle-oos">隱藏超綱內容</button>
-  <span style="font-size:11.5px;opacity:.85">紅底框 = Provider 課程外（Instructor 等級延伸）</span>
+  <span class="sb-label">📚 範圍篩選（3 tier）</span>
+  <button id="toggle-oos">隱藏 Provider 超綱</button>
+  <span style="font-size:11.5px;opacity:.85">🚫 紅 = Provider 超綱　|　🟢 綠 = Guidelines 涵蓋（Provider 簡化未列）　|　🟣 紫 = AHA/ASA Stroke Guidelines（獨立文件）</span>
   <button class="sb-close" id="dismiss-banner" title="關閉">✕</button>
 </div>
 <div class="layout">
@@ -1530,6 +1548,18 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     </ul>
   </div>
 
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 10 / Part 11）</div>
+    <span class="gd-section">2025 AHA Guidelines Special Circumstances + Post-CA Care</span>
+    <ul style="margin-top:8px">
+      <li><b>RSI pre-medication（Fentanyl + Lidocaine）</b>：CPR/ECC Guidelines <span class="pv-tag-out">未明文</span>—僅在 anaphylaxis 章節提到 rocuronium-induced 情境。本題 RSI 細節為 emergency airway / TBI 專科內容。</li>
+      <li><b>Etomidate / Rocuronium 選藥</b>：Part 10 anaphylaxis 章節有提到 succinylcholine vs rocuronium-induced anaphylaxis（COR 2b for sugammadex），未討論 ICH 場景下藥物選擇。</li>
+      <li><b>顱內壓管理（IICP）</b>：Part 11 Post-CA Care 提到 ICP monitoring in HIBI（hypoxic-ischemic brain injury），但<b>不適用於 stroke 場景</b>。Stroke ICH 處置在 AHA/ASA ICH Guidelines（獨立文件）。</li>
+      <li><b>過度換氣降腦壓</b>：Part 10 僅在 sodium channel blocker (TCA) 中毒場景提到 hyperventilation + bicarbonate（COR 2a），<b>非 stroke ICH 用法</b>。</li>
+      <li>Stroke 整體處置（含 ICH 識別與 BP 管理）<span class="pv-tag-out">不在 CPR/ECC Guidelines</span>—屬 AHA/ASA Stroke Guidelines（2022 Greenberg et al ICH Guidelines, Stroke 2022;53:e282）。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
   <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 104+</span> <span class="pv-section">Part 3 / Respiratory Arrest</span>
@@ -1657,6 +1687,18 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     </ul>
   </div>
 
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 10）</div>
+    <span class="gd-section">2025 AHA Guidelines Special Circumstances / Asthma</span>
+    <ul style="margin-top:8px">
+      <li><b>低 RR + 低 TV 通氣策略</b>：Part 10 Asthma section 列為 reasonable <span class="gd-cor">COR 2a</span>（C-LD）—「A ventilation strategy of low respiratory rate and tidal volume is reasonable in adults with life-threatening asthma」。COPD 雖非獨立章節，但通氣策略相通。</li>
+      <li><b>Bronchodilator + Steroid + NIV</b>：Asthma section 列為標準急性處置。</li>
+      <li><b>SpO₂ 88-92% target for COPD</b>：CPR/ECC Guidelines <span class="pv-tag-out">未指定</span>—屬 GOLD COPD Guidelines（獨立）。</li>
+      <li><b>I:E 1:4-1:5 specific</b>：未明文，但屬「low rate」原則的具體應用，呼吸器設定屬 ICU/RT 訓練。</li>
+      <li><b>Avoid excessive ventilation</b>：Provider Manual + Guidelines 都<span class="pv-tag-in">明文強調</span>。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
   <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 109-117</span> <span class="pv-section">Part 3 / Respiratory Arrest</span>
@@ -1788,6 +1830,17 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     </ul>
   </div>
 
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 9 / Part 10）</div>
+    <span class="gd-section">2025 AHA Guidelines Adult ALS + Special Circumstances</span>
+    <ul style="margin-top:8px">
+      <li><b>DOPE 口訣</b>：2025 CPR/ECC Guidelines <span class="pv-tag-out">未直接列出口訣</span>，但 Provider Manual 明文列入（Part 3 / Advanced Airways）。各鑑別項（位移/阻塞/氣胸/設備）皆為 Guidelines 認可的 advanced airway troubleshooting。</li>
+      <li><b>CO₂ 累積 → 呼吸性酸中毒 → bradycardia</b>：屬基礎生理；Guidelines 在多處提及 acidosis 對 cardiovascular 影響。</li>
+      <li><b>Bradycardia from CCB/BB toxicity</b>：Part 10 列出 Atropine, Calcium chloride, Glucagon 等專屬解毒劑（COR 各別）。</li>
+      <li><b>Vent setting adjustment（↑MV、I:E 1:4-1:5）</b>：Guidelines 未具體建議數值；屬 ICU 級設定。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
   <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 117, 70</span> <span class="pv-section">Part 3 / Advanced Airways + Part 2 / Bradycardia</span>
@@ -1915,6 +1968,18 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     </ul>
   </div>
 
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 7 / Part 10）</div>
+    <span class="gd-section">2025 AHA Guidelines Adult BLS + Asthma</span>
+    <ul style="margin-top:8px">
+      <li><b>Lung-protective TV 6 mL/kg IBW</b>：CPR/ECC Guidelines 未明文（屬 ARDSnet / 2024 ATS Guidelines）；但 Asthma section 推薦「low TV」原則 <span class="gd-cor">COR 2a</span>。</li>
+      <li><b>Avoid excessive ventilation</b>：Guidelines 多處強調，與 Provider Manual 一致 <span class="pv-tag-in">in scope</span>。</li>
+      <li><b>O₂ titrate by SpO₂</b>：Part 11 Post-CA Care 推薦 90-98% target；Provider Manual 推薦 95%↑（一般）。</li>
+      <li><b>Septic shock fluid + abx</b>：CPR/ECC Guidelines <span class="pv-tag-out">未涵蓋</span>—屬 Surviving Sepsis Campaign Guidelines（獨立）。</li>
+      <li><b>Pneumonia 特殊治療</b>：屬 ATS/IDSA CAP Guidelines，非 CPR/ECC 範圍。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
   <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 116</span> <span class="pv-section">Part 3 / Respiratory Arrest</span>
@@ -1945,9 +2010,9 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       </div>
     </div>
   </header>
-  <div class="oos-topic">
-    <div class="oos-topic-h">⚠️ 本題完整內容超出 Provider 課程範圍</div>
-    <div class="oos-topic-body">AHA 2025 ACLS Provider Manual 對 toxic-induced emergencies 唯一在課程內容的是 <b>opioid overdose + Naloxone</b>（pg 142, Cardiac Arrest: Selected Special Situations）。本題的有機磷中毒（SLUDGEBBB / Atropine titration / Pralidoxime / 避用 Sux / Decontamination）屬 toxicology / occupational medicine 範疇，<b>非 Provider 課程教學內容</b>，本題作為 Instructor 等級延伸 case 使用。</div>
+  <div class="guideline-topic">
+    <div class="gt-h">🟢 本題完整對應 2025 AHA Guidelines Part 10 — Provider Manual 簡化版未涵蓋</div>
+    <div class="guideline-topic-body">2025 AHA Guidelines for CPR and ECC <b>Part 10 (Special Circumstances)</b> 明確列出 Organophosphate/Carbamate Poisoning 推薦項目（COR 1 為主）：Atropine 立即給藥、早期氣管內插管、BZD 抗癲癇/躁動、PPE、皮膚去汙、Pralidoxime（COR 2a）。本題的處置內容與 Guidelines 高度一致，原先標記為「Provider 超綱」其實是 Provider Manual 簡化省略，<b>不是 Guidelines 不教</b>。詳見下方對照區塊。</div>
   </div>
 <div class="block topic-images">
     <div class="block-h">📷 圖示（教案原圖）</div>
@@ -2049,7 +2114,25 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li>【AHA Airway 標準】Resp 失敗 → 用 Bag-mask vent + OPA/NPA 為起點，仍走 Lesson 3B 評分標準</li>
       <li>【測驗依據】Airway Management Skills Testing Checklist（見 T02）+ Bradycardia Checklist（見 T09）</li>
     </ul>
-  </div><div class="block provider">
+  </div>
+
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 10 (核心)）</div>
+    <span class="gd-section">2025 AHA Guidelines / Toxicology: Organophosphates & Carbamates</span>
+    <ul style="margin-top:8px">
+      <li><b>Atropine 立即給予</b>：<span class="gd-cor">COR 1, LOE A</span>「Atropine should be administered immediately for adults and children with life-threatening organophosphate or carbamate poisoning.」初始 1-2 mg，每 5 min double，titrate to reversal of bronchorrhea, bronchospasm, and bradycardia → <b>與本題教學完全一致</b>。</li>
+      <li><b>Early endotracheal intubation</b>：成人 <span class="gd-cor">COR 1, LOE C-LD</span>；兒童 <span class="gd-cor">COR 1, LOE C-EO</span>。</li>
+      <li><b>Benzodiazepines for seizures/agitation</b>：<span class="gd-cor">COR 1, LOE C-EO</span>。</li>
+      <li><b>PPE for caregivers</b>：<span class="gd-cor">COR 1, LOE C-EO</span>「Use of appropriate PPE is recommended.」</li>
+      <li><b>Dermal decontamination</b>：<span class="gd-cor">COR 1, LOE C-EO</span>。</li>
+      <li><b>Pralidoxime (2-PAM)</b>：<span class="gd-cor">COR 2a, LOE A</span>「For adults with life-threatening organophosphate poisoning, the use of pralidoxime is reasonable.」劑量 2 g IV infusion over 15-30 min（do not bolus），可重複至 3 doses。</li>
+      <li><b>避用 Succinylcholine</b>：Part 10 提到 organophosphate 抑制 pseudocholinesterase 會延長 succinylcholine 作用 → 與本題教學一致。</li>
+      <li><b>結論</b>：<span class="pv-tag-in">本題 100% 在 2025 AHA Guidelines 範圍內</span>。先前標的「🚫 Provider 超綱」實際只是 <b>Provider Manual 簡化版省略</b>，原始 Guidelines 完整覆蓋。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
+
+  <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 142</span> <span class="pv-section">Part 3 / Cardiac Arrest: Selected Special Situations</span>
     <ul style="margin-top:8px">
@@ -2187,6 +2270,20 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     </ul>
   </div>
 
+
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（不在 CPR/ECC）</div>
+    <span class="gd-section">AHA/ASA Stroke Guidelines（獨立文件）</span>
+    <ul style="margin-top:8px">
+      <li><b>2025 AHA Guidelines for CPR and ECC（這次參考的 12 個 Parts）<span class="pv-tag-out">不涵蓋 stroke 處置</span></b>。</li>
+      <li>本題的 ICH 處置內容應對照 <b>AHA/ASA 2022 Guideline for the Management of Patients With Spontaneous Intracerebral Hemorrhage</b>（Greenberg et al, Stroke 2022;53:e282-e361）。</li>
+      <li><b>The Golden Hour Bundle 六項</b>：屬 Stroke Guidelines 範疇（BP 管理、凝血校正、glucose、體溫、癲癇、ICP）。</li>
+      <li><b>BP target <140/80</b>：對應 INTERACT-2 / ATACH-2 trials 結論，AHA/ASA Stroke Guidelines 推薦中度 ICH SBP 130-150 mmHg。</li>
+      <li><b>PCC / Vit K / Platelet transfusion 反轉</b>：屬 Neurocritical Care Society / Stroke Guidelines 範疇。</li>
+      <li><b>建議</b>：將 stroke guidelines 文件單獨上傳對照（Powers 2019 AIS / Greenberg 2022 ICH / Hoh 2023 SAH）。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
   <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 42-66</span> <span class="pv-section">Part 2 / Acute Stroke</span>
@@ -2326,7 +2423,21 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li>EVT：LVO 患者最長 24 hr（0–6 hr 需 NCCT eligible；6–24 hr 需 penumbra imaging）</li>
       <li>【2025 更新】Tenecteplase 加入為 thrombolytic 選項（與 alteplase 並列）</li>
     </ul>
-  </div><div class="block provider">
+  </div>
+
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（不在 CPR/ECC）</div>
+    <span class="gd-section">AHA/ASA SAH Guidelines（獨立文件）</span>
+    <ul style="margin-top:8px">
+      <li><b>2025 AHA Guidelines CPR/ECC 不涵蓋 SAH 處置</b>。</li>
+      <li>本題對應 <b>AHA/ASA 2023 Guideline for the Management of Patients With Aneurysmal Subarachnoid Hemorrhage</b>（Hoh et al, Stroke 2023;54:e314-e370）。</li>
+      <li>CPR/ECC Guidelines 對 SAH 唯一提及：alteplase 對 SAH 為絕對禁忌（在 AIS 章節 contraindication 表）。</li>
+      <li><b>SUM 口訣 / 雷擊頭痛 / LP / Xanthochromia / Nimodipine / CTA aneurysm</b>：均在 AHA/ASA SAH Guidelines 範圍內。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
+
+  <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 60-61</span> <span class="pv-section">Part 2 / Acute Stroke / Thrombolytic Eligibility</span>
     <ul style="margin-top:8px">
@@ -2455,7 +2566,21 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li>【後續處置】仍走 stroke 流程：CT 排出血 → ABC → IV → glucose → NIHSS → last normal time</li>
       <li>【測驗依據】此案 8 分鐘示範屬「Stroke 識別 + secondary prevention 教學」</li>
     </ul>
-  </div><div class="block provider">
+  </div>
+
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（不在 CPR/ECC）</div>
+    <span class="gd-section">AHA/ASA Stroke / TIA Guidelines（獨立文件）</span>
+    <ul style="margin-top:8px">
+      <li><b>2025 AHA Guidelines CPR/ECC 不涵蓋 TIA secondary prevention</b>。</li>
+      <li>本題對應 <b>AHA/ASA 2021 Guideline for the Prevention of Stroke in Patients With Stroke and Transient Ischemic Attack</b>（Kleindorfer et al, Stroke 2021;52:e364-e467）。</li>
+      <li><b>ABCD2 Score / DAPT / SAPT / 48 hr 再中風風險</b>：均在 AHA/ASA TIA Guidelines 範圍內。</li>
+      <li>參考 trials: CHANCE / POINT (DAPT)、ABCD-I (Imaging加成)。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
+
+  <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 56</span> <span class="pv-section">Part 2 / Acute Stroke</span>
     <ul style="margin-top:8px">
@@ -2587,7 +2712,23 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li>EVT：LVO 患者最長 24 hr（0–6 hr 需 NCCT eligible；6–24 hr 需 penumbra imaging）</li>
       <li>【2025 更新】Tenecteplase 加入為 thrombolytic 選項（與 alteplase 並列）</li>
     </ul>
-  </div><div class="block provider">
+  </div>
+
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 11 (HIBI only) / 不在 CPR/ECC for stroke）</div>
+    <span class="gd-section">Post-CA Care + AHA/ASA Stroke Guidelines</span>
+    <ul style="margin-top:8px">
+      <li><b>Part 11 Post-CA Care</b> 提到 ICP monitoring in <b>hypoxic-ischemic brain injury (HIBI)</b>（即 cardiac arrest 後腦損傷），不適用於 stroke ICP。</li>
+      <li>本題的 stroke-related IICP（ICH/ischemic stroke 引起）對應 <b>AHA/ASA 2019 Powers et al AIS Guidelines</b> + <b>2022 Greenberg et al ICH Guidelines</b>。</li>
+      <li><b>三階段降腦壓 ladder（環境刺激 → 高滲透壓 → 神經保護插管）</b>：屬 Neurocritical Care Society 教學框架。</li>
+      <li><b>Mannitol 1 g/kg / 3% Saline 250 mL</b>：劑量在 Stroke Guidelines + Neurocritical Care Society Guidelines。</li>
+      <li><b>過度換氣 ETCO₂ 30-35</b>：短期 IICP rescue therapy，僅作 bridge to definitive treatment（Brain Trauma Foundation Guidelines）。</li>
+      <li><b>低溫療法 for stroke IICP</b>：證據力低；Provider/Guidelines 均不建議常規使用。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
+
+  <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 65</span> <span class="pv-section">Part 2 / Acute Stroke / Begin General Stroke Care</span>
     <ul style="margin-top:8px">
@@ -2719,7 +2860,21 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li>【AHA 8 D 第 3 項 Delivery】EMS 須執行：Identify signs / Assess ABC / Complete stroke assessment / Establish time / Transport / Alert hospital / Check glucose</li>
       <li>【AHA 醫院選擇】依 stroke severity score 與 local protocols；考慮帶 witness/family 確認時間</li>
     </ul>
-  </div><div class="block provider">
+  </div>
+
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 4 (兼具)）</div>
+    <span class="gd-section">2025 AHA Guidelines Systems of Care + AHA/ASA Stroke Guidelines</span>
+    <ul style="margin-top:8px">
+      <li><b>Part 4 Systems of Care</b> 提到 stroke destination plans，引用 <b>2021 AHA/ASA Prehospital Stroke System of Care Consensus Statement</b>（Jauch et al, Stroke 2021;52:e133-e152）。</li>
+      <li>本題的詳細處置（CPSS/G-FAST、8 D's、tPA 4.5h / IA 24h）對應 <b>AHA/ASA Stroke Guidelines</b> 系列。</li>
+      <li><b>EMS Acute Stroke Routing Algorithm</b>：在 Provider Manual 與 AHA/ASA Stroke Guidelines 都有，本題教學完整對應。</li>
+      <li><b>G-FAST</b> 仍標為地區擴充：Provider 標準是 CPSS（face/arm/speech），LVO triage 用 FAST-ED（5 項）。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
+
+  <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 47-49</span> <span class="pv-section">Part 2 / Acute Stroke / EMS Critical Assessments</span>
     <ul style="margin-top:8px">
