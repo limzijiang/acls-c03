@@ -202,6 +202,17 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
 .block.guidelines .gd-source{font-size:11px;color:var(--muted);margin-top:8px;font-style:italic}
 .block.guidelines .gd-cor{display:inline-block;background:#388e3c;color:#fff;font-size:10px;font-weight:600;padding:1px 4px;border-radius:3px;margin-right:4px}
 
+
+/* === AHA/ASA Stroke Guidelines block === */
+.block.stroke-gd{background:#f3e5f5;border:1px solid #ce93d8;border-left:4px solid #6a1b9a;margin-top:14px}
+.block.stroke-gd .block-h{color:#4a148c;font-size:14px}
+.block.stroke-gd .pg{display:inline-block;font-size:10.5px;color:#fff;background:#6a1b9a;padding:1px 6px;border-radius:3px;margin-right:4px;font-family:ui-monospace,monospace;font-weight:600}
+.block.stroke-gd .sg-section{font-weight:600;color:#4a148c;font-size:13px}
+.block.stroke-gd ul{font-size:13.5px;line-height:1.7}
+.block.stroke-gd .sg-source{font-size:11px;color:var(--muted);margin-top:8px;font-style:italic}
+.block.stroke-gd .sg-cor{display:inline-block;background:#6a1b9a;color:#fff;font-size:10px;font-weight:600;padding:1px 4px;border-radius:3px;margin-right:4px}
+.block.stroke-gd .sg-caveat{margin-top:6px;padding:6px 10px;background:#fff;border:1px dashed #ab47bc;border-radius:4px;font-size:11.5px;color:#4a148c}
+
 /* === Provider scope markers === */
 .oos{background:#fee;border-bottom:2px dotted #c62828;padding:0 2px;border-radius:2px;cursor:help}
 .oos::before{content:"🚫";font-size:10px;margin-right:2px;opacity:.85}
@@ -2284,6 +2295,22 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     </ul>
     <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
   </div>
+  <div class="block stroke-gd">
+    <div class="block-h">📕 AHA/ASA Stroke Guidelines 對照（Greenberg 2022）</div>
+    <span class="sg-section">2022 AHA/ASA Guideline for Spontaneous ICH（Greenberg et al, Stroke 2022;53:e282-e361）</span>
+    <ul style="margin-top:8px">
+      <li><b>BP 控制</b>：本題目標 BP &lt;140/80。Guideline 推薦：SBP 150-220 mmHg 之中度 ICH 急性期，<b>smooth, sustained 控制至 SBP 130-150</b>（在 6 hr 內達標）<span class="sg-cor">COR 2a</span>。本題的 &lt;140 在範圍內。藥物 Nicardipine / Labetalol / Clevidipine 均推薦 <span class="sg-cor">COR 1</span>。</li>
+      <li><b>抗凝血劑反轉</b>：Warfarin → 4-factor PCC + Vit K <span class="sg-cor">COR 1</span>（速度勝於 FFP）；Dabigatran → Idarucizumab <span class="sg-cor">COR 2a</span>；Factor Xa inhibitor → Andexanet alfa or 4-factor PCC <span class="sg-cor">COR 2a</span>。本題教學一致。</li>
+      <li><b>血小板輸注</b>：<span style="color:#c62828">⚠️ 重要</span> Guideline <span class="sg-cor">COR 3 (no benefit)</span> 對 routine 抗血小板藥物相關 ICH（依 PATCH trial）。本題「Plt &lt; 50000 → 輸血小板」<b>仍是合理</b>（thrombocytopenia 是不同情境），但「使用 aspirin 即輸 Plt」就不對。</li>
+      <li><b>顱內壓控制</b>：GCS ≤8 或 hydrocephalus → 考慮 ICP monitoring；Mannitol 1 g/kg 或 3% NaCl 為 hyperosmolar therapy；surgical evacuation for cerebellar hemorrhage &gt;3 cm 或 with hydrocephalus <span class="sg-cor">COR 1</span>。</li>
+      <li><b>癲癇</b>：<span class="sg-cor">COR 3 (no benefit)</span> 不常規 prophylaxis；只治療 clinical 或 EEG 確認的 seizures。本題「控制癲癇」表述 OK，但不應預防性給藥。</li>
+      <li><b>體溫</b>：避免 fever（&gt;38°C 早期惡化）；具體 target 未定，但建議 acetaminophen 與外部降溫。</li>
+      <li><b>Glucose</b>：避免 hypo (&lt;60) 與顯著 hyper (&gt;180)；本題教學一致。</li>
+    </ul>
+    <div class="sg-caveat">⚠️ 此區內容由 Claude 訓練知識整理（COR/LOE 為 2022 Guideline 主要建議的合理近似），未核對原文。如要嚴謹引用，請對照原 PDF（Stroke 2022;53:e282-e361 / DOI: 10.1161/STR.0000000000000407）。</div>
+    <div class="sg-source">出處：見上述 caveat 框內 DOI / Stroke journal 引用。</div>
+  </div>
+
   <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 42-66</span> <span class="pv-section">Part 2 / Acute Stroke</span>
@@ -2437,6 +2464,23 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
   </div>
 
+  <div class="block stroke-gd">
+    <div class="block-h">📕 AHA/ASA Stroke Guidelines 對照（Hoh 2023）</div>
+    <span class="sg-section">2023 AHA/ASA Guideline for Aneurysmal SAH（Hoh et al, Stroke 2023;54:e314-e370）</span>
+    <ul style="margin-top:8px">
+      <li><b>診斷</b>：CT 24 hr 內敏感度 >95%；如 CT (-) 仍高度懷疑 → LP 找 RBC + xanthochromia <span class="sg-cor">COR 1</span>。本題教學一致。</li>
+      <li><b>BP 控制（aneurysm 未夾閉前）</b>：SBP &lt;160 mmHg 為 reasonable target <span class="sg-cor">COR 2a</span>；藥物 Labetalol / Nicardipine / Clevidipine。</li>
+      <li><b>動脈瘤治療</b>：早期（&lt;24-72 hr）securing aneurysm（coiling 或 clipping）<span class="sg-cor">COR 1</span>；可同時 coiling 的 ruptured aneurysm 推薦 coiling over clipping <span class="sg-cor">COR 1</span>（ISAT trial）。</li>
+      <li><b>Vasospasm 預防</b>：Nimodipine 60 mg PO q4h × 21 days <span class="sg-cor">COR 1</span>—改善 outcome（不是直接降低 vasospasm 發生率）。本題劑量教學一致。</li>
+      <li><b>Hydrocephalus</b>：EVD 或 LP drainage 視臨床決定。</li>
+      <li><b>Vasospasm 監測與處置</b>：TCD 監測；induced hypertension（撤掉降壓藥、給升壓劑）為 first-line；endovascular（balloon angioplasty / IA vasodilator）為 refractory。</li>
+      <li><b>Seizure prophylaxis</b>：短期（3-7 days）prophylaxis 在 select 患者 reasonable <span class="sg-cor">COR 2b</span>—與 ICH 不同。</li>
+      <li><b>Statin</b>：start statin therapy 為 reasonable <span class="sg-cor">COR 2b</span>（雖然 trials mixed）。</li>
+    </ul>
+    <div class="sg-caveat">⚠️ 此區內容由 Claude 訓練知識整理。如要嚴謹引用，請對照原 PDF（Stroke 2023;54:e314-e370 / DOI: 10.1161/STR.0000000000000436）。</div>
+    <div class="sg-source">出處：見上述 caveat 框內 DOI / Stroke journal 引用。</div>
+  </div>
+
   <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 60-61</span> <span class="pv-section">Part 2 / Acute Stroke / Thrombolytic Eligibility</span>
@@ -2578,6 +2622,24 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li>參考 trials: CHANCE / POINT (DAPT)、ABCD-I (Imaging加成)。</li>
     </ul>
     <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
+
+  <div class="block stroke-gd">
+    <div class="block-h">📕 AHA/ASA Stroke Guidelines 對照（Kleindorfer 2021）</div>
+    <span class="sg-section">2021 AHA/ASA Guideline for Stroke/TIA Secondary Prevention（Kleindorfer et al, Stroke 2021;52:e364-e467）</span>
+    <ul style="margin-top:8px">
+      <li><b>DAPT for minor stroke / high-risk TIA</b>：Aspirin 75-100 mg + Clopidogrel 75 mg × <b>21 days</b>，後改 SAPT <span class="sg-cor">COR 1</span>（依 CHANCE / POINT trials）。本題教學一致（DAPT 21 days）。</li>
+      <li><b>Ticagrelor + Aspirin × 30 days</b>：另一選項 <span class="sg-cor">COR 2a</span>（依 THALES trial）。</li>
+      <li><b>Long-term SAPT</b>：Aspirin 75-100 mg、Clopidogrel 75 mg、或 Aspirin/Dipyridamole（任一）<span class="sg-cor">COR 1</span>。</li>
+      <li><b>BP target</b>：&lt;130/80 mmHg <span class="sg-cor">COR 1</span> for ischemic stroke / TIA secondary prevention。</li>
+      <li><b>Statin</b>：High-intensity statin 達 LDL &lt;70 mg/dL <span class="sg-cor">COR 1</span>（依 SPARCL）。LDL 達標進一步加 ezetimibe / PCSK9i。</li>
+      <li><b>AF → anticoagulation</b>：DOAC 優於 warfarin（除 mechanical valve / mod-severe MS）<span class="sg-cor">COR 1</span>。</li>
+      <li><b>Carotid stenosis 50-99% symptomatic</b>：CEA 或 CAS（依年齡與風險）<span class="sg-cor">COR 1</span>。</li>
+      <li><b>ABCD2 score</b>：<span style="color:#c62828">⚠️ 注意</span> 2021 Guideline <b>未明確推薦 ABCD2 用於 routine triage</b>—現代趨勢以 <b>imaging-based risk stratification</b>（diffusion MRI 看 acute infarct、CTA 看 LVO）為主，ABCD2 在臨床仍常用於溝通但不是 Guideline-backed 算法。本題教學中的 ABCD2 屬<b>歷史教學工具</b>。</li>
+      <li><b>2-7 day re-stroke risk</b>：仍是 TIA 處置的核心 urgency rationale；推 admission 或 fast-track outpatient work-up <span class="sg-cor">COR 1</span>。本題教學一致。</li>
+    </ul>
+    <div class="sg-caveat">⚠️ 此區內容由 Claude 訓練知識整理。ABCD2 在 2021 Guideline 的地位請特別查證。原文：Stroke 2021;52:e364-e467 / DOI: 10.1161/STR.0000000000000375。</div>
+    <div class="sg-source">出處：見上述 caveat 框內 DOI / Stroke journal 引用。</div>
   </div>
 
   <div class="block provider">
@@ -2728,6 +2790,23 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
   </div>
 
+  <div class="block stroke-gd">
+    <div class="block-h">📕 AHA/ASA Stroke Guidelines 對照（Greenberg 2022 + Powers 2019）</div>
+    <span class="sg-section">2022 ICH Guidelines + 2019 AIS Guidelines / IICP 處置（與 Neurocritical Care Society 合用）</span>
+    <ul style="margin-top:8px">
+      <li><b>IICP 識別</b>：increasing lethargy / decreasing LOC / 增加 BP 合併降低 HR（Cushing reflex）— 兩個 Guidelines 均提及。本題教學一致。</li>
+      <li><b>三階段 ladder（環境刺激 → 高滲透壓 → 神經保護插管/過度換氣/開顱）</b>：屬 Neurocritical Care Society 教學框架，AHA/ASA 不直接列為 ladder，但其組成元件均在 Guidelines 內：</li>
+      <li>　• 第 1 階段（head up 30°、止痛、止吐、避刺激、穩定 VTS、normothermia）→ ICH/AIS Guidelines 一般 supportive care。</li>
+      <li>　• 第 2 階段（高滲透壓 Mannitol 1g/kg 或 3% NaCl 250 mL bolus）→ ICH Guidelines 列為 hyperosmolar therapy for elevated ICP <span class="sg-cor">COR 2a</span>。劑量教學一致。</li>
+      <li>　• 第 3 階段（神經保護插管、深度鎮靜、過度換氣 ETCO₂ 30-35）→ 過度換氣為 <b>short-term rescue therapy only（&lt;1 hr）</b>，不可長期使用（會 cerebral vasoconstriction）。Guidelines 引用 Brain Trauma Foundation 立場。</li>
+      <li>　• 開顱 (decompressive craniectomy)：malignant MCA infarction → DECRA / DECIMAL / DESTINY / HAMLET trials 證實 reduced mortality（在 60 歲以下患者更顯著）<span class="sg-cor">COR 1</span>；cerebellar hemorrhage 或 stroke 引起 hydrocephalus → 急開顱。</li>
+      <li><b>低溫療法 (TTM) for stroke IICP</b>：Guidelines <b>不常規推薦</b>（證據不足；EuroHYP-1 trial neutral）。本題教學「考慮 TTM」應加註：實驗性。</li>
+      <li><b>ICP monitoring</b>：GCS ≤8 或大面積 stroke 引起 cerebral edema → 考慮 invasive ICP monitor。</li>
+    </ul>
+    <div class="sg-caveat">⚠️ 此區內容由 Claude 訓練知識整理。三階段 ladder 是教學整合，非 Guideline 直接列出的演算法。原文出處見上。</div>
+    <div class="sg-source">出處：見上述 caveat 框內 DOI / Stroke journal 引用。</div>
+  </div>
+
   <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 65</span> <span class="pv-section">Part 2 / Acute Stroke / Begin General Stroke Care</span>
@@ -2872,6 +2951,26 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li><b>G-FAST</b> 仍標為地區擴充：Provider 標準是 CPSS（face/arm/speech），LVO triage 用 FAST-ED（5 項）。</li>
     </ul>
     <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
+
+  <div class="block stroke-gd">
+    <div class="block-h">📕 AHA/ASA Stroke Guidelines 對照（Powers 2019 + Jauch 2021）</div>
+    <span class="sg-section">2019 AIS Guidelines + 2021 Prehospital Stroke System of Care Statement</span>
+    <ul style="margin-top:8px">
+      <li><b>Prehospital stroke screen</b>：CPSS（face/arm/speech）為 AHA 標準，sensitivity ≈83%。本題的 G-FAST（5 項含 Gaze + Time）為台灣本地改編。</li>
+      <li><b>LVO triage tool</b>：FAST-ED 或 LAMS（Los Angeles Motor Scale）≥4 → suspect LVO → 考慮 bypass 至 Thrombectomy-Capable Center。本題未提這個 second-tier triage。</li>
+      <li><b>Door-to-needle (DTN) target</b>：≤30 min for top performers（Target: Stroke II/III）；≤45 min standard。</li>
+      <li><b>Time windows</b>：</li>
+      <li>　• tPA 0-3 hr <span class="sg-cor">COR 1</span>，3-4.5 hr 限 select <span class="sg-cor">COR 1</span>。</li>
+      <li>　• Tenecteplase 0.25 mg/kg：可選擇（2025 update 為 COR 2a，與 alteplase 等效；TIMELESS trial）。</li>
+      <li>　• EVT 0-6 hr DAWN/DEFUSE-3 select 6-24 hr <span class="sg-cor">COR 1</span>。</li>
+      <li><b>BP control for tPA candidate</b>：&lt;185/110 before；&lt;180/105 × 24 hr after <span class="sg-cor">COR 1</span>。</li>
+      <li><b>EMS routing</b>：基於 stroke severity score 與本地 protocol—LVO suspect → 直送 TSC/CSC（如 transport time +15 min 內可達），否則 PSC（最近 tPA-capable）。</li>
+      <li><b>Prehospital notification</b>：reduces DTN by ≈ 30 min（well-established in registries）<span class="sg-cor">COR 1</span>。</li>
+      <li><b>結論</b>：本題的 8 D's + last normal time + glucose + 醫院分流邏輯，<b>完全在 AIS Guidelines 範圍內</b>。G-FAST 為地區改編，要說明 CPSS 是國際標準。</li>
+    </ul>
+    <div class="sg-caveat">⚠️ 此區內容由 Claude 訓練知識整理。原文：Powers 2019, Stroke 2019;50:e344-e418 / 2025 update Stroke 2025（DOI 待查）；Jauch 2021, Stroke 2021;52:e133-e152。</div>
+    <div class="sg-source">出處：見上述 caveat 框內 DOI / Stroke journal 引用。</div>
   </div>
 
   <div class="block provider">
