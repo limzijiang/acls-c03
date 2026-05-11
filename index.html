@@ -184,6 +184,44 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
 }
 
 
+
+/* === Guidelines tier markers === */
+.guideline-topic{border-left:4px solid #2e7d32;background:#f1f8e9;padding:12px 16px;margin:0 0 14px;border-radius:0 8px 8px 0}
+.guideline-topic .gt-h{font-size:13px;font-weight:700;color:#1b5e20;margin-bottom:6px}
+.guideline-topic-body{font-size:13.5px;color:var(--fg);line-height:1.6}
+
+.stroke-separate{border-left:4px solid #6a1b9a;background:#f3e5f5;padding:12px 16px;margin:0 0 14px;border-radius:0 8px 8px 0}
+.stroke-separate .ss-h{font-size:13px;font-weight:700;color:#4a148c;margin-bottom:6px}
+.stroke-separate-body{font-size:13.5px;color:var(--fg);line-height:1.6}
+
+.block.guidelines{background:#e8f5e9;border:1px solid #81c784;border-left:4px solid #2e7d32;margin-top:14px}
+.block.guidelines .block-h{color:#1b5e20;font-size:14px}
+.block.guidelines .pg{display:inline-block;font-size:10.5px;color:#fff;background:#2e7d32;padding:1px 6px;border-radius:3px;margin-right:4px;font-family:ui-monospace,monospace;font-weight:600}
+.block.guidelines .gd-section{font-weight:600;color:#1b5e20;font-size:13px}
+.block.guidelines ul{font-size:13.5px;line-height:1.7}
+.block.guidelines .gd-source{font-size:11px;color:var(--muted);margin-top:8px;font-style:italic}
+.block.guidelines .gd-cor{display:inline-block;background:#388e3c;color:#fff;font-size:10px;font-weight:600;padding:1px 4px;border-radius:3px;margin-right:4px}
+
+
+/* === AHA/ASA Stroke Guidelines block === */
+.block.stroke-gd{background:#f3e5f5;border:1px solid #ce93d8;border-left:4px solid #6a1b9a;margin-top:14px}
+.block.stroke-gd .block-h{color:#4a148c;font-size:14px}
+.block.stroke-gd .pg{display:inline-block;font-size:10.5px;color:#fff;background:#6a1b9a;padding:1px 6px;border-radius:3px;margin-right:4px;font-family:ui-monospace,monospace;font-weight:600}
+.block.stroke-gd .sg-section{font-weight:600;color:#4a148c;font-size:13px}
+.block.stroke-gd ul{font-size:13.5px;line-height:1.7}
+.block.stroke-gd .sg-source{font-size:11px;color:var(--muted);margin-top:8px;font-style:italic}
+.block.stroke-gd .sg-cor{display:inline-block;background:#6a1b9a;color:#fff;font-size:10px;font-weight:600;padding:1px 4px;border-radius:3px;margin-right:4px}
+.block.stroke-gd .sg-caveat{margin-top:6px;padding:6px 10px;background:#fff;border:1px dashed #ab47bc;border-radius:4px;font-size:11.5px;color:#4a148c}
+
+
+/* === Mnemonic alternatives === */
+.mnemonic-alts{margin:-8px 0 14px;padding:10px 14px;background:#fffdf0;border:1px dashed #d4a017;border-radius:0 0 8px 8px;border-top:0}
+.mnemonic-alts-h{font-size:12px;font-weight:700;color:#7c5400;margin-bottom:6px;letter-spacing:.3px}
+.mnemonic-alt{padding:6px 0;border-top:1px dotted #e6c870;font-size:13.5px;line-height:1.6;color:var(--fg)}
+.mnemonic-alt:first-of-type{border-top:0;padding-top:0}
+.mnemonic-alt-tag{display:inline-block;font-size:10.5px;font-weight:700;background:#d4a017;color:#fff;padding:1px 7px;border-radius:3px;margin-right:6px;vertical-align:1px}
+.mnemonic-alt b{color:#7c5400}
+
 /* === Provider scope markers === */
 .oos{background:#fee;border-bottom:2px dotted #c62828;padding:0 2px;border-radius:2px;cursor:help}
 .oos::before{content:"🚫";font-size:10px;margin-right:2px;opacity:.85}
@@ -233,9 +271,9 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
 </head>
 <body>
 <div class="scope-banner" id="scope-banner">
-  <span class="sb-label">📚 ACLS Provider 範圍篩選</span>
-  <button id="toggle-oos">隱藏超綱內容</button>
-  <span style="font-size:11.5px;opacity:.85">紅底框 = Provider 課程外（Instructor 等級延伸）</span>
+  <span class="sb-label">📚 範圍篩選（3 tier）</span>
+  <button id="toggle-oos">隱藏 Provider 超綱</button>
+  <span style="font-size:11.5px;opacity:.85">🚫 紅 = Provider 超綱　|　🟢 綠 = Guidelines 涵蓋（Provider 簡化未列）　|　🟣 紫 = AHA/ASA Stroke Guidelines（獨立文件）</span>
   <button class="sb-close" id="dismiss-banner" title="關閉">✕</button>
 </div>
 <div class="layout">
@@ -342,6 +380,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 失敗想四件事</div>
     <div class="mnemonic-detail">血、水、膿、痰 → 抽吸　|　異物 → 取出　|　舌 → OPA/NPA　|　喉水腫 → 藥</div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 🎭 <b>「呼吸道四惡霸」</b>：血淹、痰堵、舌倒、喉腫 — 一人一招把他們搬走</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 🎬 <b>「告白臉 vs 哭爸臉」</b>：壓額抬下巴像告白姿勢；jaw thrust 雙手托腮像痛失親人</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🧱 <b>「壓抬抬 vs 撐撐撐」</b>：一般病人壓抬抬；創傷三撐（撐顴骨 + 撐下顎 + 撐到通）</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -456,6 +502,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 困難 Ambu</div>
     <div class="mnemonic-detail">鬍 · 胖 · 無齒 · 老 · 鼾音</div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 🦴 <b>BONES 五怪人</b>：Bearded 鬍鬚胖叔、Obese 啤酒肚、No teeth 缺牙、Elderly 老 + Snorer 打呼震天響 — 五個都中很難捏</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 🥢 <b>「Mask Seal 三大敵」</b>：缺牙塌、鬍鬚滑、肉太厚 → C-E 抓不緊就喊雙人法</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 📸 <b>「合照圈不到的臉」</b>：鬍胖牙老打呼 — 看到這五項先擺 OPA、找隊友</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -575,6 +629,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-detail">LEMON 困難氣道評估　|　開桿滑挑：開口、桿舌、滑到底、左上挑根現聲門</div>
   </div>
 
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 🍋 <b>「擠檸檬看聲門」</b>：LEMON 五味（Look 外觀 / Evaluate 3-3-2 / Mallampati 舌 / Obstruction 阻 / Neck 頸活動）— 太酸啟動 backup</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 🪚 <b>「開桿滑挑」四連發</b>：開口 cross finger → 桿舌 Blade 45° → 滑到底 vallecula → 左上挑根現聲門</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 📐 <b>「8 P 一氣呵成」</b>：Plan → Prep（SOAPME）→ Position → Pre-O₂ → Pre-Med → Paralysis → Placement → Post — 念完剛好 30 秒</div>
+  </div>
+
+
   <div class="grid2">
     <div class="block">
       <div class="block-h">🎛 SimPad Plus 設定</div>
@@ -683,6 +745,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 鐵律</div>
     <div class="mnemonic-detail">保護呼吸道 &gt; 保護頸椎；MILS 全程不放手；VL/bougie 優先</div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 🛡️ <b>「保命優先，保頸其次」</b> — 八字鐵律。MILS 全程不放手，VL/bougie 不撬牙</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 👥 <b>「三人組合技」</b>：主手插管、副手備援、第三人手不離頭 — 缺一個就停手</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🚗 <b>「車禍三件套」</b>：MILS（不放手）+ VL（不撬牙）+ bougie（先導 ETT）— 失敗果斷壓額抬下巴</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -794,6 +864,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-detail">比愛心（食拇指交叉打開嘴）　|　打氣量 = (size − 1) × 10 cc</div>
   </div>
 
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> ❤️ <b>「比愛心三步」</b>：比愛心開嘴 → 沿硬顎滑 → 打 30 cc — 三秒會背</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> ⏰ <b>「Last-Minute Airway」</b>：LMA = 插管失敗的最後一張牌；ROSC 後立刻換 ETT 防誤吸</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🛞 <b>「LMA 是備胎」</b>：胎壓 40-60 cmH₂O 剛好；胎漏（>60）洩氣換大號 — 公式 (size − 1) × 10 cc</div>
+  </div>
+
+
   <div class="grid2">
     <div class="block">
       <div class="block-h">🎛 SimPad Plus 設定</div>
@@ -901,6 +979,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-detail">白右、紅左下、黑（Smoke）over 紅（Fire）／或：白右紅腳</div>
   </div>
 
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 🚒 <b>「Smoke over Fire」</b>：黑煙（左上）壓在紅火（左下）— 一句英文順口溜記左側兩貼片</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 🩹 <b>「白右紅腳、黑壓紅」</b>：右上白 → 左下紅 → 黑在左上壓紅 — 三貼片定位</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 📺 <b>「Lead II 是工作 lead」</b>：Asystole 必須兩個 lead 一起確認；80% 雜訊來自貼片接觸不良</div>
+  </div>
+
+
   <div class="grid2">
     <div class="block">
       <div class="block-h">🎛 SimPad Plus 設定</div>
@@ -1004,6 +1090,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 AED 5 步</div>
     <div class="mnemonic-detail">開機 → 貼片 → 分析（不要碰）→ 電擊 → 立刻 CPR 2 min</div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 🎯 <b>「開貼分電壓」</b> — 五字咒：開機 → 貼片 → 分析（不要碰）→ 電擊 → 壓胸（立刻）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 👶 <b>「5 歲都會用 AED」</b>：開機 → 貼片 → 大家退開 → 按一鍵 → 立刻 CPR — 不確定就按上面那顆閃的</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🚫 <b>「AED 三不一立刻」</b>：不要怕、不要碰（分析時）、不要關（CPR 中）；shock 完立刻接 CPR</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -1109,6 +1203,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 能量速查</div>
     <div class="mnemonic-detail">VF/pVT：Biphasic 120–200J（不知就最大）／Mono 360J　|　兒童 2–4 J/kg</div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 💯 <b>「能量不知就最大」</b> — 一句話策略：Biphasic 200J / Mono 360J / 兒童 2-4 J/kg；後續 ≥ 前一次</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 🥊 <b>「Charge-Clear-Shock-CPR」四連發</b>：充電 → 清場（看頭/腳/自己）→ 電擊 → 立刻 CPR ≤ 5 秒銜接</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🔌 <b>「200 焦的甩巴掌」</b>：心臟重開機；每延遲 1 分鐘存活率 ↓ 7-10%</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -1219,6 +1321,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-detail">Electrical（spike + wide QRS）+ Mechanical（脈搏與 BP 改善）</div>
   </div>
 
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 💞 <b>「機器跳 + 病人跳 = 雙跳成功」</b>：Electrical（spike + wide QRS）+ Mechanical（脈搏 + BP 改善）缺一不可</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 💉 <b>「沒鎮靜 = 病人痛到飛」</b>：先給 Fentanyl/Morphine + Midazolam，再開 mA — 別用手評估同側脈搏</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🌉 <b>「TCP 是橋」</b>：mA 從 40 起每 5-10 加，capture 後再加 5-10 safety margin → 安排 transvenous</div>
+  </div>
+
+
   <div class="grid2">
     <div class="block">
       <div class="block-h">🎛 SimPad Plus 設定</div>
@@ -1325,6 +1435,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 能量表（2025 更新）</div>
     <div class="mnemonic-detail">Narrow regular 100J　|　Monomorphic VT 100J　|　AF 200J　|　AFL 200J　|　Polymorphic VT → defib（unsync max）</div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> ⚡ <b>「沒按 SYNC = 把人電成 VF」</b> — 反差警告：R-on-T 一秒誘發 VF</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 🔄 <b>「SYNC 每次都要重按」</b>：每次 shock 後 sync 自動關 → 第二次 shock 前要再按一次！</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🆚 <b>「Defib vs Cardio = 差一個 SYNC 鍵」</b>：能量看 narrow/wide × regular/irregular；polymorphic VT 直接 defib</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -1447,6 +1565,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-detail">不規則呼吸 + HTN + Bradycardia → 想腦疝</div>
   </div>
 
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 🎰 <b>Cushing 三件套</b>：呼吸亂 + BP 高 + HR 慢 → 想腦疝在敲門</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 🚪 <b>「腦疝來敲門 = ICP 已破底」</b>：你要 RSI 接門 — 別讓他咳/吐/痛（會 ↑ICP）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 💊 <b>「保腦插管 F+L+E+R 四件套」</b>：Fentanyl 減痛 + Lidocaine 麻喉 + Etomidate 鎮靜 + Rocuronium 肌鬆 — 避 Ketamine 與 Sux</div>
+  </div>
+
+
   <div class="grid2">
     <div class="block">
       <div class="block-h">🎛 SimPad Plus 設定</div>
@@ -1530,6 +1656,18 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     </ul>
   </div>
 
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 10 / Part 11）</div>
+    <span class="gd-section">2025 AHA Guidelines Special Circumstances + Post-CA Care</span>
+    <ul style="margin-top:8px">
+      <li><b>RSI pre-medication（Fentanyl + Lidocaine）</b>：CPR/ECC Guidelines <span class="pv-tag-out">未明文</span>—僅在 anaphylaxis 章節提到 rocuronium-induced 情境。本題 RSI 細節為 emergency airway / TBI 專科內容。</li>
+      <li><b>Etomidate / Rocuronium 選藥</b>：Part 10 anaphylaxis 章節有提到 succinylcholine vs rocuronium-induced anaphylaxis（COR 2b for sugammadex），未討論 ICH 場景下藥物選擇。</li>
+      <li><b>顱內壓管理（IICP）</b>：Part 11 Post-CA Care 提到 ICP monitoring in HIBI（hypoxic-ischemic brain injury），但<b>不適用於 stroke 場景</b>。Stroke ICH 處置在 AHA/ASA ICH Guidelines（獨立文件）。</li>
+      <li><b>過度換氣降腦壓</b>：Part 10 僅在 sodium channel blocker (TCA) 中毒場景提到 hyperventilation + bicarbonate（COR 2a），<b>非 stroke ICH 用法</b>。</li>
+      <li>Stroke 整體處置（含 ICH 識別與 BP 管理）<span class="pv-tag-out">不在 CPR/ECC Guidelines</span>—屬 AHA/ASA Stroke Guidelines（2022 Greenberg et al ICH Guidelines, Stroke 2022;53:e282）。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
   <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 104+</span> <span class="pv-section">Part 3 / Respiratory Arrest</span>
@@ -1577,6 +1715,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 兩組記憶</div>
     <div class="mnemonic-detail">叫叫 CABD　|　呼吸衰竭三軸：道、力、氣</div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 📢 <b>「叫叫 CABD → 道力氣」</b>：先叫人，再 CABD；呼衰拆三軸：道（通）/ 力（vent）/ 氣（換氣）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 🌬️ <b>「COPD 三數字」</b>：SpO₂ 88-92、I:E 1:4-1:5、permissive hypercapnia — 讓腦幹記得呼吸</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🪓 <b>「Resp arrest with pulse」</b>：只通氣不壓胸 — 1 breath / 6 sec，每 2 min 重新摸脈搏</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -1657,6 +1803,18 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     </ul>
   </div>
 
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 10）</div>
+    <span class="gd-section">2025 AHA Guidelines Special Circumstances / Asthma</span>
+    <ul style="margin-top:8px">
+      <li><b>低 RR + 低 TV 通氣策略</b>：Part 10 Asthma section 列為 reasonable <span class="gd-cor">COR 2a</span>（C-LD）—「A ventilation strategy of low respiratory rate and tidal volume is reasonable in adults with life-threatening asthma」。COPD 雖非獨立章節，但通氣策略相通。</li>
+      <li><b>Bronchodilator + Steroid + NIV</b>：Asthma section 列為標準急性處置。</li>
+      <li><b>SpO₂ 88-92% target for COPD</b>：CPR/ECC Guidelines <span class="pv-tag-out">未指定</span>—屬 GOLD COPD Guidelines（獨立）。</li>
+      <li><b>I:E 1:4-1:5 specific</b>：未明文，但屬「low rate」原則的具體應用，呼吸器設定屬 ICU/RT 訓練。</li>
+      <li><b>Avoid excessive ventilation</b>：Provider Manual + Guidelines 都<span class="pv-tag-in">明文強調</span>。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
   <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 109-117</span> <span class="pv-section">Part 3 / Respiratory Arrest</span>
@@ -1706,6 +1864,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 DOPE</div>
     <div class="mnemonic-detail">D Displacement / O Obstruction / P Pneumothorax / E Equipment</div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 🕵️ <b>「插管後喘 → DOPE 四兇手」</b>：滑（位移）、塞（阻塞/痰）、爆（氣胸）、壞（設備）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 🤲 <b>「先拆 vent 手 bagging → 同時跑 DOPE」</b>：同步診斷 + 治療，比慢慢查機器快</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🤡 <b>DOPE 諧音「笨蛋」</b>：管子笨了（滑）、肺爆了（氣胸）、機器笨了（壞）— 不是病人變壞</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -1788,6 +1954,17 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     </ul>
   </div>
 
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 9 / Part 10）</div>
+    <span class="gd-section">2025 AHA Guidelines Adult ALS + Special Circumstances</span>
+    <ul style="margin-top:8px">
+      <li><b>DOPE 口訣</b>：2025 CPR/ECC Guidelines <span class="pv-tag-out">未直接列出口訣</span>，但 Provider Manual 明文列入（Part 3 / Advanced Airways）。各鑑別項（位移/阻塞/氣胸/設備）皆為 Guidelines 認可的 advanced airway troubleshooting。</li>
+      <li><b>CO₂ 累積 → 呼吸性酸中毒 → bradycardia</b>：屬基礎生理；Guidelines 在多處提及 acidosis 對 cardiovascular 影響。</li>
+      <li><b>Bradycardia from CCB/BB toxicity</b>：Part 10 列出 Atropine, Calcium chloride, Glucagon 等專屬解毒劑（COR 各別）。</li>
+      <li><b>Vent setting adjustment（↑MV、I:E 1:4-1:5）</b>：Guidelines 未具體建議數值；屬 ICU 級設定。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
   <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 117, 70</span> <span class="pv-section">Part 3 / Advanced Airways + Part 2 / Bradycardia</span>
@@ -1835,6 +2012,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 同 T12</div>
     <div class="mnemonic-detail">叫叫 CABD → 道、力、氣（治療換成肺炎）</div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 🏥 <b>「叫叫 CABD → 道力氣 → 對症治本」</b>：肺炎加抗生素 + 化痰 + 肺保護通氣</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 📋 <b>「肺保護兩數字」</b>：TV 6 mL/kg IBW + PEEP 8 — ARDSnet 風格底線</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 👨‍👩‍👦 <b>「家屬大叫沒呼吸」</b>：先 ABC，再對家屬一句「爸爸呼吸不好，給我們 5 分鐘」— Family liaison 加分</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -1915,6 +2100,18 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     </ul>
   </div>
 
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 7 / Part 10）</div>
+    <span class="gd-section">2025 AHA Guidelines Adult BLS + Asthma</span>
+    <ul style="margin-top:8px">
+      <li><b>Lung-protective TV 6 mL/kg IBW</b>：CPR/ECC Guidelines 未明文（屬 ARDSnet / 2024 ATS Guidelines）；但 Asthma section 推薦「low TV」原則 <span class="gd-cor">COR 2a</span>。</li>
+      <li><b>Avoid excessive ventilation</b>：Guidelines 多處強調，與 Provider Manual 一致 <span class="pv-tag-in">in scope</span>。</li>
+      <li><b>O₂ titrate by SpO₂</b>：Part 11 Post-CA Care 推薦 90-98% target；Provider Manual 推薦 95%↑（一般）。</li>
+      <li><b>Septic shock fluid + abx</b>：CPR/ECC Guidelines <span class="pv-tag-out">未涵蓋</span>—屬 Surviving Sepsis Campaign Guidelines（獨立）。</li>
+      <li><b>Pneumonia 特殊治療</b>：屬 ATS/IDSA CAP Guidelines，非 CPR/ECC 範圍。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
   <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 116</span> <span class="pv-section">Part 3 / Respiratory Arrest</span>
@@ -1945,9 +2142,9 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       </div>
     </div>
   </header>
-  <div class="oos-topic">
-    <div class="oos-topic-h">⚠️ 本題完整內容超出 Provider 課程範圍</div>
-    <div class="oos-topic-body">AHA 2025 ACLS Provider Manual 對 toxic-induced emergencies 唯一在課程內容的是 <b>opioid overdose + Naloxone</b>（pg 142, Cardiac Arrest: Selected Special Situations）。本題的有機磷中毒（SLUDGEBBB / Atropine titration / Pralidoxime / 避用 Sux / Decontamination）屬 toxicology / occupational medicine 範疇，<b>非 Provider 課程教學內容</b>，本題作為 Instructor 等級延伸 case 使用。</div>
+  <div class="guideline-topic">
+    <div class="gt-h">🟢 本題完整對應 2025 AHA Guidelines Part 10 — Provider Manual 簡化版未涵蓋</div>
+    <div class="guideline-topic-body">2025 AHA Guidelines for CPR and ECC <b>Part 10 (Special Circumstances)</b> 明確列出 Organophosphate/Carbamate Poisoning 推薦項目（COR 1 為主）：Atropine 立即給藥、早期氣管內插管、BZD 抗癲癇/躁動、PPE、皮膚去汙、Pralidoxime（COR 2a）。本題的處置內容與 Guidelines 高度一致，原先標記為「Provider 超綱」其實是 Provider Manual 簡化省略，<b>不是 Guidelines 不教</b>。詳見下方對照區塊。</div>
   </div>
 <div class="block topic-images">
     <div class="block-h">📷 圖示（教案原圖）</div>
@@ -1967,6 +2164,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 SLUDGEBBB（淋濕蜜蜂）</div>
     <div class="mnemonic-detail">Salivation, Lacrimation, Urination, Defecation, GI cramps, Emesis + Bronchorrhea / Bradycardia / Bronchospasm — 全身濕 + 心搏過緩</div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 🐝 <b>「淋濕蜜蜂」(SLUDGE + BBB)</b> — Salivation/Lacrimation/Urination/Defecation/GI cramps/Emesis + Bronchorrhea/Bradycardia/Bronchospasm（王者口訣）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 💦 <b>「全身漏水 + 心跳偷懶」</b>：副交感大爆發 → 流汗流淚上吐下瀉尿多痰多 + 心搏過緩</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 💉 <b>「Atropine 1-2-4 倍增」</b>：每 5 min double，目標痰乾 + HR > 80（不是看瞳孔）；2-PAM 2g IV over 30 min</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -2049,7 +2254,25 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li>【AHA Airway 標準】Resp 失敗 → 用 Bag-mask vent + OPA/NPA 為起點，仍走 Lesson 3B 評分標準</li>
       <li>【測驗依據】Airway Management Skills Testing Checklist（見 T02）+ Bradycardia Checklist（見 T09）</li>
     </ul>
-  </div><div class="block provider">
+  </div>
+
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 10 (核心)）</div>
+    <span class="gd-section">2025 AHA Guidelines / Toxicology: Organophosphates & Carbamates</span>
+    <ul style="margin-top:8px">
+      <li><b>Atropine 立即給予</b>：<span class="gd-cor">COR 1, LOE A</span>「Atropine should be administered immediately for adults and children with life-threatening organophosphate or carbamate poisoning.」初始 1-2 mg，每 5 min double，titrate to reversal of bronchorrhea, bronchospasm, and bradycardia → <b>與本題教學完全一致</b>。</li>
+      <li><b>Early endotracheal intubation</b>：成人 <span class="gd-cor">COR 1, LOE C-LD</span>；兒童 <span class="gd-cor">COR 1, LOE C-EO</span>。</li>
+      <li><b>Benzodiazepines for seizures/agitation</b>：<span class="gd-cor">COR 1, LOE C-EO</span>。</li>
+      <li><b>PPE for caregivers</b>：<span class="gd-cor">COR 1, LOE C-EO</span>「Use of appropriate PPE is recommended.」</li>
+      <li><b>Dermal decontamination</b>：<span class="gd-cor">COR 1, LOE C-EO</span>。</li>
+      <li><b>Pralidoxime (2-PAM)</b>：<span class="gd-cor">COR 2a, LOE A</span>「For adults with life-threatening organophosphate poisoning, the use of pralidoxime is reasonable.」劑量 2 g IV infusion over 15-30 min（do not bolus），可重複至 3 doses。</li>
+      <li><b>避用 Succinylcholine</b>：Part 10 提到 organophosphate 抑制 pseudocholinesterase 會延長 succinylcholine 作用 → 與本題教學一致。</li>
+      <li><b>結論</b>：<span class="pv-tag-in">本題 100% 在 2025 AHA Guidelines 範圍內</span>。先前標的「🚫 Provider 超綱」實際只是 <b>Provider Manual 簡化版省略</b>，原始 Guidelines 完整覆蓋。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
+
+  <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 142</span> <span class="pv-section">Part 3 / Cardiac Arrest: Selected Special Situations</span>
     <ul style="margin-top:8px">
@@ -2101,6 +2324,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 Golden Hour Bundle 6 項</div>
     <div class="mnemonic-detail"><span class="oos">①BP &lt;140/80 ②凝血校正 ③Glucose &lt;180 ④BT &lt;37.5 ⑤癲癇控制 ⑥ICP 控制</span></div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 🎯 <b>「壓凝糖溫癇腦」六字訣</b>：BP / 凝血 / 葡萄糖 / 體溫 / 癲癇 / ICP — 一字一件事</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> ⏱️ <b>「黃金一小時 6 動詞」</b>：壓低 / 凝住 / 控糖 / 退燒 / 止癲 / 降腦壓 — 全做完才算守住</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🚫 <b>「ICH = 不能 tPA + 6 件套」</b>：CT 看到血就把 tPA 鎖起來，馬上跑 bundle</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -2187,6 +2418,36 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     </ul>
   </div>
 
+
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（不在 CPR/ECC）</div>
+    <span class="gd-section">AHA/ASA Stroke Guidelines（獨立文件）</span>
+    <ul style="margin-top:8px">
+      <li><b>2025 AHA Guidelines for CPR and ECC（這次參考的 12 個 Parts）<span class="pv-tag-out">不涵蓋 stroke 處置</span></b>。</li>
+      <li>本題的 ICH 處置內容應對照 <b>AHA/ASA 2022 Guideline for the Management of Patients With Spontaneous Intracerebral Hemorrhage</b>（Greenberg et al, Stroke 2022;53:e282-e361）。</li>
+      <li><b>The Golden Hour Bundle 六項</b>：屬 Stroke Guidelines 範疇（BP 管理、凝血校正、glucose、體溫、癲癇、ICP）。</li>
+      <li><b>BP target <140/80</b>：對應 INTERACT-2 / ATACH-2 trials 結論，AHA/ASA Stroke Guidelines 推薦中度 ICH SBP 130-150 mmHg。</li>
+      <li><b>PCC / Vit K / Platelet transfusion 反轉</b>：屬 Neurocritical Care Society / Stroke Guidelines 範疇。</li>
+      <li><b>建議</b>：將 stroke guidelines 文件單獨上傳對照（Powers 2019 AIS / Greenberg 2022 ICH / Hoh 2023 SAH）。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
+  <div class="block stroke-gd">
+    <div class="block-h">📕 AHA/ASA Stroke Guidelines 對照（Greenberg 2022）</div>
+    <span class="sg-section">2022 AHA/ASA Guideline for Spontaneous ICH（Greenberg et al, Stroke 2022;53:e282-e361）</span>
+    <ul style="margin-top:8px">
+      <li><b>BP 控制</b>：本題目標 BP &lt;140/80。Guideline 推薦：SBP 150-220 mmHg 之中度 ICH 急性期，<b>smooth, sustained 控制至 SBP 130-150</b>（在 6 hr 內達標）<span class="sg-cor">COR 2a</span>。本題的 &lt;140 在範圍內。藥物 Nicardipine / Labetalol / Clevidipine 均推薦 <span class="sg-cor">COR 1</span>。</li>
+      <li><b>抗凝血劑反轉</b>：Warfarin → 4-factor PCC + Vit K <span class="sg-cor">COR 1</span>（速度勝於 FFP）；Dabigatran → Idarucizumab <span class="sg-cor">COR 2a</span>；Factor Xa inhibitor → Andexanet alfa or 4-factor PCC <span class="sg-cor">COR 2a</span>。本題教學一致。</li>
+      <li><b>血小板輸注</b>：<span style="color:#c62828">⚠️ 重要</span> Guideline <span class="sg-cor">COR 3 (no benefit)</span> 對 routine 抗血小板藥物相關 ICH（依 PATCH trial）。本題「Plt &lt; 50000 → 輸血小板」<b>仍是合理</b>（thrombocytopenia 是不同情境），但「使用 aspirin 即輸 Plt」就不對。</li>
+      <li><b>顱內壓控制</b>：GCS ≤8 或 hydrocephalus → 考慮 ICP monitoring；Mannitol 1 g/kg 或 3% NaCl 為 hyperosmolar therapy；surgical evacuation for cerebellar hemorrhage &gt;3 cm 或 with hydrocephalus <span class="sg-cor">COR 1</span>。</li>
+      <li><b>癲癇</b>：<span class="sg-cor">COR 3 (no benefit)</span> 不常規 prophylaxis；只治療 clinical 或 EEG 確認的 seizures。本題「控制癲癇」表述 OK，但不應預防性給藥。</li>
+      <li><b>體溫</b>：避免 fever（&gt;38°C 早期惡化）；具體 target 未定，但建議 acetaminophen 與外部降溫。</li>
+      <li><b>Glucose</b>：避免 hypo (&lt;60) 與顯著 hyper (&gt;180)；本題教學一致。</li>
+    </ul>
+    <div class="sg-caveat">⚠️ 此區內容由 Claude 訓練知識整理（COR/LOE 為 2022 Guideline 主要建議的合理近似），未核對原文。如要嚴謹引用，請對照原 PDF（Stroke 2022;53:e282-e361 / DOI: 10.1161/STR.0000000000000407）。</div>
+    <div class="sg-source">出處：見上述 caveat 框內 DOI / Stroke journal 引用。</div>
+  </div>
+
   <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 42-66</span> <span class="pv-section">Part 2 / Acute Stroke</span>
@@ -2241,6 +2502,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 SUM</div>
     <div class="mnemonic-detail">Sudden onset · Unlike previous · Maximal at onset</div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> ⚡ <b>「SUM = 三突」</b>：突發 / 突劇痛 / 突到頂 — Sudden / Unlike previous / Maximal at onset</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 🌩️ <b>「雷擊頭痛 + 脖僵」</b>：CT 沒看到 SAH → LP 找 RBC + Xanthochromia；確定後走 ICH 流程</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 💊 <b>「Nimodipine 60 × 4 × 21」</b>：60 mg PO q4h × 21 days — 預防血管痙攣</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -2326,7 +2595,38 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li>EVT：LVO 患者最長 24 hr（0–6 hr 需 NCCT eligible；6–24 hr 需 penumbra imaging）</li>
       <li>【2025 更新】Tenecteplase 加入為 thrombolytic 選項（與 alteplase 並列）</li>
     </ul>
-  </div><div class="block provider">
+  </div>
+
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（不在 CPR/ECC）</div>
+    <span class="gd-section">AHA/ASA SAH Guidelines（獨立文件）</span>
+    <ul style="margin-top:8px">
+      <li><b>2025 AHA Guidelines CPR/ECC 不涵蓋 SAH 處置</b>。</li>
+      <li>本題對應 <b>AHA/ASA 2023 Guideline for the Management of Patients With Aneurysmal Subarachnoid Hemorrhage</b>（Hoh et al, Stroke 2023;54:e314-e370）。</li>
+      <li>CPR/ECC Guidelines 對 SAH 唯一提及：alteplase 對 SAH 為絕對禁忌（在 AIS 章節 contraindication 表）。</li>
+      <li><b>SUM 口訣 / 雷擊頭痛 / LP / Xanthochromia / Nimodipine / CTA aneurysm</b>：均在 AHA/ASA SAH Guidelines 範圍內。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
+
+  <div class="block stroke-gd">
+    <div class="block-h">📕 AHA/ASA Stroke Guidelines 對照（Hoh 2023）</div>
+    <span class="sg-section">2023 AHA/ASA Guideline for Aneurysmal SAH（Hoh et al, Stroke 2023;54:e314-e370）</span>
+    <ul style="margin-top:8px">
+      <li><b>診斷</b>：CT 24 hr 內敏感度 >95%；如 CT (-) 仍高度懷疑 → LP 找 RBC + xanthochromia <span class="sg-cor">COR 1</span>。本題教學一致。</li>
+      <li><b>BP 控制（aneurysm 未夾閉前）</b>：SBP &lt;160 mmHg 為 reasonable target <span class="sg-cor">COR 2a</span>；藥物 Labetalol / Nicardipine / Clevidipine。</li>
+      <li><b>動脈瘤治療</b>：早期（&lt;24-72 hr）securing aneurysm（coiling 或 clipping）<span class="sg-cor">COR 1</span>；可同時 coiling 的 ruptured aneurysm 推薦 coiling over clipping <span class="sg-cor">COR 1</span>（ISAT trial）。</li>
+      <li><b>Vasospasm 預防</b>：Nimodipine 60 mg PO q4h × 21 days <span class="sg-cor">COR 1</span>—改善 outcome（不是直接降低 vasospasm 發生率）。本題劑量教學一致。</li>
+      <li><b>Hydrocephalus</b>：EVD 或 LP drainage 視臨床決定。</li>
+      <li><b>Vasospasm 監測與處置</b>：TCD 監測；induced hypertension（撤掉降壓藥、給升壓劑）為 first-line；endovascular（balloon angioplasty / IA vasodilator）為 refractory。</li>
+      <li><b>Seizure prophylaxis</b>：短期（3-7 days）prophylaxis 在 select 患者 reasonable <span class="sg-cor">COR 2b</span>—與 ICH 不同。</li>
+      <li><b>Statin</b>：start statin therapy 為 reasonable <span class="sg-cor">COR 2b</span>（雖然 trials mixed）。</li>
+    </ul>
+    <div class="sg-caveat">⚠️ 此區內容由 Claude 訓練知識整理。如要嚴謹引用，請對照原 PDF（Stroke 2023;54:e314-e370 / DOI: 10.1161/STR.0000000000000436）。</div>
+    <div class="sg-source">出處：見上述 caveat 框內 DOI / Stroke journal 引用。</div>
+  </div>
+
+  <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 60-61</span> <span class="pv-section">Part 2 / Acute Stroke / Thrombolytic Eligibility</span>
     <ul style="margin-top:8px">
@@ -2376,6 +2676,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 ABCD² Score</div>
     <div class="mnemonic-detail">Age ≥60(1) · BP ≥140/90(1) · Clinical(unilateral 2 / speech 1) · Duration(≥60 min 2 / 10–59 1) · DM(1)　≥4 = 高 risk</div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 🚨 <b>「TIA 不是 OK，是預警」</b>：症狀消失 ≠ 沒事，2-7 天再中風風險高</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> ✋ <b>「ABCD² 五指法則」</b>：A 年齡 / B BP / C 臨床 / D 持續時間 / D 糖尿病 — 五根手指算分</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 💊 <b>「DAPT 21 天 + 找源頭」</b>：Aspirin + Clopidogrel 21 天 + 影像 + AF/carotid 找源頭</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -2455,7 +2763,39 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li>【後續處置】仍走 stroke 流程：CT 排出血 → ABC → IV → glucose → NIHSS → last normal time</li>
       <li>【測驗依據】此案 8 分鐘示範屬「Stroke 識別 + secondary prevention 教學」</li>
     </ul>
-  </div><div class="block provider">
+  </div>
+
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（不在 CPR/ECC）</div>
+    <span class="gd-section">AHA/ASA Stroke / TIA Guidelines（獨立文件）</span>
+    <ul style="margin-top:8px">
+      <li><b>2025 AHA Guidelines CPR/ECC 不涵蓋 TIA secondary prevention</b>。</li>
+      <li>本題對應 <b>AHA/ASA 2021 Guideline for the Prevention of Stroke in Patients With Stroke and Transient Ischemic Attack</b>（Kleindorfer et al, Stroke 2021;52:e364-e467）。</li>
+      <li><b>ABCD2 Score / DAPT / SAPT / 48 hr 再中風風險</b>：均在 AHA/ASA TIA Guidelines 範圍內。</li>
+      <li>參考 trials: CHANCE / POINT (DAPT)、ABCD-I (Imaging加成)。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
+
+  <div class="block stroke-gd">
+    <div class="block-h">📕 AHA/ASA Stroke Guidelines 對照（Kleindorfer 2021）</div>
+    <span class="sg-section">2021 AHA/ASA Guideline for Stroke/TIA Secondary Prevention（Kleindorfer et al, Stroke 2021;52:e364-e467）</span>
+    <ul style="margin-top:8px">
+      <li><b>DAPT for minor stroke / high-risk TIA</b>：Aspirin 75-100 mg + Clopidogrel 75 mg × <b>21 days</b>，後改 SAPT <span class="sg-cor">COR 1</span>（依 CHANCE / POINT trials）。本題教學一致（DAPT 21 days）。</li>
+      <li><b>Ticagrelor + Aspirin × 30 days</b>：另一選項 <span class="sg-cor">COR 2a</span>（依 THALES trial）。</li>
+      <li><b>Long-term SAPT</b>：Aspirin 75-100 mg、Clopidogrel 75 mg、或 Aspirin/Dipyridamole（任一）<span class="sg-cor">COR 1</span>。</li>
+      <li><b>BP target</b>：&lt;130/80 mmHg <span class="sg-cor">COR 1</span> for ischemic stroke / TIA secondary prevention。</li>
+      <li><b>Statin</b>：High-intensity statin 達 LDL &lt;70 mg/dL <span class="sg-cor">COR 1</span>（依 SPARCL）。LDL 達標進一步加 ezetimibe / PCSK9i。</li>
+      <li><b>AF → anticoagulation</b>：DOAC 優於 warfarin（除 mechanical valve / mod-severe MS）<span class="sg-cor">COR 1</span>。</li>
+      <li><b>Carotid stenosis 50-99% symptomatic</b>：CEA 或 CAS（依年齡與風險）<span class="sg-cor">COR 1</span>。</li>
+      <li><b>ABCD2 score</b>：<span style="color:#c62828">⚠️ 注意</span> 2021 Guideline <b>未明確推薦 ABCD2 用於 routine triage</b>—現代趨勢以 <b>imaging-based risk stratification</b>（diffusion MRI 看 acute infarct、CTA 看 LVO）為主，ABCD2 在臨床仍常用於溝通但不是 Guideline-backed 算法。本題教學中的 ABCD2 屬<b>歷史教學工具</b>。</li>
+      <li><b>2-7 day re-stroke risk</b>：仍是 TIA 處置的核心 urgency rationale；推 admission 或 fast-track outpatient work-up <span class="sg-cor">COR 1</span>。本題教學一致。</li>
+    </ul>
+    <div class="sg-caveat">⚠️ 此區內容由 Claude 訓練知識整理。ABCD2 在 2021 Guideline 的地位請特別查證。原文：Stroke 2021;52:e364-e467 / DOI: 10.1161/STR.0000000000000375。</div>
+    <div class="sg-source">出處：見上述 caveat 框內 DOI / Stroke journal 引用。</div>
+  </div>
+
+  <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 56</span> <span class="pv-section">Part 2 / Acute Stroke</span>
     <ul style="margin-top:8px">
@@ -2506,6 +2846,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 顱內高壓三階段</div>
     <div class="mnemonic-detail"><span class="oos">①預防（環境刺激、穩定 VTS、所有患者）②高滲透壓藥物（Mannitol/3% saline）③神經保護性插管+深度鎮靜+過度換氣／開顱／低溫</span></div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 🪜 <b>「降腦壓三段：避 → 藥 → 切」</b>：避刺激 → 給高滲透壓藥 → 開顱/低溫</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 💧 <b>「Mannitol 1 g/kg = 第一發子彈」</b>：3% NaCl 250 mL 是備用彈；放尿管監測尿量</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> ⏳ <b>「過度換氣只能 < 1 小時」</b>：ETCO₂ 30-35 救急用，撐到神外開刀 — 長期會 cerebral vasoconstriction</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -2587,7 +2935,40 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li>EVT：LVO 患者最長 24 hr（0–6 hr 需 NCCT eligible；6–24 hr 需 penumbra imaging）</li>
       <li>【2025 更新】Tenecteplase 加入為 thrombolytic 選項（與 alteplase 並列）</li>
     </ul>
-  </div><div class="block provider">
+  </div>
+
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 11 (HIBI only) / 不在 CPR/ECC for stroke）</div>
+    <span class="gd-section">Post-CA Care + AHA/ASA Stroke Guidelines</span>
+    <ul style="margin-top:8px">
+      <li><b>Part 11 Post-CA Care</b> 提到 ICP monitoring in <b>hypoxic-ischemic brain injury (HIBI)</b>（即 cardiac arrest 後腦損傷），不適用於 stroke ICP。</li>
+      <li>本題的 stroke-related IICP（ICH/ischemic stroke 引起）對應 <b>AHA/ASA 2019 Powers et al AIS Guidelines</b> + <b>2022 Greenberg et al ICH Guidelines</b>。</li>
+      <li><b>三階段降腦壓 ladder（環境刺激 → 高滲透壓 → 神經保護插管）</b>：屬 Neurocritical Care Society 教學框架。</li>
+      <li><b>Mannitol 1 g/kg / 3% Saline 250 mL</b>：劑量在 Stroke Guidelines + Neurocritical Care Society Guidelines。</li>
+      <li><b>過度換氣 ETCO₂ 30-35</b>：短期 IICP rescue therapy，僅作 bridge to definitive treatment（Brain Trauma Foundation Guidelines）。</li>
+      <li><b>低溫療法 for stroke IICP</b>：證據力低；Provider/Guidelines 均不建議常規使用。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
+
+  <div class="block stroke-gd">
+    <div class="block-h">📕 AHA/ASA Stroke Guidelines 對照（Greenberg 2022 + Powers 2019）</div>
+    <span class="sg-section">2022 ICH Guidelines + 2019 AIS Guidelines / IICP 處置（與 Neurocritical Care Society 合用）</span>
+    <ul style="margin-top:8px">
+      <li><b>IICP 識別</b>：increasing lethargy / decreasing LOC / 增加 BP 合併降低 HR（Cushing reflex）— 兩個 Guidelines 均提及。本題教學一致。</li>
+      <li><b>三階段 ladder（環境刺激 → 高滲透壓 → 神經保護插管/過度換氣/開顱）</b>：屬 Neurocritical Care Society 教學框架，AHA/ASA 不直接列為 ladder，但其組成元件均在 Guidelines 內：</li>
+      <li>　• 第 1 階段（head up 30°、止痛、止吐、避刺激、穩定 VTS、normothermia）→ ICH/AIS Guidelines 一般 supportive care。</li>
+      <li>　• 第 2 階段（高滲透壓 Mannitol 1g/kg 或 3% NaCl 250 mL bolus）→ ICH Guidelines 列為 hyperosmolar therapy for elevated ICP <span class="sg-cor">COR 2a</span>。劑量教學一致。</li>
+      <li>　• 第 3 階段（神經保護插管、深度鎮靜、過度換氣 ETCO₂ 30-35）→ 過度換氣為 <b>short-term rescue therapy only（&lt;1 hr）</b>，不可長期使用（會 cerebral vasoconstriction）。Guidelines 引用 Brain Trauma Foundation 立場。</li>
+      <li>　• 開顱 (decompressive craniectomy)：malignant MCA infarction → DECRA / DECIMAL / DESTINY / HAMLET trials 證實 reduced mortality（在 60 歲以下患者更顯著）<span class="sg-cor">COR 1</span>；cerebellar hemorrhage 或 stroke 引起 hydrocephalus → 急開顱。</li>
+      <li><b>低溫療法 (TTM) for stroke IICP</b>：Guidelines <b>不常規推薦</b>（證據不足；EuroHYP-1 trial neutral）。本題教學「考慮 TTM」應加註：實驗性。</li>
+      <li><b>ICP monitoring</b>：GCS ≤8 或大面積 stroke 引起 cerebral edema → 考慮 invasive ICP monitor。</li>
+    </ul>
+    <div class="sg-caveat">⚠️ 此區內容由 Claude 訓練知識整理。三階段 ladder 是教學整合，非 Guideline 直接列出的演算法。原文出處見上。</div>
+    <div class="sg-source">出處：見上述 caveat 框內 DOI / Stroke journal 引用。</div>
+  </div>
+
+  <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 65</span> <span class="pv-section">Part 2 / Acute Stroke / Begin General Stroke Care</span>
     <ul style="margin-top:8px">
@@ -2637,6 +3018,14 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="block-h">🧠 G-FAST</div>
     <div class="mnemonic-detail">Gaze（眼追手指）· Face（露齒微笑）· Arm（兩手抬起，昏迷者看哪邊先落）· Speech（「股市上萬點、台灣走出去」）· Time of last normal</div>
   </div>
+
+  <div class="mnemonic-alts">
+    <div class="mnemonic-alts-h">💡 候選版本（3 選 1 — 上面是原版）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">A</span> 👀 <b>「G-FAST = 眼嘴手話何時」</b>：Gaze / Face / Arm / Speech / Time — 一行記齊</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">B</span> 🌍 <b>「FAST 國際 + G/T 台灣加碼」</b>：FAST 是 AHA 三項，G-FAST 多加 Gaze（眼歪 → LVO）和 Time（最後正常）</div>
+    <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> ⏰ <b>「Scene time < 15 min；預先通報省 30 min」</b>：到院前打給急診，省下院內準備時間</div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -2719,7 +3108,41 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li>【AHA 8 D 第 3 項 Delivery】EMS 須執行：Identify signs / Assess ABC / Complete stroke assessment / Establish time / Transport / Alert hospital / Check glucose</li>
       <li>【AHA 醫院選擇】依 stroke severity score 與 local protocols；考慮帶 witness/family 確認時間</li>
     </ul>
-  </div><div class="block provider">
+  </div>
+
+  <div class="block guidelines">
+    <div class="block-h">📚 2025 AHA Guidelines 對照（Part 4 (兼具)）</div>
+    <span class="gd-section">2025 AHA Guidelines Systems of Care + AHA/ASA Stroke Guidelines</span>
+    <ul style="margin-top:8px">
+      <li><b>Part 4 Systems of Care</b> 提到 stroke destination plans，引用 <b>2021 AHA/ASA Prehospital Stroke System of Care Consensus Statement</b>（Jauch et al, Stroke 2021;52:e133-e152）。</li>
+      <li>本題的詳細處置（CPSS/G-FAST、8 D's、tPA 4.5h / IA 24h）對應 <b>AHA/ASA Stroke Guidelines</b> 系列。</li>
+      <li><b>EMS Acute Stroke Routing Algorithm</b>：在 Provider Manual 與 AHA/ASA Stroke Guidelines 都有，本題教學完整對應。</li>
+      <li><b>G-FAST</b> 仍標為地區擴充：Provider 標準是 CPSS（face/arm/speech），LVO triage 用 FAST-ED（5 項）。</li>
+    </ul>
+    <div class="gd-source">出處：2025 American Heart Association Guidelines for CPR and ECC（Circulation 2025;152(suppl 2)）</div>
+  </div>
+
+  <div class="block stroke-gd">
+    <div class="block-h">📕 AHA/ASA Stroke Guidelines 對照（Powers 2019 + Jauch 2021）</div>
+    <span class="sg-section">2019 AIS Guidelines + 2021 Prehospital Stroke System of Care Statement</span>
+    <ul style="margin-top:8px">
+      <li><b>Prehospital stroke screen</b>：CPSS（face/arm/speech）為 AHA 標準，sensitivity ≈83%。本題的 G-FAST（5 項含 Gaze + Time）為台灣本地改編。</li>
+      <li><b>LVO triage tool</b>：FAST-ED 或 LAMS（Los Angeles Motor Scale）≥4 → suspect LVO → 考慮 bypass 至 Thrombectomy-Capable Center。本題未提這個 second-tier triage。</li>
+      <li><b>Door-to-needle (DTN) target</b>：≤30 min for top performers（Target: Stroke II/III）；≤45 min standard。</li>
+      <li><b>Time windows</b>：</li>
+      <li>　• tPA 0-3 hr <span class="sg-cor">COR 1</span>，3-4.5 hr 限 select <span class="sg-cor">COR 1</span>。</li>
+      <li>　• Tenecteplase 0.25 mg/kg：可選擇（2025 update 為 COR 2a，與 alteplase 等效；TIMELESS trial）。</li>
+      <li>　• EVT 0-6 hr DAWN/DEFUSE-3 select 6-24 hr <span class="sg-cor">COR 1</span>。</li>
+      <li><b>BP control for tPA candidate</b>：&lt;185/110 before；&lt;180/105 × 24 hr after <span class="sg-cor">COR 1</span>。</li>
+      <li><b>EMS routing</b>：基於 stroke severity score 與本地 protocol—LVO suspect → 直送 TSC/CSC（如 transport time +15 min 內可達），否則 PSC（最近 tPA-capable）。</li>
+      <li><b>Prehospital notification</b>：reduces DTN by ≈ 30 min（well-established in registries）<span class="sg-cor">COR 1</span>。</li>
+      <li><b>結論</b>：本題的 8 D's + last normal time + glucose + 醫院分流邏輯，<b>完全在 AIS Guidelines 範圍內</b>。G-FAST 為地區改編，要說明 CPSS 是國際標準。</li>
+    </ul>
+    <div class="sg-caveat">⚠️ 此區內容由 Claude 訓練知識整理。原文：Powers 2019, Stroke 2019;50:e344-e418 / 2025 update Stroke 2025（DOI 待查）；Jauch 2021, Stroke 2021;52:e133-e152。</div>
+    <div class="sg-source">出處：見上述 caveat 框內 DOI / Stroke journal 引用。</div>
+  </div>
+
+  <div class="block provider">
     <div class="block-h">📖 ACLS Provider Manual 延伸閱讀（2025 版）</div>
     <span class="pg">pg 47-49</span> <span class="pv-section">Part 2 / Acute Stroke / EMS Critical Assessments</span>
     <ul style="margin-top:8px">
