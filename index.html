@@ -215,6 +215,19 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
 
 
 
+
+/* === 道力氣 analysis block === */
+.block.dlq{background:#fff3e0;border:1px solid #ffcc80;border-left:4px solid #f57c00;margin:14px 0}
+.block.dlq .block-h{color:#e65100;font-size:14px}
+.dlq-row{padding:10px 0 8px;border-top:1px dotted #ffcc80;display:flex;gap:12px;align-items:flex-start}
+.dlq-row:first-of-type{border-top:0;padding-top:6px}
+.dlq-label{flex-shrink:0;width:64px;font-weight:700;color:#fff;background:#f57c00;padding:8px 0;border-radius:8px;text-align:center;font-size:18px;line-height:1.2;align-self:stretch;display:flex;align-items:center;justify-content:center}
+.dlq-content{flex:1;font-size:13.5px;line-height:1.65;color:var(--fg)}
+.dlq-content ul{margin:0;padding-left:18px}
+.dlq-content li{margin:2px 0}
+.dlq-content b{color:#e65100}
+.dlq-key{display:inline-block;background:#fff;color:#e65100;border:1px solid #ffcc80;font-size:11.5px;font-weight:600;padding:1px 6px;border-radius:3px;margin:0 2px}
+
 /* === Interaction patterns block === */
 .block.interaction{background:#e0f2f1;border:1px solid #4db6ac;border-left:4px solid #00695c;margin:14px 0}
 .block.interaction .block-h{color:#00695c;font-size:14px}
@@ -1878,6 +1891,35 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     </ol>
   </div>
 
+  <div class="block dlq">
+    <div class="block-h">🌀 個案道力氣分析（ICH 70 歲男）</div>
+    <div class="dlq-row">
+      <div class="dlq-label">道</div>
+      <div class="dlq-content"><ul>
+        <li>GCS 3 → 無法 protect airway，<b>嘔吐物易誤吸</b></li>
+        <li>抽吸口咽分泌物 → 放 OPA（注意刺激 → ↑ICP，先 Lidocaine 麻喉）</li>
+        <li><b>執行神經保護性插管</b>（不是常規 RSI）— F+L+E+R 四件套</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">力</div>
+      <div class="dlq-content"><ul>
+        <li>腦疝壓迫腦幹 → 不規則呼吸 / apnea（<span class="dlq-key">Cushing 三件套</span>）</li>
+        <li>BVM 過渡 → 機械式通氣；<b>避免 excessive ventilation</b>（intrathoracic P ↑ → 加重 ICP）</li>
+        <li>RR 設 12-16；TV 6-8 mL/kg；PEEP 5-8（過高會阻 venous return → ↑ICP）</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">氣</div>
+      <div class="dlq-content"><ul>
+        <li><b>SpO₂ ≥ 95%</b>（hypoxia 加重腦損傷）— 與 COPD 不同</li>
+        <li>ETCO₂ 目標 35-40；短暫過度換氣到 30-35 為 IICP rescue（< 1 hr）</li>
+        <li>避免 hyperoxia 與長期 hypocapnia（cerebral vasoconstriction）</li>
+        <li>治本：神外照會、ICP 監測、頭抬 30°、體溫正常</li>
+      </ul></div>
+    </div>
+  </div>
+
   <div class="block">
     <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
     <ol>
@@ -2049,6 +2091,35 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li><b class="q-label">Q2</b>　怎麼拆解呼吸衰竭？　→ 「道、力、氣」三字訣。</li>
       <li><b class="q-label">Q3</b>　COPD AE 治療？　→ 插管 + 機械通氣、bronchodilator、steroid。<span class="oos">SpO₂ 88–92% 讓腦幹記得呼吸</span>；I:E 1:4–1:5。</li>
     </ol>
+  </div>
+
+  <div class="block dlq">
+    <div class="block-h">🌀 個案道力氣分析（COPD AE 69 歲男）</div>
+    <div class="dlq-row">
+      <div class="dlq-label">道</div>
+      <div class="dlq-content"><ul>
+        <li>叫叫 CABD：意識變差 → protect airway 不足</li>
+        <li><b>持續抽痰</b>（COPD 痰多是常態）</li>
+        <li>放 OPA → 必要時插管（呼吸衰竭明顯時）</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">力</div>
+      <div class="dlq-content"><ul>
+        <li>COPD 呼吸肌疲勞 + auto-PEEP → 機械式通氣</li>
+        <li><b>I:E 1:4-1:5</b>（延長吐氣防 air-trapping / auto-PEEP）</li>
+        <li>Low RR 10-12（不要追 normal CO₂）；TV 6-8 mL/kg IBW</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">氣</div>
+      <div class="dlq-content"><ul>
+        <li><b>SpO₂ 88-92%</b>（保留 hypoxic drive；> 92 會抑制呼吸驅動）</li>
+        <li><b>Permissive hypercapnia</b>：pH > 7.20 即可</li>
+        <li>治本三招：bronchodilator（B₂ agonist）+ steroid + 抗生素（若感染）</li>
+        <li>注意：Provider scope 不涵蓋 COPD 特殊設定，屬 ICU/RT 級別</li>
+      </ul></div>
+    </div>
   </div>
 
   <div class="block">
@@ -2225,6 +2296,38 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     </ol>
   </div>
 
+  <div class="block dlq">
+    <div class="block-h">🌀 個案道力氣分析（DOPE 72 歲 ICU 已插管）</div>
+    <div class="dlq-row">
+      <div class="dlq-label">道</div>
+      <div class="dlq-content"><ul>
+        <li><b>已插管但仍 brady → DOPE 四檢查</b></li>
+        <li><span class="dlq-key">D</span> 位置（ETT 滑出 / 太深 → 單側）</li>
+        <li><span class="dlq-key">O</span> 阻塞（痰塞 / cuff 漏）</li>
+        <li><span class="dlq-key">P</span> 氣胸（單側呼吸音 / SC emphysema）</li>
+        <li><span class="dlq-key">E</span> 設備（vent 故障 / 管路脫落）</li>
+        <li><b>第一動作：拆 vent → 手 bagging</b>（同時診斷 + 治療）</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">力</div>
+      <div class="dlq-content"><ul>
+        <li>通氣不足 → CO₂ ↑ → pH ↓ → 心肌抑制 → bradycardia</li>
+        <li>↑ Minute ventilation：增加 RR 或 TV</li>
+        <li>I:E 延長至 1:4-1:5（排 CO₂）</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">氣</div>
+      <div class="dlq-content"><ul>
+        <li><b>高 CO₂（> 80）+ pH < 7.2 是 brady 的真兇</b></li>
+        <li>校正氣交換 = 校正 brady（不要先打 Atropine）</li>
+        <li>COPD 特殊：SpO₂ 88-92% + permissive hypercapnia</li>
+        <li>若仍昏痛喘休克：Atropine / TCP / Dopamine — 但根因仍要解決</li>
+      </ul></div>
+    </div>
+  </div>
+
   <div class="block">
     <div class="block-h">🎬 Demo（2 分鐘）— 邊演邊講</div>
     <ol>
@@ -2394,6 +2497,36 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li><b class="q-label">Q2</b>　怎麼拆解？　→ 道、力、氣（同 T12）。</li>
       <li><b class="q-label">Q3</b>　肺炎特殊性？　→ 抗生素、bronchodilator、化痰藥；肺保護性通氣（高 PEEP、低 TV 6 mL/kg IBW）。</li>
     </ol>
+  </div>
+
+  <div class="block dlq">
+    <div class="block-h">🌀 個案道力氣分析（肺炎 80 歲 ICU）</div>
+    <div class="dlq-row">
+      <div class="dlq-label">道</div>
+      <div class="dlq-content"><ul>
+        <li>叫叫 CABD：witnessed arrest with weak pulse</li>
+        <li><b>痰多 → 持續抽吸</b>（肺炎核心）</li>
+        <li>插管維持氣道；GCS 變差 → 防誤吸</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">力</div>
+      <div class="dlq-content"><ul>
+        <li>肺炎 + 呼吸肌疲勞 → 機械式通氣</li>
+        <li><b>Lung-protective</b>：TV 6 mL/kg IBW + PEEP 8（防 ARDS / volutrauma）</li>
+        <li>注意：lung-protective 屬 ARDSnet / 2024 ATS Guidelines，Provider 範圍外</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">氣</div>
+      <div class="dlq-content"><ul>
+        <li>肺實變 → V/Q mismatch → 氣交換失敗 → SpO₂ ↓</li>
+        <li>FiO₂ 100% 起始 → 依 SpO₂ titrate down（目標 ≥ 90-94%）</li>
+        <li><b>治本</b>：抗生素 broad-spectrum（後依 culture）+ 化痰 + supportive</li>
+        <li>Septic shock：30 mL/kg fluid + 升壓劑（屬 Surviving Sepsis）</li>
+        <li><b>Family liaison</b>：「爸爸呼吸不好，給我們 5 分鐘」— 別忘了家屬安撫</li>
+      </ul></div>
+    </div>
   </div>
 
   <div class="block">
@@ -2571,6 +2704,40 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li><b class="q-label">Q3</b>　怎麼穩定 ABC？　→ A 暢通+持續抽痰；B 機械式呼吸器+繼續抽；C brady → Atropine（同時是解毒劑）。</li>
       <li><b class="q-label">Q4</b>　解毒劑？　→ Atropine 1–2–4 mg Q5min（double until 痰減少）+ Pralidoxime 2 mg IV then 500 mg IVF。</li>
     </ol>
+  </div>
+
+  <div class="block dlq">
+    <div class="block-h">🌀 個案道力氣分析（有機磷 40 歲口服）</div>
+    <div class="dlq-row">
+      <div class="dlq-label">道</div>
+      <div class="dlq-content"><ul>
+        <li><b>核心：持續抽吸！</b>大量分泌物（SLUDGE）會淹沒呼吸道</li>
+        <li>上呼吸道：痰液 + 流涎 + 嘔吐物 → 抽 + OPA</li>
+        <li>下呼吸道：bronchospasm + bronchorrhea → 抽吸 + 解毒</li>
+        <li>插管後仍要抽（痰液累積會讓 ETT 失效）</li>
+        <li><b>避用 succinylcholine</b>（pseudocholinesterase 被抑制 → 作用延長數小時）→ 用 <b>Rocuronium 1.2 mg/kg</b></li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">力</div>
+      <div class="dlq-content"><ul>
+        <li>副交感過度活化 → bronchospasm + bronchorrhea → 呼吸動力被痰液淹沒</li>
+        <li>機械式通氣 + 持續抽吸（兩件事同時做）</li>
+        <li>注意 bronchospasm → 高 PIP；可考慮 bronchodilator</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">氣</div>
+      <div class="dlq-content"><ul>
+        <li>bronchospasm + 痰液堵塞 → 氣交換失敗 → SpO₂ ↓</li>
+        <li>高 FiO₂ + 適度 PEEP（太高可能加重 bronchospasm）</li>
+        <li><b>治本是解毒劑</b>（Guidelines Part 10 明文 COR 1-2a）：</li>
+        <li>　• <b>Atropine 1-2-4 mg</b> 每 5 min 倍增 → 目標 <b>痰乾 + HR > 80</b>（不看瞳孔）</li>
+        <li>　• <b>Pralidoxime (2-PAM) 2 g IV over 15-30 min</b>（不可 bolus）</li>
+        <li>　• BZD for 癲癇 / 躁動</li>
+        <li><b>PPE + 皮膚去汙</b>：避免照顧者中毒（Guidelines 明列）</li>
+      </ul></div>
+    </div>
   </div>
 
   <div class="block">
