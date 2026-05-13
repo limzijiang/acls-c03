@@ -214,6 +214,33 @@ footer{margin-top:60px;padding:20px 0;border-top:1px solid var(--border);font-si
 .block.stroke-gd .sg-caveat{margin-top:6px;padding:6px 10px;background:#fff;border:1px dashed #ab47bc;border-radius:4px;font-size:11.5px;color:#4a148c}
 
 
+
+
+/* === 道力氣 analysis block === */
+.block.dlq{background:#fff3e0;border:1px solid #ffcc80;border-left:4px solid #f57c00;margin:14px 0}
+.block.dlq .block-h{color:#e65100;font-size:14px}
+.dlq-row{padding:10px 0 8px;border-top:1px dotted #ffcc80;display:flex;gap:12px;align-items:flex-start}
+.dlq-row:first-of-type{border-top:0;padding-top:6px}
+.dlq-label{flex-shrink:0;width:64px;font-weight:700;color:#fff;background:#f57c00;padding:8px 0;border-radius:8px;text-align:center;font-size:18px;line-height:1.2;align-self:stretch;display:flex;align-items:center;justify-content:center}
+.dlq-content{flex:1;font-size:13.5px;line-height:1.65;color:var(--fg)}
+.dlq-content ul{margin:0;padding-left:18px}
+.dlq-content li{margin:2px 0}
+.dlq-content b{color:#e65100}
+.dlq-key{display:inline-block;background:#fff;color:#e65100;border:1px solid #ffcc80;font-size:11.5px;font-weight:600;padding:1px 6px;border-radius:3px;margin:0 2px}
+
+/* === Interaction patterns block === */
+.block.interaction{background:#e0f2f1;border:1px solid #4db6ac;border-left:4px solid #00695c;margin:14px 0}
+.block.interaction .block-h{color:#00695c;font-size:14px}
+.interaction-pat{padding:10px 0 8px;border-top:1px dotted #4db6ac;font-size:13.5px;line-height:1.6}
+.interaction-pat:first-of-type{border-top:0;padding-top:4px}
+.interaction-pat-tag{display:inline-block;font-size:11px;font-weight:700;background:#00695c;color:#fff;padding:2px 8px;border-radius:3px;margin-right:6px}
+.interaction-pat-title{font-weight:700;color:#004d40;font-size:14px}
+.interaction-row{padding:3px 0 3px 14px;font-size:13px}
+.interaction-row.stage{color:#00695c}
+.interaction-row.audience{color:#5d4037}
+.interaction-row.task{color:#004d40}
+.interaction-row b{font-weight:600}
+
 /* === Mnemonic alternatives === */
 .mnemonic-alts{margin:-8px 0 14px;padding:10px 14px;background:#fffdf0;border:1px dashed #d4a017;border-radius:0 0 8px 8px;border-top:0}
 .mnemonic-alts-h{font-size:12px;font-weight:700;color:#7c5400;margin-bottom:6px;letter-spacing:.3px}
@@ -390,6 +417,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 🚦 <b>「氣道紅綠燈」</b>：一般病人用「綠燈」壓額抬下巴通行；創傷用「紅燈」jaw thrust 防撞車（傷頸椎）</div>
   </div>
 
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🤝 <span class="interaction-pat-title">兩兩配對 + floating 評審</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>抽 1 對示範（2 人）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>其他 6 對同步做（互評）</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>講師 + 2 位 floating 評審巡視糾正手指位置（軟組織 vs 骨頭、頭過後仰）</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🎯 <span class="interaction-pat-title">挑錯競賽</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>講師 + 1 助教故意做 3 個錯誤動作</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>14 人分 3 組（每組 4-5 人），1 分鐘內找錯</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>每組推派 1 位上台「糾正」講師；找到最多錯誤的組勝</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 🔄 <span class="interaction-pat-title">錯誤 case 接力</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>1 位扮路倒、1 位扮機車車禍（後腦勺血腫）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>操作者輪流上台處理</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下 12 人記「壓額抬下巴 vs jaw thrust」選擇正確嗎；故意「打不開」考驗換技術果斷度</div>
+    </div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -512,6 +561,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🍔 <b>「面罩夾漢堡」</b>：要把面罩跟臉「夾緊」像吃漢堡 — 無齒（沒下巴）、太胖（漢堡太大）、有鬚（沾醬）都會滑</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">D</span> 🤳 <b>「合照圈不到的臉」</b>：相機自動對焦圈不到的五張臉 — 鬍胖牙老打呼，先擺 OPA + 喊雙人法</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 🥢 <b>「Mask Seal 三大敵」</b>：缺牙塌（下顎沒形）、鬍鬚滑（面罩坐不穩）、肉太厚（C-E 抓不到骨頭） → 抓不緊就雙人法</div>
+  </div>
+
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🆚 <span class="interaction-pat-title">單人 vs 雙人對照賽</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>抽 2 對學員（4 人），各組做單人 EC-clamp + 雙人 thenar grip</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下 10 人用評分卡看 chest rise + 漏氣聲 + 速率</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>每人記「哪一組 tidal volume 較大」、計時 1 分鐘給幾口（目標 10/min）</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🎭 <span class="interaction-pat-title">BONES 假病人 cosplay</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>輪流上台當「困難 ambu 假病人」（戴假鬍鬚 / 含棉花無齒 / 鼓起肚子）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>3 位 bagger 上台依序處理</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下 11 人投票「哪種 patient 最難 seal」+ 記錄處理對策（OPA/雙人法）</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> ⏱️ <span class="interaction-pat-title">節拍器計時挑戰</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>3 位上台輪流 bagging</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>1 位喊「漏氣！」、1 位喊「胸沒抬！」+ 10 人開節拍器（6 秒/口）</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>速率慢/快錯一次罰 5 秒；目標 1 分鐘 10 口 ± 1</div>
+    </div>
   </div>
 
 
@@ -642,6 +713,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 📏 <b>「插管深度看身材」</b>：男 7.5/22 cm、女 7.0/20 cm；深度 ≈ ETT 號 × 3 — 像買衣服找號數</div>
   </div>
 
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🔗 <span class="interaction-pat-title">8 P 接龍</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>點 8 位學員每人負責 1 個 P（Plan/Prep/Position/Pre-O₂/Pre-Med/Paralysis/Placement/Post）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>其他 6 位拿 LEMON 卡評估困難氣道</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>主手出列示範插管；接龍漏一個 P 全班集體念出該項</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🚧 <span class="interaction-pat-title">困難氣道 backup 接力</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>2 位上台（主手 + 副手）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下 12 人分 3 組討論「啟動 backup」順序：誰先到？麻醉？耳鼻喉？</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>講師故意切 LEMON 一項，看主手 30 秒內叫到援兵沒</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 🎯 <span class="interaction-pat-title">看不見的 BURP</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>2 位插管 + 1 位執行 BURP（不能看內視野，只憑主手 verbal 指令）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>主手只能說「再左一點 / 上一點」</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>14 人計時能否 30 秒內視野滿意；同步學「verbal closed-loop」</div>
+    </div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -759,6 +852,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🤝 <b>「插管接力賽」</b>：MILS 是棒子全程不掉地；視野不夠 BURP 接棒；失敗時放棄頸椎 = 「跌倒爬起來再衝終點」</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">D</span> 🚗 <b>「車禍三件套」</b>：MILS（不放手）+ VL（不撬牙）+ bougie（先導 ETT）— 一個都不能省</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 🎯 <b>「BURP 是瞄準器」</b>：按甲狀軟骨「Back-Up-Right-Pressure」幫主手對焦聲門 — 像把鏡頭微調對到主角</div>
+  </div>
+
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 👁️ <span class="interaction-pat-title">頭動 < 1 cm 監視</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>3 位上台（主手 + 副手 + 第三人 MILS）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下 11 人各認領一項：「頭動 > 1 cm 喊停」、「C-collar 重戴了嗎」、「30 秒沒成功？」、「BURP 有沒有用」</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>任何違規當場喊停，記下時間點</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🤲 <span class="interaction-pat-title">MILS 不放手挑戰</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>1 裝病人、1 MILS、1 主手</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下 11 人盯 MILS 那隻手</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>講師「故意」叫 MILS 暫離 1 秒，看誰會抓出來；主手插管全程不可叫 MILS 離開</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 🚨 <span class="interaction-pat-title">車禍劇場</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>4 人扮 EMS 抬病人進來；3 人插管組</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>其餘分配角色：家屬 1、目擊者 1、第二副手 2、麻醉 / 耳鼻喉備援 3</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下要記「prearrival notification」有沒有完成、c-spine 保護全程是否中斷</div>
+    </div>
   </div>
 
 
@@ -881,6 +996,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> ⏰ <b>「Last-Minute Airway」</b>：插管失敗的最後一張牌；ROSC 後立刻換 ETT 防誤吸</div>
   </div>
 
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> ❤️ <span class="interaction-pat-title">比愛心開嘴大會</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>14 人輪流上來「比愛心」開假人嘴 → 講師逐一糾正手指交叉位置</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>看完每人示範後，全班分 7 對</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>7 對配對做 LMA 置入；台下講師抽查 cuff 壓力 40-60 cmH₂O 達標率</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🎲 <span class="interaction-pat-title">尺寸盲選</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>講師擺「胖 / 瘦 / 中等」3 個假人</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>14 人各自寫下 LMA size 答案（不准看人）</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>點 3 位上來實際試插 → 對答案；錯誤 size 的學員上台示範改正</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> ⏱️ <span class="interaction-pat-title">達壓計時賽</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>3 位上台同時插 LMA + 打氣</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下 11 人各拿 1 個壓力卡</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>誰先達 40-60 cmH₂O 且雙側胸闊起伏 + ETCO₂ 波形正常 = 勝；錯誤手法當場糾正</div>
+    </div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -998,6 +1135,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 📺 <b>「Lead II 是工作 lead」</b>：Asystole 必須兩個 lead 一起確認；80% 雜訊來自貼片接觸不良 → 先看人再看波形</div>
   </div>
 
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🎰 <span class="interaction-pat-title">Paradox 心律猜謎</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>1 位操作 SimPad、3 位輪流貼貼片、2 位讀波形</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>其他 8 人舉牌投票（sinus/AF/VT/asystole）</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>講師快速切換 4 種 rhythm，看誰最先喊對</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🕵️ <span class="interaction-pat-title">Artifact 戳穿賽</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>1 對上台貼貼片，講師故意鬆掉 1 個 + 加抖動 artifact</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下 12 人 30 秒內舉手「這不是 asystole！」</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>會喊「先看病人、2-lead 確認」的得分</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 🔀 <span class="interaction-pat-title">Lead 換位錯誤找碴</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>3 位上台貼片，講師故意把白/黑/紅貼錯 → 演示錯誤波形</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>14 人 1 分鐘內找錯</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>指出貼錯位置 + 預測波形如何改變 = 加分</div>
+    </div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -1110,6 +1269,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 👶 <b>「5 歲都會用 AED」</b>：開機 → 貼片 → 大家退開 → 按一鍵 → 立刻 CPR — 不確定就按上面那顆閃的</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">D</span> ⚽ <b>「AED PK 大戰」</b>：開貼分（罰球前準備）→ 電（射門）→ 立刻 CPR（補射）— 每 2 分鐘換一輪</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 🚫 <b>「AED 三不一立刻」</b>：不要怕、不要碰（分析時）、不要關（CPR 中）；shock 完立刻接 CPR</div>
+  </div>
+
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🎬 <span class="interaction-pat-title">5 步分工 + 評分</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 位上台分配「開機/貼片/清場/電擊/CPR」每人只做 1 步</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下 9 人用 calmness checklist 評估每步</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>主要看清場是否徹底（看頭/腳/自己）+ shock-to-CPR ≤ 10 秒</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🚨 <span class="interaction-pat-title">倒地計時挑戰</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>3 位扮路人、1 位倒地</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>倒數計時器啟動</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>全班看誰能 < 3 分鐘把第一發電打出去；台下記「呼救 / 拿 AED / 開始 CPR」三件事先後</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 🎴 <span class="interaction-pat-title">特殊情境連環卡</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>3 位輪流上台處理 5 個情境</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>情境卡：① normal ② 胸毛多 ③ 藥布 ④ 起搏器 ⑤ 濕身</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>14 人記下「漏掉哪個處理」（剃毛、撕藥布、距 ≥ 2.5 cm、擦乾）</div>
+    </div>
   </div>
 
 
@@ -1225,6 +1406,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🔌 <b>「200 焦的甩巴掌」</b>：心臟重開機；每延遲 1 分鐘存活率 ↓ 7-10%</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">D</span> 💯 <b>「能量不知就 max」</b>：Biphasic 200J / Mono 360J / 兒童 2-4 J/kg；後續 ≥ 前一次（焦黑會產生電阻）</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 🔋 <b>「Defib = 心臟急救包」</b>：充電（Charge）→ 解包（Clear）→ 用力按下（Shock）→ 接續按摩（CPR）— 用完不能停</div>
+  </div>
+
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🃏 <span class="interaction-pat-title">能量決策舉牌</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 種 rhythm 卡，講師逐一念</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>14 人舉牌喊能量（200J / 360J / 兒童 2-4 J/kg / max）</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>點 3 位上來操作對應 shock，配合 charge-clear-shock-CPR 四連發</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> ⏱️ <span class="interaction-pat-title">Shock-to-CPR 計時</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>2 位上台示範 charge-clear-shock-CPR</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下 12 人計時，目標 shock-to-CPR ≤ 5 秒</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>同時記清場有沒有三看（頭/腳/自己），氧氣有沒有移開</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> ⚔️ <span class="interaction-pat-title">Paddle vs Pads 對比</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>2 對上台分別用 paddle / 黏貼 pads</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下分組計 CPR 暫停時間</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>結論：pads hands-off 中斷時間短，paddle 暫停較久 → 強化「pads 優先」</div>
+    </div>
   </div>
 
 
@@ -1346,6 +1549,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 💉 <b>「TCP 沒鎮靜 = 凌虐病人」</b>：先給 Fentanyl/Morphine + Midazolam，再開 mA — 別用同側手摸脈搏</div>
   </div>
 
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 💰 <span class="interaction-pat-title">mA 拍賣</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>2 位上台一個操作機器一個摸對側脈搏</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>14 人喊價「猜 capture mA」（從 40 起每 10 加）</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>看實際 capture mA 多少；猜中前 3 名加分</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🎬 <span class="interaction-pat-title">止痛配音</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>1 位扮病人喊「好痛！」逐漸大聲</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>主操作者必須在 30 秒內 verbalize 給 Fentanyl + Midazolam</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下 11 人記錄「幾秒內想到止痛」+「有沒有用同側手摸脈搏（錯誤）」</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 🔍 <span class="interaction-pat-title">雙 capture 確認</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>3 位上台輪流：開機 / 摸脈 / 看 monitor</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下 11 人分 2 排：1 排盯 spike + wide QRS、1 排盯脈搏跳/BP 升</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>兩排同時喊「captured！」才算 = electrical + mechanical 雙確認</div>
+    </div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -1461,6 +1686,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> ⚡ <b>「沒按 SYNC = 把人電成 VF」</b> 反差警告：把不穩定電成「真死」</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">D</span> 🔄 <b>「SYNC 每次都要重按」</b>：每次 shock 後 sync 自動關 → 第二次 shock 前再按一次！</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 🆚 <b>「Defib vs Cardio = 差一個鍵」</b>：能量看 narrow/wide × regular/irregular；polymorphic VT 直接 defib</div>
+  </div>
+
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🛡️ <span class="interaction-pat-title">SYNC 守門員</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>2 位操作 cardioversion</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>指派 1 位「SYNC 守門員」每次 shock 前必喊「SYNC 按了嗎？」</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>漏喊扣 5 分；台下 11 人記第二次 shock 是否重按（最常忘）</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🃏 <span class="interaction-pat-title">能量輪流喊</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>講師畫 4 種 rhythm（narrow regular / mono VT / AF / AFL）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>14 人輪流喊「100J」「100J」「200J」「200J」（傳遞式記憶）</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>點錯能量的學員出來操作該 rhythm 的 cardioversion</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> ⚖️ <span class="interaction-pat-title">電 vs 藥判斷</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>講師念 5 個 case（穩定 PSVT / 不穩定 AF RVR / wide VT 不穩 / poly VT / aflutter 不穩）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>14 人舉「電」or「藥」牌</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>點 2 位上來操作 cardioversion 或給 adenosine；錯判給 R-on-T 機會教育</div>
+    </div>
   </div>
 
 
@@ -1594,6 +1841,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 💊 <b>「F+L+E+R 四件套」</b>：Fentanyl + Lidocaine + Etomidate + Rocuronium — 避 Ketamine 與 Sux（會 ↑ICP）</div>
   </div>
 
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🎭 <span class="interaction-pat-title">6 角色固定 + 4 評分組</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>6 位上台：Leader / Airway / Circulation / Recorder / Family / 神外照會員</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下 8 人分 4 組各拿一張評分表：領導力 / 通氣 / 鎮靜選藥（F+L+E+R）/ 家屬溝通</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>每組 2 人，跑完一致報告該軸觀察點</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🔄 <span class="interaction-pat-title">兩輪接力（人人有份）</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>第一輪 5 人上台跑流程，講師「卡掉」（病人惡化）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>第二輪換另 5 人，從卡點接續</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>14 人都有上台機會；台下 4 人觀察「接續 verbalize 完整度」</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 🪞 <span class="interaction-pat-title">角色互換 debrief</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>第一輪 5 人上台跑完</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>互換到台下；台下 9 人選另 5 位上來「重做正確版」</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>比較兩次差異；台下記「pre-medication 是否完整：F+L+E+R 四件套全到位嗎」</div>
+    </div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -1620,6 +1889,35 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li><b class="q-label">Q4</b>　Pre-medication？　→ Fentanyl 減痛；局部 Lidocaine 麻痺喉頭，降疼痛/嘔吐/咳嗽（皆會 ↑ICP）。</li>
       <li><b class="q-label">Q5</b>　鎮靜與肌鬆？　→ 鎮靜 Etomidate（避 Ketamine ↑ICP）；肌鬆 Rocuronium（避 Sux ↑ICP）。</li>
     </ol>
+  </div>
+
+  <div class="block dlq">
+    <div class="block-h">🌀 個案道力氣分析（ICH 70 歲男）</div>
+    <div class="dlq-row">
+      <div class="dlq-label">道</div>
+      <div class="dlq-content"><ul>
+        <li>GCS 3 → 無法 protect airway，<b>嘔吐物易誤吸</b></li>
+        <li>抽吸口咽分泌物 → 放 OPA（注意刺激 → ↑ICP，先 Lidocaine 麻喉）</li>
+        <li><b>執行神經保護性插管</b>（不是常規 RSI）— F+L+E+R 四件套</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">力</div>
+      <div class="dlq-content"><ul>
+        <li>腦疝壓迫腦幹 → 不規則呼吸 / apnea（<span class="dlq-key">Cushing 三件套</span>）</li>
+        <li>BVM 過渡 → 機械式通氣；<b>避免 excessive ventilation</b>（intrathoracic P ↑ → 加重 ICP）</li>
+        <li>RR 設 12-16；TV 6-8 mL/kg；PEEP 5-8（過高會阻 venous return → ↑ICP）</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">氣</div>
+      <div class="dlq-content"><ul>
+        <li><b>SpO₂ ≥ 95%</b>（hypoxia 加重腦損傷）— 與 COPD 不同</li>
+        <li>ETCO₂ 目標 35-40；短暫過度換氣到 30-35 為 IICP rescue（< 1 hr）</li>
+        <li>避免 hyperoxia 與長期 hypocapnia（cerebral vasoconstriction）</li>
+        <li>治本：神外照會、ICP 監測、頭抬 30°、體溫正常</li>
+      </ul></div>
+    </div>
   </div>
 
   <div class="block">
@@ -1747,6 +2045,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 🪓 <b>「Resp arrest with pulse」</b>：只通氣不壓胸 — 1 breath / 6 sec，每 2 min 重新摸脈搏</div>
   </div>
 
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🏆 <span class="interaction-pat-title">道力氣三組搶答</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>14 人分 3 組（道組 / 力組 / 氣組）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>講師念症狀 → 各組搶答對策</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>5 位上台演練；最快答對的組派代表上台執行對應軸</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🎴 <span class="interaction-pat-title">Vent 設定卡接力</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 位跑流程 → 到調呼吸器時暫停</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下 9 人各拿一張「設定卡」（FiO₂ / RR / TV / I:E / PEEP / SpO₂ target）</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>依序上台貼正確值（COPD: SpO₂ 88-92 / I:E 1:4-1:5 / TV 6-8 mL/kg）</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 🎬 <span class="interaction-pat-title">家屬演員加碼</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 位上台 + 1 位學員扮焦急家屬</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>家屬追問「為什麼 SpO₂ 給 88？這樣不會缺氧？」</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下 8 人評 Leader 解釋 permissive hypercapnia 是否淺顯易懂</div>
+    </div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -1771,6 +2091,35 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li><b class="q-label">Q2</b>　怎麼拆解呼吸衰竭？　→ 「道、力、氣」三字訣。</li>
       <li><b class="q-label">Q3</b>　COPD AE 治療？　→ 插管 + 機械通氣、bronchodilator、steroid。<span class="oos">SpO₂ 88–92% 讓腦幹記得呼吸</span>；I:E 1:4–1:5。</li>
     </ol>
+  </div>
+
+  <div class="block dlq">
+    <div class="block-h">🌀 個案道力氣分析（COPD AE 69 歲男）</div>
+    <div class="dlq-row">
+      <div class="dlq-label">道</div>
+      <div class="dlq-content"><ul>
+        <li>叫叫 CABD：意識變差 → protect airway 不足</li>
+        <li><b>持續抽痰</b>（COPD 痰多是常態）</li>
+        <li>放 OPA → 必要時插管（呼吸衰竭明顯時）</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">力</div>
+      <div class="dlq-content"><ul>
+        <li>COPD 呼吸肌疲勞 + auto-PEEP → 機械式通氣</li>
+        <li><b>I:E 1:4-1:5</b>（延長吐氣防 air-trapping / auto-PEEP）</li>
+        <li>Low RR 10-12（不要追 normal CO₂）；TV 6-8 mL/kg IBW</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">氣</div>
+      <div class="dlq-content"><ul>
+        <li><b>SpO₂ 88-92%</b>（保留 hypoxic drive；> 92 會抑制呼吸驅動）</li>
+        <li><b>Permissive hypercapnia</b>：pH > 7.20 即可</li>
+        <li>治本三招：bronchodilator（B₂ agonist）+ steroid + 抗生素（若感染）</li>
+        <li>注意：Provider scope 不涵蓋 COPD 特殊設定，屬 ICU/RT 級別</li>
+      </ul></div>
+    </div>
   </div>
 
   <div class="block">
@@ -1898,6 +2247,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 🤡 <b>DOPE 諧音「笨蛋」</b>：管子笨了、肺爆了、機器笨了 — 不是病人變壞</div>
   </div>
 
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🎴 <span class="interaction-pat-title">DOPE 卡盲翻</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 位上台跑流程</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>14 張卡（D×3 / O×3 / P×3 / E×3 + 2 張空白），輪流抽</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>抽到的人扮該情境（管子滑、痰塞、氣胸、vent 故障）→ 上台演 → 主手對策</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🛞 <span class="interaction-pat-title">拆 vent 手 bagging 計時</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>主手 + 副手上台，講師切「SpO₂ 掉」</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下計時：拆 vent → 手 bagging 銜接時間（目標 < 10 秒）</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>同時記 DOPE 4 件事檢查順序</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 🕵️ <span class="interaction-pat-title">DOPE 偵探推理</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>1 位扮 vent、1 位扮病人、3 位插管組</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>講師給「兇手線索」（如：ETCO₂ 突然 0 = D 位移）</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>14 人 1 分鐘內推理是哪一個 D-O-P-E；對應處置上台演</div>
+    </div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -1923,6 +2294,38 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li><b class="q-label">Q3</b>　已插管為何通氣不足？　→ 用 DOPE 口訣：</li>
       <li><b class="q-label">Q4</b>　呼吸器怎麼調？　→ SpO₂ 88–92%、增加 minute ventilation、I:E 1:4–1:5 改善 CO₂ 排除。</li>
     </ol>
+  </div>
+
+  <div class="block dlq">
+    <div class="block-h">🌀 個案道力氣分析（DOPE 72 歲 ICU 已插管）</div>
+    <div class="dlq-row">
+      <div class="dlq-label">道</div>
+      <div class="dlq-content"><ul>
+        <li><b>已插管但仍 brady → DOPE 四檢查</b></li>
+        <li><span class="dlq-key">D</span> 位置（ETT 滑出 / 太深 → 單側）</li>
+        <li><span class="dlq-key">O</span> 阻塞（痰塞 / cuff 漏）</li>
+        <li><span class="dlq-key">P</span> 氣胸（單側呼吸音 / SC emphysema）</li>
+        <li><span class="dlq-key">E</span> 設備（vent 故障 / 管路脫落）</li>
+        <li><b>第一動作：拆 vent → 手 bagging</b>（同時診斷 + 治療）</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">力</div>
+      <div class="dlq-content"><ul>
+        <li>通氣不足 → CO₂ ↑ → pH ↓ → 心肌抑制 → bradycardia</li>
+        <li>↑ Minute ventilation：增加 RR 或 TV</li>
+        <li>I:E 延長至 1:4-1:5（排 CO₂）</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">氣</div>
+      <div class="dlq-content"><ul>
+        <li><b>高 CO₂（> 80）+ pH < 7.2 是 brady 的真兇</b></li>
+        <li>校正氣交換 = 校正 brady（不要先打 Atropine）</li>
+        <li>COPD 特殊：SpO₂ 88-92% + permissive hypercapnia</li>
+        <li>若仍昏痛喘休克：Atropine / TCP / Dopamine — 但根因仍要解決</li>
+      </ul></div>
+    </div>
   </div>
 
   <div class="block">
@@ -2048,6 +2451,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 👨‍👩‍👦 <b>「家屬大叫沒呼吸」</b>：先 ABC，再對家屬一句「爸爸呼吸不好，給我們 5 分鐘」— Family liaison 加分</div>
   </div>
 
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🎬 <span class="interaction-pat-title">家屬大叫劇場</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 位上台 + 1 位學員扮家屬</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>家屬「我爸爸不會死吧？」逐漸激動</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>Leader 必須 1 句安撫 + 繼續 CABD；台下 8 人打 family liaison 分</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> ⚖️ <span class="interaction-pat-title">介入優先順序</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 位上台，3 種介入卡（抗生素 / 通氣 / 抽痰）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>必須說出「先做哪個」並 verbalize 理由</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下 9 人投票「順序對嗎」（正解：A → B → 治本）</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 🃏 <span class="interaction-pat-title">Lung-protective 設定 quiz</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 位跑流程 → 設 vent 時暫停</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下分 2 組舉牌：TV「6 vs 10」、PEEP「8 vs 5」、FiO₂「100% titrate down vs 40%」</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>大家投票後上台貼正確值（ARDSnet: TV 6 mL/kg IBW / PEEP 8 / FiO₂ titrate by SpO₂）</div>
+    </div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -2072,6 +2497,36 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li><b class="q-label">Q2</b>　怎麼拆解？　→ 道、力、氣（同 T12）。</li>
       <li><b class="q-label">Q3</b>　肺炎特殊性？　→ 抗生素、bronchodilator、化痰藥；肺保護性通氣（高 PEEP、低 TV 6 mL/kg IBW）。</li>
     </ol>
+  </div>
+
+  <div class="block dlq">
+    <div class="block-h">🌀 個案道力氣分析（肺炎 80 歲 ICU）</div>
+    <div class="dlq-row">
+      <div class="dlq-label">道</div>
+      <div class="dlq-content"><ul>
+        <li>叫叫 CABD：witnessed arrest with weak pulse</li>
+        <li><b>痰多 → 持續抽吸</b>（肺炎核心）</li>
+        <li>插管維持氣道；GCS 變差 → 防誤吸</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">力</div>
+      <div class="dlq-content"><ul>
+        <li>肺炎 + 呼吸肌疲勞 → 機械式通氣</li>
+        <li><b>Lung-protective</b>：TV 6 mL/kg IBW + PEEP 8（防 ARDS / volutrauma）</li>
+        <li>注意：lung-protective 屬 ARDSnet / 2024 ATS Guidelines，Provider 範圍外</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">氣</div>
+      <div class="dlq-content"><ul>
+        <li>肺實變 → V/Q mismatch → 氣交換失敗 → SpO₂ ↓</li>
+        <li>FiO₂ 100% 起始 → 依 SpO₂ titrate down（目標 ≥ 90-94%）</li>
+        <li><b>治本</b>：抗生素 broad-spectrum（後依 culture）+ 化痰 + supportive</li>
+        <li>Septic shock：30 mL/kg fluid + 升壓劑（屬 Surviving Sepsis）</li>
+        <li><b>Family liaison</b>：「爸爸呼吸不好，給我們 5 分鐘」— 別忘了家屬安撫</li>
+      </ul></div>
+    </div>
   </div>
 
   <div class="block">
@@ -2202,6 +2657,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 💉 <b>「Atropine 1-2-4 倍增」</b>：每 5 min double，目標痰乾 + HR > 80（不是看瞳孔）；2-PAM 2g IV over 30 min</div>
   </div>
 
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🥽 <span class="interaction-pat-title">PPE 競賽</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 位上台必須先穿全套 PPE（手套 / 罩 / 隔離衣）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>計時誰最快全副武裝</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下 9 人記漏掉項目；錯誤項目當場示範改正（PPE 是 Guidelines COR 1）</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 📊 <span class="interaction-pat-title">Atropine 倍增畫白板</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 位跑流程 + 1 位副手白板記錄 Atropine 劑量（1→2→4→8...）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>直到「痰乾 + HR > 80」才停</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下 8 人投票「夠了嗎」（教學重點：終點不是瞳孔大小）</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 🔀 <span class="interaction-pat-title">三軸救治輪轉</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>14 人分 3 組（A 抽痰組 / B 機械通氣組 / C 解毒劑組）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>講師快速切換情境（痰多 / SpO₂ 掉 / brady 加劇）</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>各組輪流上來處理對應軸 + verbalize 為什麼</div>
+    </div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -2227,6 +2704,40 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
       <li><b class="q-label">Q3</b>　怎麼穩定 ABC？　→ A 暢通+持續抽痰；B 機械式呼吸器+繼續抽；C brady → Atropine（同時是解毒劑）。</li>
       <li><b class="q-label">Q4</b>　解毒劑？　→ Atropine 1–2–4 mg Q5min（double until 痰減少）+ Pralidoxime 2 mg IV then 500 mg IVF。</li>
     </ol>
+  </div>
+
+  <div class="block dlq">
+    <div class="block-h">🌀 個案道力氣分析（有機磷 40 歲口服）</div>
+    <div class="dlq-row">
+      <div class="dlq-label">道</div>
+      <div class="dlq-content"><ul>
+        <li><b>核心：持續抽吸！</b>大量分泌物（SLUDGE）會淹沒呼吸道</li>
+        <li>上呼吸道：痰液 + 流涎 + 嘔吐物 → 抽 + OPA</li>
+        <li>下呼吸道：bronchospasm + bronchorrhea → 抽吸 + 解毒</li>
+        <li>插管後仍要抽（痰液累積會讓 ETT 失效）</li>
+        <li><b>避用 succinylcholine</b>（pseudocholinesterase 被抑制 → 作用延長數小時）→ 用 <b>Rocuronium 1.2 mg/kg</b></li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">力</div>
+      <div class="dlq-content"><ul>
+        <li>副交感過度活化 → bronchospasm + bronchorrhea → 呼吸動力被痰液淹沒</li>
+        <li>機械式通氣 + 持續抽吸（兩件事同時做）</li>
+        <li>注意 bronchospasm → 高 PIP；可考慮 bronchodilator</li>
+      </ul></div>
+    </div>
+    <div class="dlq-row">
+      <div class="dlq-label">氣</div>
+      <div class="dlq-content"><ul>
+        <li>bronchospasm + 痰液堵塞 → 氣交換失敗 → SpO₂ ↓</li>
+        <li>高 FiO₂ + 適度 PEEP（太高可能加重 bronchospasm）</li>
+        <li><b>治本是解毒劑</b>（Guidelines Part 10 明文 COR 1-2a）：</li>
+        <li>　• <b>Atropine 1-2-4 mg</b> 每 5 min 倍增 → 目標 <b>痰乾 + HR > 80</b>（不看瞳孔）</li>
+        <li>　• <b>Pralidoxime (2-PAM) 2 g IV over 15-30 min</b>（不可 bolus）</li>
+        <li>　• BZD for 癲癇 / 躁動</li>
+        <li><b>PPE + 皮膚去汙</b>：避免照顧者中毒（Guidelines 明列）</li>
+      </ul></div>
+    </div>
   </div>
 
   <div class="block">
@@ -2362,6 +2873,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🎯 <b>「壓凝糖溫癇腦」六字訣</b>：BP / 凝血 / 葡萄糖 / 體溫 / 癲癇 / ICP — 一字一件事</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">D</span> ⏱️ <b>「黃金一小時 6 動詞」</b>：壓低 / 凝住 / 控糖 / 退燒 / 止癲 / 降腦壓 — 全做完才算守住</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 🚫 <b>「ICH = 不能 tPA + 6 件套」</b>：CT 看到血就把 tPA 鎖起來，馬上跑 bundle</div>
+  </div>
+
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> ⏰ <span class="interaction-pat-title">黃金一小時計時器</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 位上台跑 6 件套（壓凝糖溫癇腦）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>桌上放真實 timer 60 min；台下 9 人各拿一個「件」舉牌完成</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>6 件全做完才停錶；缺哪件當場示範補上</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 💰 <span class="interaction-pat-title">凝血反轉拍賣</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>病人有 warfarin INR 2.5；5 位上台討論反轉策略</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下分 4 組各代表 Vit K / PCC / FFP / Andexanet</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>4 組辯論誰先 → 投票 → Leader 決定（正解：PCC 速度 > FFP，加 Vit K）</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 🛑 <span class="interaction-pat-title">不能 tPA 守門員</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>1 位演 stroke neurologist 想打 tPA（沒看到 CT）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>Leader 必須堅持「CT 看到血 → ICH → 絕對禁忌」</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下 12 人評溝通技巧 + 看 Leader 是否避免衝突仍堅守立場</div>
+    </div>
   </div>
 
 
@@ -2544,6 +3077,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 💊 <b>「Nimodipine 60 × 4 × 21」</b>：60 mg PO q4h × 21 days — 預防血管痙攣</div>
   </div>
 
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> ❓ <span class="interaction-pat-title">SUM 三問</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>1 位學員扮病人</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>Leader 必須問「突然嗎？以前痛過嗎？開始就最痛嗎？」</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下 12 人評問問題完整度 + 是否同時排除其他鑑別診斷</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🪡 <span class="interaction-pat-title">LP 程序示範</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 位上台演 LP：鋪單 / 抽腰椎液 / 觀察 xanthochromia</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下 9 人記錄無菌操作有沒有破</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>同步討論：CT (-) 但仍懷疑 SAH 的處置時機</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 💣 <span class="interaction-pat-title">Vasospasm 二次爆</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>14 天後病人 vasospasm；5 位重新組隊</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下 9 人記「Nimodipine 已給了還是要 induced HTN」+「TCD 監測有沒有提到」</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>強化「炸彈引信」概念：第一次爆 vs 第二次爆</div>
+    </div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -2720,6 +3275,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> 💊 <b>「DAPT 21 天 + 找源頭」</b>：Aspirin + Clopidogrel 21 天 + 影像（CTA/心電/心超）找 AF/carotid</div>
   </div>
 
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> ✋ <span class="interaction-pat-title">ABCD² 五指計分</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>14 人每人代表一個 ABCD² 因子 → 上台站成一排</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>5 位上台用「點頭點數」算分（A 1+B 1+C 2+D 1+D 1 = 6）</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下 9 人投票「住院 or 返家」（≥ 4 強烈住院）</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🔍 <span class="interaction-pat-title">症狀消失但要查</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>Leader 必須說明「為什麼還要 CTA / 心電 / 心超」</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>1 位學員扮病人說「我都好了為什麼要住院」</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下評溝通力 + 是否提及「2-7 天再中風風險最高」</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 💊 <span class="interaction-pat-title">DAPT 21 天 patient ed</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>1 位扮病人問「為什麼吃 2 種抗血小板藥？要吃多久？」</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>Leader 解釋 DAPT 21 days then SAPT</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下 12 人評淺顯易懂程度 + 是否提及出血副作用</div>
+    </div>
+  </div>
+
 
   <div class="grid2">
     <div class="block">
@@ -2890,6 +3467,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 🪜 <b>「降腦壓三段：避 → 藥 → 切」</b>：避刺激 → 給高滲透壓藥 → 開顱/低溫</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">D</span> 💧 <b>「Mannitol 1 g/kg = 第一發子彈」</b>：3% NaCl 250 mL 是備用彈；放尿管監測尿量（會利尿、低 BP）</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> ⏳ <b>「過度換氣只能 < 1 小時」</b>：ETCO₂ 30-35 救急用，撐到神外開刀 — 長期會 cerebral vasoconstriction</div>
+  </div>
+
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🪜 <span class="interaction-pat-title">三階段升級劇場</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 位上台跑「環境管理 → 高滲透壓 → 神經保護插管」</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>台下分 3 組各代表一階段，舉牌「升級」or「還沒到」</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>錯誤升級（如直接過度換氣）當場糾正</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🧮 <span class="interaction-pat-title">Mannitol 劑量計算</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>病人 70 kg → 1 g/kg = 70 g</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>14 人寫答案：拿幾瓶 20% Mannitol（500 mL / 100 g）？</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>正解：0.7 瓶；上台 1 位實際抽藥示範</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> ⏱️ <span class="interaction-pat-title">過度換氣 < 1 小時警鈴</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>副手按倒數 60 min 警鈴</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>60 min 內必須升級到開刀照會</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>沒升級 = 教學重點：hyperventilation 只是 bridge therapy</div>
+    </div>
   </div>
 
 
@@ -3064,6 +3663,28 @@ body.hide-oos .oos-block,body.hide-oos .oos-topic{display:none}
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">C</span> 👀 <b>「G-FAST = 眼嘴手話何時」</b>：Gaze / Face / Arm / Speech / Time — 一行記齊</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">D</span> 🌍 <b>「FAST 國際 + G/T 台灣加碼」</b>：FAST 是 AHA 三項；G-FAST 多加 Gaze（眼歪 → LVO）和 Time（最後正常）</div>
     <div class="mnemonic-alt"><span class="mnemonic-alt-tag">E</span> ⏰ <b>「Scene time < 15 min，預先通報省 30 min」</b>：到院前打給急診，省下院內準備時間</div>
+  </div>
+
+  <div class="block interaction">
+    <div class="block-h">🎭 互動設計（14 人版，3 選 1）</div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 A</span> 🤸 <span class="interaction-pat-title">G-FAST 五指動作</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>14 人在座位上一起做 G-FAST 動作（眼歪/嘴歪/手歪/話歪/問時間）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>5 位上台跑 EMT 完整流程</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下記「last normal time + glucose + 通報」三件事是否完成</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 B</span> 🗣️ <span class="interaction-pat-title">三醫院辯論</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>14 人分 3 組分別代表 地區（2 min 無神內）/ 區域（10 min rtPA）/ 醫學中心（50 min IA）</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>講師說情境後，3 組辯論「該送哪間」</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>台下投票；正解依時間窗（< 4.5 hr 嫌疑 LVO → IA 中心）</div>
+    </div>
+    <div class="interaction-pat">
+      <span class="interaction-pat-tag">版本 C</span> 📞 <span class="interaction-pat-title">SBAR 通報訓練</span>
+      <div class="interaction-row stage"><b>🎬 台上：</b>5 位上台跑流程 → 到「預先通報」時暫停</div>
+      <div class="interaction-row audience"><b>👥 台下：</b>1 位學員扮 ED dispatcher 接電話</div>
+      <div class="interaction-row task"><b>📋 觀察重點：</b>主手用 SBAR 通報；台下 8 人評通報品質（簡潔 / 完整 / 含 LVO score）</div>
+    </div>
   </div>
 
 
